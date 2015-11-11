@@ -6,7 +6,7 @@ During the 1990s, the cumulative loss of economic assets due to natural disaster
 
 The World Bank is increasingly integrating natural hazard risk management and mitigation approaches into the design of infrastructure projects as well as in policy advice to clients to ensure that new infrastructure is able to withstand disaster impacts. Mitigation Information and Risk Identification System (MIRISK) is one such tool which will provide sources of information for natural hazards design guidelines, norms and good practices, and is intended for use by World Bank's Development Managers during all stages of the Project Cycle. MIRISK has been developed to let users identify the natural hazards related to the development project, identify the typical vulnerability of each infrastructure, identify normal design and mitigation plan of each infrastructure.
 
-A Natural Disaster can destroy years of Development in a few seconds.
+**A Natural Disaster can destroy years of Development in a few seconds.**
 
 This is because building design codes are only a minimum level of design. That is, the purpose of normal building design codes is not to eliminate all damage given a major earthquake, flood or tropical cyclone. Rather, the code’s purpose is to prevent major loss of life – significant damage is acceptable per modern building codes, if not many people die.
 
@@ -18,15 +18,19 @@ MIRISK is a tool to help Development Managers consider natural hazards risk, and
 * describing the vulnerability of these assets to natural hazards, and how vulnerability can be reduced
 * analyzing the natural hazards and vulnerability data, to assess whether Projects should follow normal design practices, or whether the cost of some enhanced design for natural hazards is justified by the benefits (of avoided losses).
 
-*Natural hazards considered in MIRISK are earthquakes, flood, tropical cyclone, and volcanism.*
+**Natural hazards considered in MIRISK are earthquakes, flood, tropical cyclone, and volcanism.**
 
 MIRISK’s basic purpose is to allow a Development Manager to quickly learn if natural hazards are very significant in a region where the Manager is considering development. If so, MIRISK provides information on what can be done, and permits estimation of the added cost for a moderately enhanced level of construction for natural hazards. An ‘optimum’ level of enhanced construction is estimated, based on the degree of hazard, the type of facility, and the Project’s benefit cost ratio (BCR, used to account for indirect costs of damage).
 
 ##Requirements##
-* LAMP or WAMP stack
-* php
-* postgresql
-* postGIS
+* [LAMP](https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29) or [WAMP](https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29#WAMP)
+* PHP
+* PostgreSQL
+* PostGIS
+* MapServer
+* MapScript
+
+**Note:** MIRISK was originally developed on a [HostGIS Linux](http://www.hostgis.com/linux/) system.
 
 ##Installation##
 * Copy the files to the webserver.
@@ -39,7 +43,7 @@ Follow the instructions in *MIRISK-HELP.pdf*
 
 ##License##
 
-Copyright Charles Scawthorn, [Christakis Mina](https://github.com/chrmina) and Takahiro Tsutsumiuchi
+Copyright [Charles Scawthorn](https://www.linkedin.com/in/charles-scawthorn-b340a815), [Christakis Mina](https://www.linkedin.com/in/chrismina) and Takahiro Tsutsumiuchi.
 
 MIRISK has been developed under and is subject to the terms of the Kyoto University Intellectual Property Policy, available at http://www.kyoto-u.ac.jp/en/about/profile/ideals/documents/e-ipp.pdf.
 
