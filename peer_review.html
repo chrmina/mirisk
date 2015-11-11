@@ -1,0 +1,825 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>MIRISK - Peer Review Form</title>
+  <meta name="description" content="Mitigation Information and Risk Identification System">
+  <meta name="author" content="MIRISK Team">
+  <meta name="keywords" content="MIRISK">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="abstract" content="MIRISK">
+  <meta name="description" content="MIRISK">
+  <meta name="keywords" content="MIRISK">
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="container">
+  <div id="header">MIRISK</div>
+  <center>
+    <H3>Mitigation Information and Risk Identification System</H3>
+  </center>
+  <div id="menu">
+    <a href="./index.html">Main</a>
+    <a href="./study.html">1. Project Data</a>
+    <a href="./location.html">2. Location/Hazard Data</a> 
+    <a href="./asset.html">3. Component (Asset) Data</a>
+    <a href="./analysis.html">4. Analysis/Report</a>
+    <a href="./help.html">Help</a>
+    <a href="./about.html">About</a> 
+    <a href="./peer_review.html" class="aactive">Feedback</a> 
+  </div>
+  
+  <H3>MIRISK PEER REVIEW</H3>
+  <P>
+  Thank you for agreeing to Peer Review MIRISK. To complete this Peer
+  Review, we suggest:
+  </P>
+  <UL>
+    <LI>At the end of this preamble, you stop, and go to MIRISK</LI>
+    <LI>At MIRISK, take the tutorial and then try MIRISK on one or several
+      projects in various regions you are familiar with</LI>
+    <LI>Then, come back to this Peer Review form, and complete the table
+      below.  While answering the questions, you may of course find it
+      useful to return to MIRISK - if so, please do so.</LI>
+    <LI>Please only complete this Feedback form once. However,
+      you can provide comments at any time, via the MIRISK Wiki
+      facility, which is accessed from the MAIN page.</LI>
+  </UL>
+  <P>
+  <B><U>Introduction:</U></B> As has been emphasized, MIRISK is in Beta version, so
+  that some data and other aspects are not finalized.  However, the
+  general framework is complete.  Version 1.0 has been constructed using
+  only HOTSPOTS data, and it is fully recognized that more detailed data
+  should be developed in subsequent versions.<BR>
+  <BR>
+  <B><U>Instructions:</U></B> To facilitate your Peer Review, we ask the following
+  specific questions.  Of course, following these questions, you are
+  invited to provide any other comments you wish to make.<BR>
+  <BR> 
+  In the following Table, for each numbered question, please Score the
+  feature 0-10, where:
+  </P>
+  <DL>
+    <DT>
+      <DD><B>0 = Totally Terrible or 100% No</B>, and needs <U>complete Revision</U>, and</DD>
+      <DD><B>10 = Excellent or 100% Yes</B>, and needs <U>No</U> Revision.</DD>
+    </DT>
+  </DL>
+  <P>
+  Space is provided for you to elaborate and comment as to why a feature
+  may score less than 10, and how it might be revised. For each
+  question, feel free in the Comment section to elaborate.<BR>
+  </P>
+  <center>
+  <form action="send_mail.php" method="POST">
+    <input type="hidden" name="subject" value="MIRISK Peer Review">
+    <table border="0" cellpadding="5">
+      <tr>
+	<th colspan="3">Reviewer Data</th>
+      </tr>
+      <tr>
+	<td colspan="2" align="left">Name:</td>
+	<td align="left"><input type="text" name="name" size="63"></td>
+      </tr>
+      <tr>
+	<td colspan="2" align="left">E-mail:</td>
+	<td align="left"><input type="text" name="email" size="63"></td>
+      </tr>
+
+      <tr>
+	<th width="150">Feature</th>
+	<th width="50">Score</th>
+	<th width="400">Comment</th>
+      </tr>
+
+      <tr>
+	<td align="left" width="150">1. <B>Main</B> (Opening Screen)</td>
+	<td align="left">
+	  <select name="rating01">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	</td>
+	<td align="center"><textarea name="text01" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">a. Attractiveness</td>
+	<td align="left">
+	  <select name="rating01a">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested question: Is a more attractive screen important?)<BR>
+	  <textarea name="text01a" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">b. Informativeness</td>
+	<td align="left">
+	  <select name="rating01b">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested question: How might it be made more informative?)<BR>
+	  <textarea name="text01b" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">c. Comprehensibility</td>
+	<td align="left">
+	  <select name="rating01c">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Easily understood? If
+	  not, why not? Is the next step clear? Did you understand
+	  what was meant by Wiki? Did you easily find the Tutorial?)<BR>
+	  <textarea name="text01c" cols="70" rows="4"></textarea></td>
+      </tr>
+      
+      <tr>
+	<th width="150">Feature</th>
+	<th width="50">Score</th>
+	<th width="400">Comment</th>
+      </tr>
+
+      <tr>
+	<td align="left" width="150">2. <B>Wiki</B></td>
+	<td align="left">
+	  <select name="rating02">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center"><textarea name="text02" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">a. Useability</td>
+	<td align="left">
+	  <select name="rating02a">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested question: Was it easy to
+	  understand how to use the Wiki to provide comments and
+	  feedback? If not, how can the Wiki be improved?)<BR>
+	  <textarea name="text02a" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">b. Comprehensibility</td>
+	<td align="left">
+	  <select name="rating02b">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: In the Wiki,
+	  comments are provided by editing the Wiki - did you
+	  understand this? Would you prefer another mode? Would you
+	  prefer another mode for providing comments?)<BR>
+	  <textarea name="text02b" cols="70" rows="4"></textarea></td>
+      </tr>
+
+      <tr>
+	<th width="150">Feature</th>
+	<th width="50">Score</th>
+	<th width="400">Comment</th>
+      </tr>
+
+      <tr>
+	<td align="left" width="150">3. <B>Tutorial</B></td>
+	<td align="left">
+	  <select name="rating03">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center"><textarea name="text03" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">a. Accessibility</td>
+	<td align="left">
+	  <select name="rating03a">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested question: Was the Tutorial
+	  easy to get to?)<BR>
+	  <textarea name="text03a" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">b. Useability</td>
+	<td align="left">
+	  <select name="rating03b">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Was the Tutorial
+	  easy to get going and navigate?)<BR>
+	  <textarea name="text03b" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">c. Informativeness</td>
+	<td align="left">
+	  <select name="rating03c">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Was the Tutorial informative?)<BR>
+	  <textarea name="text03c" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">d. Duration</td>
+	<td align="left">
+	  <select name="rating03d">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Length? ie,
+	  Tutorial is too long or too short? Which?)<BR>
+	  <textarea name="text03d" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">e. Comprehensibility</td>
+	<td align="left">
+	  <select name="rating03e">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: In general did you
+	  feel you could easily use MIRISK after watching the tutorial?)<BR>
+	  <textarea name="text03e" cols="70" rows="4"></textarea></td>
+      </tr>
+
+      <tr>
+	<th width="150">Feature</th>
+	<th width="50">Score</th>
+	<th width="400">Comment</th>
+      </tr>
+      
+      <tr>
+	<td align="left" width="150">4. <B>Tab 1: Project Data</B></td>
+	<td align="left">
+	  <select name="rating04">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center"><textarea name="text04" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">a. Useability</td>
+	<td align="left">
+	  <select name="rating04a">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested question: Did you understand
+	  how to use this page?)<BR>
+	  <textarea name="text04a" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">b. Comprehensibility</td>
+	<td align="left">
+	  <select name="rating04b">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Did you understand
+	  how to retrieve an existing Project? Did you understand
+	  the distinction between Project and Component? Did you
+	  easily progress to the next step? Was there any confusion
+	  about this page?  If so, what?)<BR>
+	  <textarea name="text04b" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">c. Data Entry</td>
+	<td align="left">
+	  <select name="rating04c">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Did you understand
+	  how to enter a New Project? Data entry? How can it be improved?)<BR>
+	  <textarea name="text04c" cols="70" rows="4"></textarea></td>
+      </tr>
+
+      <tr>
+	<th width="150">Feature</th>
+	<th width="50">Score</th>
+	<th width="400">Comment</th>
+      </tr>
+
+      <tr>
+	<td align="left" width="150">5. <B>Tab 2: Location/Hazard Data</B></td>
+	<td align="left">
+	  <select name="rating05">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center"><textarea name="text05" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">a. Useability</td>
+	<td align="left">
+	  <select name="rating05a">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Did you find the
+	  various hazard data useful? Were the hazard data credible?
+	  Did you easily progress to the next step?)<BR>
+	  <textarea name="text05a" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">b. Comprehensibility</td>
+	<td align="left">
+	  <select name="rating05b">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Did you understand
+          how to use this page? Did you find the various hazard data
+          easy to understand? Did you understand how to enter a New
+          Component? Did you understand that you could turn layers
+          ,ie hazard layers, on and off? Was there any confusion
+          about this page? If so, what?)<BR>
+	  <textarea name="text05b" cols="70" rows="4"></textarea></td>
+      </tr>
+
+      <tr>
+	<th width="150">Feature</th>
+	<th width="50">Score</th>
+	<th width="400">Comment</th>
+      </tr>
+
+      <tr>
+	<td align="left" width="150">6. <B>Tab 3: Component (Asset) Data</B></td>
+	<td align="left">
+	  <select name="rating06">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center"><textarea name="text06" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">a. Useability</td>
+	<td align="left">
+	  <select name="rating06a">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Did you understand
+	  how to use this page? Did you understand how to bring up a
+	  component? Are the use of "Asset Category" and "Category
+	  Class" OK? If not, please suggest Alternatives. Were the
+	  data and photographs under "Description, damage and
+	  design information on assets" useful? How would you
+	  improve this section?)<BR>
+	  <textarea name="text06a" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">b. Comprehensibility</td>
+	<td align="left">
+	  <select name="rating06b">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Did you understand
+	  Benefit Cost Ratio, BCR? Would you rather have another
+	  measure for indirect benefits? If so, what? Did you have
+	  BCR data readily available? Was Real Interest Rate understandable?)<BR>
+	  <textarea name="text06b" cols="70" rows="4"></textarea></td>
+      </tr>
+
+      <tr>
+	<th width="150">Feature</th>
+	<th width="50">Score</th>
+	<th width="400">Comment</th>
+      </tr>
+
+      <tr>
+	<td align="left" width="150">7. <B>Tab 4: Analysis/Report</B></td>
+	<td align="left">
+	  <select name="rating07">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center"><textarea name="text07" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">a. Useability</td>
+	<td align="left">
+	  <select name="rating07a">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Were the results
+	  useful? Were the results credible? Was the Summary Results
+	  section, above the table, useful? Was the table useful?
+	  Should it be dropped? Was the graph, below the table,
+	  useful? Should it be dropped?)<BR>
+	  <textarea name="text07a" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">b. Comprehensibility</td>
+	<td align="left">
+	  <select name="rating07b">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Did you understand
+	  how to use this page? Would you add anything to the
+	  Analysis/Results page?)<BR>
+	  <textarea name="text07b" cols="70" rows="4"></textarea></td>
+      </tr>
+
+      <tr>
+	<th width="150">Feature</th>
+	<th width="50">Score</th>
+	<th width="400">Comment</th>
+      </tr>
+
+      <tr>
+	<td align="left" width="150">8. <B>Help</B></td>
+	<td align="left">
+	  <select name="rating08">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center"><textarea name="text08" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">a. Useability</td>
+	<td align="left">
+	  <select name="rating08a">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Was the HELP
+	  useful?  What more is needed?)<BR>
+	  <textarea name="text08a" cols="70" rows="4"></textarea></td>
+      </tr>
+
+      <tr><td colspan="3" bgcolor="#dddddd"></td></tr>
+
+      <tr>
+	<td align="left" width="150">9. <B>About</B></td>
+	<td align="left">
+	  <select name="rating09">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center"><textarea name="text09" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">a. Useability</td>
+	<td align="left">
+	  <select name="rating09a">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Was the ABOUT
+	  useful?)<BR>
+	  <textarea name="text09a" cols="70" rows="4"></textarea></td>
+      </tr>
+
+      <tr><td colspan="3" bgcolor="#dddddd"></td></tr>
+
+      <tr>
+	<td align="left" width="150">10. <B>Peer Review</B></td>
+	<td align="left">
+	  <select name="rating10">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center"><textarea name="text10" cols="70" rows="4"></textarea></td>
+      </tr>
+      <tr>
+	<td align="left" width="150">a. Comprehensibility</td>
+	<td align="left">
+	  <select name="rating10a">
+	    <option value="0">0</option>
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	    <option value="5">5</option>
+	    <option value="6">6</option>
+	    <option value="7">7</option>
+	    <option value="8">8</option>
+	    <option value="9">9</option>
+	    <option value="10">10</option>
+	  </select>
+	<td align="center">(Suggested questions: Was this Peer
+	  Review about right, as to length and comprehensiveness? If
+	  not, how should it be revised?)<BR>
+	  <textarea name="text10a" cols="70" rows="4"></textarea></td>
+      </tr>
+
+      <tr><td colspan="3" bgcolor="#dddddd"></td></tr>
+
+      <tr>
+	<td align="left" colspan="2">11. <B>Other Comments</B></td>
+	<td align="center"><textarea name="text11" cols="70" rows="6"></textarea></td>
+      </tr>
+
+      <tr>
+	<td colspan="3"><input type="submit" name="submit" value="Click Here to Submit Feedback"></td>
+      </tr>
+    </table>
+  </form>
+  </center>
+
+  <div id="divider"></div>
+
+  <center>
+    <H3>
+      Thank you for taking the time to complete the Peer Review of
+      MIRISK.<BR>
+      Your feedback is very important and will be used to make
+      MIRISK work best for YOU!
+    </H3>
+  </center>
+
+  <div id="divider"></div>
+
+  <div id="footer">(c) 2006 MIRISK Group</div>
+
+</div>
+</body>
+</html>

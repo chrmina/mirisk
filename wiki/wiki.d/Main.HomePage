@@ -1,0 +1,92 @@
+version=pmwiki-2.2.0-beta45 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3
+author=CM
+charset=ISO-8859-1
+csum=
+host=130.54.130.61
+name=Main.HomePage
+rev=226
+targets=Main.Feedback,Main.BugReporting
+text=== Welcome to the **MIRISK** Wiki Home Page ==%0a%0a**A Natural Disaster can destroy years of Development in a few seconds.**%0a%0a**MIRISK** is a tool to help Development Managers consider natural hazards, by:%0a%0a**//identifying//** natural hazards affecting a region \\%0a**//defining//** the kinds of infrastructure ("assets") that make up typical Development projects \\%0a**//describing//** the vulnerability of these assets to natural hazards, and how vulnerability can be reduced \\%0a**//analyzing//** the natural hazards and vulnerability data, to assess whether Projects should follow normal design practices, or whether the cost of some enhanced design for natural hazards is justified by the benefits (of avoided losses).%0a%0a----%0a%0a**MIRISK** is currently at the //beta// stage.%0a%0aTo submit feedback, comments or usage hints please click on [[ Main/Feedback | Feedback ]]. \\%0aTo report bugs and usage problems please click on [[ Main/BugReporting | Bug Reporting ]].%0a%0aThank You!%0a%0aThe **MIRISK** Team.
+time=1180508094
+author:1180508094=CM
+diff:1180508094:1180507890:minor=1,3c1%0a%3c == Welcome to the **MIRISK** Wiki Home Page ==%0a%3c %0a%3c **A Natural Disaster can destroy years of Development in a few seconds.**%0a---%0a> **'+A Natural Disaster can destroy years of Development in a few seconds+'.**%0a
+host:1180508094=130.54.130.61
+author:1180507890=CM
+csum:1180507890=Initial Change
+diff:1180507890:1180016652:=1,9c1,18%0a%3c **'+A Natural Disaster can destroy years of Development in a few seconds+'.**%0a%3c %0a%3c **MIRISK** is a tool to help Development Managers consider natural hazards, by:%0a%3c %0a%3c **//identifying//** natural hazards affecting a region \\%0a%3c **//defining//** the kinds of infrastructure ("assets") that make up typical Development projects \\%0a%3c **//describing//** the vulnerability of these assets to natural hazards, and how vulnerability can be reduced \\%0a%3c **//analyzing//** the natural hazards and vulnerability data, to assess whether Projects should follow normal design practices, or whether the cost of some enhanced design for natural hazards is justified by the benefits (of avoided losses).%0a%3c %0a---%0a> == Welcome to the **MIRISK** Users' Comment Page ==%0a> %0a> **A Natural Disaster can destroy years of Development in a few seconds.** %0a> %0a> **MIRISK** (//Mitigation Information and Risk Identification System//) is a tool to help Development Managers consider natural hazards risk, and ways to reduce that risk.%0a> %0a> To enter your comments:%0a> %0a> # click on **EDIT** tab above%0a> # scroll to bottom of page%0a> # draw line %0a> #enter your Name, Date and Comments%0a> #**SAVE** your comments (otherwise they are lost immediately, sorry)%0a> %0a> For information about Basic Editing please click **'+[[PmWiki/BasicEditing | here]]+'**.%0a> %0a> - The **MIRISK** Team%0a> %0a11,19c20,22%0a%3c %0a%3c **MIRISK** is currently at the //beta// stage.%0a%3c %0a%3c To submit feedback, comments or usage hints please click on [[ Main/Feedback | Feedback ]]. \\%0a%3c To report bugs and usage problems please click on [[ Main/BugReporting | Bug Reporting ]].%0a%3c %0a%3c Thank You!%0a%3c %0a%3c The **MIRISK** Team.%0a\ No newline at end of file%0a---%0a> comment;%0a> %0a> In the Asset data page, on some browsers, little boxes with red 'x' appear, where there should be photos. If you see these, don't be concerned, they are placeholders for the photos we will be loading.  On some browsers (eg, firefox) they don't appear. %0a
+host:1180507890=130.54.130.61
+author:1180016652=
+diff:1180016652:1180016034:=20,22c20%0a%3c comment;%0a%3c %0a%3c In the Asset data page, on some browsers, little boxes with red 'x' appear, where there should be photos. If you see these, don't be concerned, they are placeholders for the photos we will be loading.  On some browsers (eg, firefox) they don't appear. %0a---%0a> %0a
+host:1180016652=211.124.129.4
+author:1180016034=
+diff:1180016034:1180015985:=20c20,23%0a%3c %0a---%0a> Comment No. 1 / MIRISK Team / 24 May 07%0a> We will soon have a online tutorial for first time Users.%0a> Caution: on each tab, make sure you enter data for your Study and Project.%0a> ----%0a
+host:1180016034=211.124.129.4
+author:1180015985=
+diff:1180015985:1180007084:=22c22,23%0a%3c Caution: on each tab, make sure you enter data for your Study and Project.%0a---%0a> Caution: on each tab, make sure you enter data for your Project Study%0a> (note: one Project can have many Studies)%0a
+host:1180015985=211.124.129.4
+author:1180007084=
+diff:1180007084:1180007039:=24a25,28%0a> ----%0a> Comment No.2 / Takahiro Tsutsumiuchi / 24 May 07%0a> It's only a test, so this comment will be deleted soon.%0a> ----%0a\ No newline at end of file%0a
+host:1180007084=10.249.200.175
+author:1180007039=
+diff:1180007039:1179996846:=24,27d23%0a%3c ----%0a%3c ----%0a%3c Comment No.2 / Takahiro Tsutsumiuchi / 24 May 07%0a%3c It's only a test, so this comment will be deleted soon.%0a
+host:1180007039=10.249.200.175
+author:1179996846=
+diff:1179996846:1179996729:=20,24d19%0a%3c Comment No. 1 / MIRISK Team / 24 May 07%0a%3c We will soon have a online tutorial for first time Users.%0a%3c Caution: on each tab, make sure you enter data for your Project Study%0a%3c (note: one Project can have many Studies)%0a%3c ----%0a\ No newline at end of file%0a
+host:1179996846=10.249.200.158
+author:1179996729=
+diff:1179996729:1179996677:=15a16,22%0a> %0a> Thank You%0a> %0a> ----%0a> comment no. 1:%0a> %0a> Welcome to the MIRISK wiki. Please share your comments, suggestions and any problems you encounter while using MIRISK here. Looking forward to hear from you.%0a
+host:1179996729=10.249.200.158
+author:1179996677=
+diff:1179996677:1179996632:=
+host:1179996677=10.249.200.158
+author:1179996632=
+diff:1179996632:1179996606:=23,24d22%0a%3c %0a%3c - The **MIRISK** Team%0a
+host:1179996632=10.249.200.158
+author:1179996606=
+diff:1179996606:1179932826:=22,23c22,33%0a%3c Welcome to the MIRISK wiki. Please share your comments, suggestions and any problems you encounter while using MIRISK here. Looking forward to hear from you.%0a%3c %0a---%0a> C. Scawthorn, 23 May 2007%0a> %0a> Welcome to MIRISK. We still have a lot of work to do, but look forward to your comments.%0a> %0a> ----%0a> comment no. 2:%0a> %0a> Chris Mina, 23 May 2007%0a> %0a> Welcome to the MIRISK wiki. Feel free to modify any of its pages or create new content.%0a> Please share your comments, suggestions and any problems you encounter while using MIRISK here.%0a> Looking forward to hear from you.%0a
+host:1179996606=10.249.200.158
+author:1179932826=CM
+csum:1179932826=Welcoming comment
+diff:1179932826:1179890209:=26,35c26%0a%3c ----%0a%3c comment no. 2:%0a%3c %0a%3c Chris Mina, 23 May 2007%0a%3c %0a%3c Welcome to the MIRISK wiki. Feel free to modify any of its pages or create new content.%0a%3c Please share your comments, suggestions and any problems you encounter while using MIRISK here.%0a%3c Looking forward to hear from you.%0a%3c %0a%3c ----%0a---%0a> ----%0a\ No newline at end of file%0a
+host:1179932826=130.54.130.60
+author:1179890209=CM
+diff:1179890209:1179890069:=19c19%0a%3c ----%0a---%0a> -----------------------------------------------------%0a26c26%0a%3c ----%0a\ No newline at end of file%0a---%0a> -------------------------------------------------------%0a\ No newline at end of file%0a
+host:1179890209=130.54.130.60
+author:1179890069=CM
+csum:1179890069=Added link to Basic editing
+diff:1179890069:1179889262:=14,15d13%0a%3c %0a%3c For information about Basic Editing please click **'+[[PmWiki/BasicEditing | here]]+'**.%0a
+host:1179890069=130.54.130.60
+author:1179889262=
+diff:1179889262:1179889176:=9,13c9,17%0a%3c # click on **EDIT** tab above%0a%3c # scroll to bottom of page%0a%3c # draw line %0a%3c #enter your Name, Date and Comments%0a%3c #**SAVE** your comments (otherwise they are lost immediately, sorry)%0a---%0a> 1) click on **EDIT** tab above%0a> %0a> 2) scroll to bottom of page%0a> %0a> 3) draw line %0a> %0a> 4) enter your Name, Date and Comments%0a> %0a> 5) **SAVE** your comments (otherwise they are lost immediately, sorry)%0a
+host:1179889262=10.249.200.158
+author:1179889176=
+diff:1179889176:1179889157:=
+host:1179889176=10.249.200.158
+author:1179889157=
+diff:1179889157:1179889120:=10d9%0a%3c %0a12d10%0a%3c %0a14d11%0a%3c %0a16d12%0a%3c %0a
+host:1179889157=10.249.200.158
+author:1179889120=
+diff:1179889120:1179888967:=3,5d2%0a%3c **A Natural Disaster can destroy years of Development in a few seconds.** %0a%3c %0a%3c **MIRISK** (//Mitigation Information and Risk Identification System//) is a tool to help Development Managers consider natural hazards risk, and ways to reduce that risk.%0a
+host:1179889120=10.249.200.158
+author:1179888967=
+diff:1179888967:1179888955:=1c1%0a%3c == Welcome to the **MIRISK** Users' Comment Page ==%0a---%0a> == Welcome to the **MIRISK** USERS' Comment Page ==%0a
+host:1179888967=10.249.200.158
+author:1179888955=
+diff:1179888955:1179888926:=1c1%0a%3c == Welcome to the **MIRISK** USERS' Comment Page ==%0a---%0a> == WELCOME TO THE **MIRISK** USERS' COMMENT PAGE ==%0a
+host:1179888955=10.249.200.158
+author:1179888926=
+diff:1179888926:1179886648:=1c1%0a%3c == WELCOME TO THE **MIRISK** USERS' COMMENT PAGE ==%0a---%0a> == WELCOME TO THE MIRISK USERS' COMMENT PAGE ==%0a
+host:1179888926=10.249.200.158
+author:1179886648=
+diff:1179886648:1179886613:=6c6%0a%3c 1) click on **EDIT** tab above%0a---%0a> 1) click on EDIT tab above%0a10c10%0a%3c 5) **SAVE** your comments (otherwise they are lost immediately, sorry)%0a---%0a> 5) SAVE your comments (otherwise they are lost immediately, sorry)%0a
+host:1179886648=10.249.200.158
+author:1179886613=
+diff:1179886613:1179886592:=0a1%0a> %0a15d15%0a%3c comment no. 1:%0a
+host:1179886613=10.249.200.158
+author:1179886592=
+diff:1179886592:1179216509:=1,21c1,14%0a%3c %0a%3c == WELCOME TO THE MIRISK USERS' COMMENT PAGE ==%0a%3c %0a%3c %0a%3c To enter your comments:%0a%3c %0a%3c 1) click on EDIT tab above%0a%3c 2) scroll to bottom of page%0a%3c 3) draw line %0a%3c 4) enter your Name, Date and Comments%0a%3c 5) SAVE your comments (otherwise they are lost immediately, sorry)%0a%3c %0a%3c Thank You%0a%3c %0a%3c -----------------------------------------------------%0a%3c %0a%3c C. Scawthorn, 23 May 2007%0a%3c %0a%3c Welcome to MIRISK. We still have a lot of work to do, but look forward to your comments.%0a%3c %0a%3c -------------------------------------------------------%0a\ No newline at end of file%0a---%0a> Welcome to PmWiki!%0a> %0a> A local copy of PmWiki's%0a> documentation has been installed along with the software,%0a> and is available via the [[PmWiki/documentation index]].  %0a> %0a> To continue setting up PmWiki, see [[PmWiki/initial setup tasks]].%0a> %0a> The [[PmWiki/basic editing]] page describes how to create pages%0a> in PmWiki.  You can practice editing in the [[wiki sandbox]].%0a> %0a> More information about PmWiki is available from http://www.pmwiki.org .%0a> %0a> TEST!!!!%0a\ No newline at end of file%0a
+host:1179886592=10.249.200.158
+author:1179216509=
+diff:1179216509:1142203034:=13,14d12%0a%3c %0a%3c TEST!!!!%0a\ No newline at end of file%0a
+host:1179216509=10.249.209.221

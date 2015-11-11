@@ -1,0 +1,105 @@
+<?php
+
+if($_REQUEST["searchID"]){
+  $IDvalue = $_REQUEST["searchID"];
+
+//  
+// process the study name in database
+//
+
+// connect to the database
+include "./connect_pg.php";
+
+$conn = connect_pg("MIRISK");
+
+if(!$conn){
+   echo "Fail to connect to the database";
+   exit();
+}
+
+$sql = "SELECT oid, study_name FROM studydata WHERE study_id='$IDvalue'";
+$res = pg_query($conn,$sql) or die("fail to insert the data");
+
+$rownum = pg_num_rows($res);
+$fieldnum = pg_num_fields($res);
+
+for ($j=0;$j<$rownum;$j++){
+  $arr[$j][0] = pg_fetch_result($res,$j,0);
+  $arr[$j][1] = pg_fetch_result($res,$j,1);
+  }
+pg_close("MIRISK");
+
+}
+
+if($_REQUEST["searchDistrict"]){
+  $countryvalue = $_REQUEST["searchDistrict"];
+
+//  
+// process the study name in database
+//
+
+// connect to the database
+include "./connect_pg.php";
+
+$conn = connect_pg("MIRISK");
+
+if(!$conn){
+   echo "Fail to connect to the database";
+   exit();
+}
+
+$sql = "SELECT oid, study_name FROM studydata WHERE study_country='$countryvalue'";
+$res = pg_query($conn,$sql) or die("fail to insert the data");
+
+$rownum = pg_num_rows($res);
+$fieldnum = pg_num_fields($res);
+
+for ($j=0;$j<$rownum;$j++){
+  $arr[$j][0] = pg_fetch_result($res,$j,0);
+  $arr[$j][1] = pg_fetch_result($res,$j,1);
+  }
+pg_close("MIRISK");
+}
+
+?>
+
+<html>
+<head>
+  <title>MIRISK - searchresults.phtml</title>
+  <meta name="description" content="Mitigation Information and Risk Identification System">
+  <meta name="author" content="MIRISK Team">
+  <meta name="keywords" content="MIRISK">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="abstract" content="MIRISK">
+  <meta name="description" content="MIRISK">
+  <meta name="keywords" content="MIRISK">
+  <link href="../dbstyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<center>
+
+<form method="post" action="./loadstudy.phtml" target="input">
+
+<select name="selectstudy" size = "10">
+
+<?php
+  for ($i=0;$i<$rownum;$i++)
+  {
+       echo "<option value=\"",$arr[$i][0],"\">";
+       echo $arr[$i][1];
+       echo "</option>";
+  }
+?>
+	 
+</select>
+
+<BR><BR>
+  
+<input type="submit" name="loadstudy" value="Load Project">
+</form>
+
+</center> 
+</body>
+
+</html>

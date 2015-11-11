@@ -1,0 +1,85 @@
+MAP
+  NAME WORLD
+  STATUS ON
+  SIZE 800 500
+  IMAGETYPE PNG
+  IMAGECOLOR 33 128 222
+  SHAPEPATH "data/vector/World/"
+  fontset "data/fonts/fonts.txt"
+  symbolset "data/fonts/symbols.txt"
+  EXTENT -180 -90 180 90
+  UNITS DD
+  WEB
+    IMAGEPATH "map/images/"
+    IMAGEURL "map/images/"
+  END
+
+LEGEND
+  STATUS ON
+  # KEYSIZE 18 12
+  # LABEL object
+  LABEL
+    TYPE bitmap
+    COLOR 0 0 0
+    SIZE small
+    ANTIALIAS TRUE
+  END
+  TEMPLATE "templates/legend.html"  ### HTML template file
+END
+
+	LAYER
+    NAME "Countries"
+    DATA "countries_simpl"
+    STATUS DEFAULT
+    TYPE POLYGON
+    CLASSITEM "name"
+    CLASS
+      NAME "Countries"
+      OUTLINECOLOR 0 0 0
+      COLOR 220 220 220
+    END
+    METADATA
+      SHOWINLEGEND "yes"
+    END
+  END  
+
+	LAYER
+    NAME "Country Names"
+    GROUP "Countries"
+    DATA "countries_simpl"
+    STATUS ON
+    TYPE POLYGON
+    SIZEUNITS PIXELS
+    LABELITEM "name"
+    LABELMAXSCALE 5e+07
+    LABELMINSCALE 1
+    CLASSITEM "name"
+    CLASS
+      NAME "Country Names"
+      LABEL
+        ANGLE 0.000000
+        ANTIALIAS TRUE
+        FONT "verdana"
+        MAXSIZE 256
+        MINSIZE 4
+        SIZE 9
+        MINDISTANCE 50
+        TYPE TRUETYPE
+        BUFFER 2
+        COLOR 20 20 20
+#        OFFSET 0 10
+        OUTLINECOLOR 255 255 255
+        PARTIALS FALSE
+        POSITION CC
+      END
+      STYLE
+        ANGLE 360
+        OUTLINECOLOR 0 0 0
+        SYMBOL 0
+      END
+    END
+    METADATA
+      SHOWINLEGEND "yes"
+    END
+  END
+END

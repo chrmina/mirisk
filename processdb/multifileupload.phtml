@@ -1,0 +1,97 @@
+<?php
+
+// Multiple File upload script.
+// Can do any number of file uploads
+// Just set the variables below and away you go
+// Author: Kevin Waterson <kevin@phpro.org>
+
+  // just so we know its broken...
+  error_reporting(E_ALL);
+
+  // specify a few variables..
+  $uploadDir    = './';        // upload dir
+  $numOfUploads = 5;         // number of files to upload
+  $maxFileSize  = 51200;    // maximum file size in bytes
+
+?>
+
+  <?php echo '<?xml version="1.0" encoding="iso-8859-1"?>';?>
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+  <html>
+  <head><title>Multiple File Upload</title></head>
+  <body bgcolor="#ffffff">
+  <h3>Please Choose a File and click Submit</h3>
+  <form enctype="multipart/form-data" action="<?php echo
+$_SERVER['PHP_SELF'];?>" method="post">
+  <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+<?php
+  $num = 0;
+  while($num < $numOfUploads)
+    {
+        echo '<div><input name="userfile[]" type="file"></div>';
+	        $num++;
+	        }
+?>
+
+  <input type="submit" value="Submit">
+  </form>
+</body></html>
+
+<?php
+	  // check if a file has been submitted
+	  if(!isset($_FILES['userfile']['tmp_name']))
+	        {
+	        echo '<div>No files uploaded</div>';
+		        }
+		  else
+		    {
+		    // upload the files...
+		    upload($maxFileSize, $uploadDir);
+		    }
+
+function upload($maxFileSize, $uploadDir){
+		  $i=0;
+		  // loop through the array
+		  for($i=0; $i <
+		count($_FILES['userfile']['tmp_name']);$i++)
+		  // check if there is a file in the array
+		  if(is_uploaded_file($_FILES['userfile']['tmp_name'][$i]))
+		    {
+		    // check the file is less than the maximum file
+		size
+		    if($_FILES['userfile']['size'][$i] < $maxFileSize)
+		        {
+		        // copy the file to the specified dir
+		        if(@copy($_FILES['userfile']['tmp_name'][$i],$uploadDir.'/'.$_FILES['userfile']['name'][$i]))
+		            {
+		            // give praise and thanks to the php gods
+		            echo'<div>Upload of file
+			      '.$_FILES['userfile']['name'][$i].'
+			      successful.</div>';
+			                  }
+			              else
+			                  {
+			                  // print an error message
+			                  echo '<div>Upload of file
+					    '.$_FILES['userfile']['name'][$i].' Failed.</div>';
+					                }
+					            }
+					        else
+					            {
+					            // if the file is
+					    not less than the maximum
+					    allowed, print an error
+					            echo
+					            '<div>File exceeds
+						      the Maximum File
+						      limit</div>
+						              <div>Maximum File limit is '.$maxFileSize.'</div>
+							              <div>File '.$_FILES['userfile']['name'][$i].' is '.$_FILES['userfile']['size'][$i].' bytes</div>
+								              <hr />';
+     }
+   }
+ }
+
+?>

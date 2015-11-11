@@ -1,0 +1,23 @@
+version=pmwiki-2.2.0-beta45 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4
+author=CAM
+charset=ISO-8859-1
+csum=
+ctime=1180507128
+host=130.54.130.61
+name=Main.Feedback
+rev=3
+targets=PmWiki.BasicEditing
+text=== Welcome to the **MIRISK** Users' Comment Page ==%0a%0a**A Natural Disaster can destroy years of Development in a few seconds.** %0a%0a**MIRISK** (//Mitigation Information and Risk Identification System//) is a tool to help Development Managers consider natural hazards risk, and ways to reduce that risk.%0a%0aTo enter your comments:%0a%0a# click on **EDIT** tab above%0a# scroll to bottom of page%0a# draw line %0a#enter your Name, Date and Comments%0a#**SAVE** your comments (otherwise they are lost immediately, sorry)%0a%0aFor information about Basic Editing please click **'+[[PmWiki/BasicEditing | here]]+'**.%0a%0a- The **MIRISK** Team%0a%0a----%0acomment;%0a%0aIn the Asset data page, on some browsers, little boxes with red 'x' appear, where there should be photos. If you see these, don't be concerned, they are placeholders for the photos we will be loading.  On some browsers (eg, firefox) they don't appear. %0a%0a{+REPLY from the MIRISK team+}: Problem fixed! We will be adding the missing photos soon.
+time=1180673751
+author:1180673751=CAM
+diff:1180673751:1180673727:minor=24c24%0a%3c {+REPLY from the MIRISK team+}: Problem fixed! We will be adding the missing photos soon.%0a\ No newline at end of file%0a---%0a> {+REPLY from the MIRISK team+}: Problem fixed! No errors should be received anymore. We will be adding the missing photos soon.%0a\ No newline at end of file%0a
+host:1180673751=130.54.130.61
+author:1180673727=CAM
+csum:1180673727=Reply
+diff:1180673727:1180507128:=23,24d22%0a%3c %0a%3c {+REPLY from the MIRISK team+}: Problem fixed! No errors should be received anymore. We will be adding the missing photos soon.%0a\ No newline at end of file%0a
+host:1180673727=130.54.130.61
+author:1180507128=CM
+csum:1180507128=Initial Change
+diff:1180507128:1180507128:=1,22d0%0a%3c == Welcome to the **MIRISK** Users' Comment Page ==%0a%3c %0a%3c **A Natural Disaster can destroy years of Development in a few seconds.** %0a%3c %0a%3c **MIRISK** (//Mitigation Information and Risk Identification System//) is a tool to help Development Managers consider natural hazards risk, and ways to reduce that risk.%0a%3c %0a%3c To enter your comments:%0a%3c %0a%3c # click on **EDIT** tab above%0a%3c # scroll to bottom of page%0a%3c # draw line %0a%3c #enter your Name, Date and Comments%0a%3c #**SAVE** your comments (otherwise they are lost immediately, sorry)%0a%3c %0a%3c For information about Basic Editing please click **'+[[PmWiki/BasicEditing | here]]+'**.%0a%3c %0a%3c - The **MIRISK** Team%0a%3c %0a%3c ----%0a%3c comment;%0a%3c %0a%3c In the Asset data page, on some browsers, little boxes with red 'x' appear, where there should be photos. If you see these, don't be concerned, they are placeholders for the photos we will be loading.  On some browsers (eg, firefox) they don't appear. %0a
+host:1180507128=130.54.130.61

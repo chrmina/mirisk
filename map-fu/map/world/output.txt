@@ -1,0 +1,21 @@
+BEGIN
+CREATE TABLE
+                   addgeometrycolumn                   
+-------------------------------------------------------
+ public.volcanolist.the_geom SRID:-1 TYPE:POINT DIMS:2
+  
+(1 row)
+
+ROLLBACK
+BEGIN
+ROLLBACK
+BEGIN
+ROLLBACK
+BEGIN
+ROLLBACK
+BEGIN
+ROLLBACK
+BEGIN
+ROLLBACK
+BEGIN
+ROLLBACK

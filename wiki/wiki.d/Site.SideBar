@@ -1,0 +1,16 @@
+version=pmwiki-2.2.0-beta45 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3
+author=CM
+charset=ISO-8859-1
+csum=Initial Change
+host=130.54.130.61
+name=Site.SideBar
+passwdedit=@_site_edit
+rev=1
+targets=Main.HomePage,Main.Introduction,Main.CurrentStatus,Main.Feedback,Main.BugReporting,Main.Help,PmWiki.PmWiki,Main.WikiSandbox,PmWiki.BasicEditing,PmWiki.DocumentationIndex,PmWiki.FAQ,PmWiki.PmWikiPhilosophy,Site.SideBar
+text=%25sidehead%25 Navigation%0a* [[Main/HomePage]]%0a* [[Main/Introduction]]%0a* [[Main/Current Status]]%0a* [[Main/Feedback]]%0a* [[Main/Bug Reporting]]%0a* [[Main/Help]]%0a%0a%25sidehead%25 External Links%0a* [[http://www.kyoto-u.ac.jp/ | Kyoto University ]]%0a* [[http://dum.kyoto-u.ac.jp/ | Kyoto University Department of Urban Management ]] %0a* [[http://www.risk-agora.org/ | The Alliance for Global Open Risk Assessment (AGORA) ]] %0a%0a%25sidehead%25 [[PmWiki/PmWiki]]%0a* [[Main/WikiSandbox]]%0a* [[PmWiki/Basic Editing]]%0a* [[PmWiki/Documentation Index]]%0a* [[PmWiki/FAQ | PmWiki FAQ ]]%0a* [[PmWiki/PmWikiPhilosophy]]%0a%0a%25right%25 [-[[Site.SideBar?action=edit | edit SideBar]]-]
+time=1180507047
+author:1180507047=CM
+csum:1180507047=Initial Change
+diff:1180507047:1125550800:=1d0%0a%3c %25sidehead%25 Navigation%0a3,14d1%0a%3c * [[Main/Introduction]]%0a%3c * [[Main/Current Status]]%0a%3c * [[Main/Feedback]]%0a%3c * [[Main/Bug Reporting]]%0a%3c * [[Main/Help]]%0a%3c %0a%3c %25sidehead%25 External Links%0a%3c * [[http://www.kyoto-u.ac.jp/ | Kyoto University ]]%0a%3c * [[http://dum.kyoto-u.ac.jp/ | Kyoto University Department of Urban Management ]] %0a%3c * [[http://www.risk-agora.org/ | The Alliance for Global Open Risk Assessment (AGORA) ]] %0a%3c %0a%3c %25sidehead%25 [[PmWiki/PmWiki]]%0a15a3,5%0a> %0a> %25sidehead%25 [[PmWiki/PmWiki]]%0a> * [[PmWiki/Initial Setup Tasks]]  %0a19a10,17%0a> * [[PmWiki/Release Notes]]%0a> * [[PmWiki/ChangeLog]]%0a> %0a> %25sidehead%25 [[http://www.pmwiki.org | pmwiki.org ]]%0a> * [[Cookbook:CookbookBasics | Cookbook (addons) ]]%0a> * [[Cookbook:Skins | Skins (themes) ]]%0a> * [[PITS:PITS | PITS (issue tracking) ]]%0a> * [[PmWiki/Mailing Lists]]%0a
+host:1180507047=130.54.130.61

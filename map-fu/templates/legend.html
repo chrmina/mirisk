@@ -1,0 +1,16 @@
+<br>
+[leg_layer_html]
+  [if name=SHOWINLEGEND oper=isset]
+    <div style="text-decoration:underline; padding-left:4px; padding-bottom:3px; padding-top:7px;">
+      [leg_layer_name]
+    </div>
+  [/if]
+[/leg_layer_html]
+
+[leg_class_html]
+  [if name=SHOWINLEGEND oper=isset]
+  <div style="padding-left:8px;">
+    <img src=[leg_icon]> [leg_class_name]
+  </div>
+  [/if]
+[/leg_class_html]

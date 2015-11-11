@@ -1,0 +1,129 @@
+Map-Fu - README
+===============
+
+INTRODUCTION
+
+Map-Fu is intended to be a full-featured mapping interface that can be
+easily modified to create a custom mapping application.
+
+WIKI
+
+  http://www.arc.pdx.edu/map-fu-wiki
+
+  - General Project Information
+  - Developer's Manual
+
+PROJECT SITE
+
+  http://www.sourceforge.net/projects/map-fu
+
+  - Latest release download
+  - Sample Data
+  - Mailing Lists
+  - Bug Tracking
+
+SOFTWARE REQUIREMENTS
+
+Client:
+
++ Javascript enabled browser, see BROWSER COMPATIBILITY
+
+Server:
+
++ PHP 5.x 
++ Webserver (Apache) with PHP 5.x support
++ MapServer version 4.8.0-rc2 or greater with support for:
+    PROJ.4, GDAL, PNG
++ Include mapserver support for any of the following if necessary: 
+    PostGIS, Shapefile input
+
+    If you run Windows and do not have mapserver setup consider one of
+    the following self-installing packages:
+
+    Mapserver 4 Windows (MS4W) - http://maptools.org/ms4w/
+
+    If you run Linux an entire suite of tools is available including
+    Mapserver
+
+    FOSS GIS Suite (FGS) for Linux - http://maptools.org/fgs/
+
++ MapScript 4.8.x or greater (included with MS4W and FGS)
+
+    For more information on MapScript visit -
+    http://maptools.org/php_mapscript/index.phtml 
+
+OPERATING SYSTEM COMPATIBILITY
+
+Linux        Yes
+Solaris      ?
+Windows      ?
+
+BROWSER COMPATIBILITY
+
+Mozilla Firefox         Yes
+Internet Explorer       ver 6+
+Opera                   ?
+Safari                  ?
+Konqueror               ?
+
+INTERFACE FEATURES
+
+A. USER WIDGETS
+
+- Typical zoom in, zoom out, pan and scale tools
+
+- Zoom to tool, allowing one to specify a specific map scale or
+  constrain by lat/lon 
+
+- Zoom to scale tool that uses a set of predefined scale values.  The
+  user can choose a map scale using a selector or zoom in or out from one
+  predefined scale to the next.  The default scale selector is a drop-down
+  menu but can be customized to use other types of selectors such as a
+  slider bar.
+
+- Reference map tab for visualizing the current map view in relation
+  to the full map.
+
+- MapInfo tab providing map metadata.
+
+- Scrollable error tab for viewing current and past errors.
+
+B. DEVELOPER FEATURES - PHP
+
+- Abstract Component class providing a common interface for defining
+  Tools, Banners, Datasources, etc.  Allows much of the Javascript,
+  CSS and HTML for each component to be defined server-side in one
+  place, then collated for client side use.
+
+- DefaultDataSource class used to provide and manage any datasource that
+  the mapping application may need, specifically a list of available
+  mapfiles and the logic to allow the user to choose between them.
+
+- JSON class for serializing and transmitting objects from
+  server to client.
+
+C. DEVELOPER FEATURES - Javascript
+
+- Map object for handling map related queries and functionality.
+
+- MapState object which provides information client-side about the
+  maps current state.
+
+- Queue object for making AJAX calls and ensuring they are done
+  in-order.
+
+- TabMenu and Tab objects for creating custom quick-access tab menus
+  allowing other widgets to be tucked away in the interface taking up
+  minimal real estate
+
+- Panel object for creating a set of stackable panels that contain other
+  functionality.  Tabs are used to switch between them.
+
+- Scrollable debug tab for displaying info while debugging
+
+INSTALLATION INSTRUCTIONS
+
+See SETUP file
+
+$Id: README 77 2006-12-08 21:43:42Z tim_j_welch $
+$URL: https://svn.sourceforge.net/svnroot/map-fu/trunk/README $

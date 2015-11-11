@@ -1,0 +1,16 @@
+version=pmwiki-2.2.0-beta45 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3
+author=CM
+charset=ISO-8859-1
+csum=Initial Change
+ctime=1180508009
+host=130.54.130.61
+name=Main.BugReporting
+rev=1
+targets=PmWiki.BasicEditing
+text=== Welcome to the **MIRISK** Bug Reporting Page ==%0a%0a**A Natural Disaster can destroy years of Development in a few seconds.** %0a%0a**MIRISK** (//Mitigation Information and Risk Identification System//) is a tool to help Development Managers consider natural hazards risk, and ways to reduce that risk.%0a%0aTo report bugs and usage problems:%0a%0a# click on **EDIT** tab above%0a# scroll to bottom of page%0a# draw line %0a#enter your Name, Date and Comments%0a#**SAVE** your comments (otherwise they are lost immediately, sorry)%0a%0aFor information about Basic Editing please click **'+[[PmWiki/BasicEditing | here]]+'**.%0a%0a- The **MIRISK** Team%0a%0a
+time=1180508009
+author:1180508009=CM
+csum:1180508009=Initial Change
+diff:1180508009:1180508009:=1,18d0%0a%3c == Welcome to the **MIRISK** Bug Reporting Page ==%0a%3c %0a%3c **A Natural Disaster can destroy years of Development in a few seconds.** %0a%3c %0a%3c **MIRISK** (//Mitigation Information and Risk Identification System//) is a tool to help Development Managers consider natural hazards risk, and ways to reduce that risk.%0a%3c %0a%3c To report bugs and usage problems:%0a%3c %0a%3c # click on **EDIT** tab above%0a%3c # scroll to bottom of page%0a%3c # draw line %0a%3c #enter your Name, Date and Comments%0a%3c #**SAVE** your comments (otherwise they are lost immediately, sorry)%0a%3c %0a%3c For information about Basic Editing please click **'+[[PmWiki/BasicEditing | here]]+'**.%0a%3c %0a%3c - The **MIRISK** Team%0a%3c %0a
+host:1180508009=130.54.130.61

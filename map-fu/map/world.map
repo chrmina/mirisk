@@ -1,0 +1,758 @@
+MAP
+  NAME "WORLD MAP"
+  STATUS ON
+  ### the pixel size of displayed map, width and height
+  #SIZE 600 300
+  SIZE 800 500
+  IMAGETYPE png24
+  #IMAGECOLOR 33 128 222
+  ### Path to the directory holding the shapefiles
+  SHAPEPATH "map/world"
+  FONTSET "/var/www/htdocs/mirisk/map-fu/data/fonts/fonts.txt"
+  ### default extent of map
+  EXTENT -180 -90 180 90
+  ### enable interlace method when drawing  
+  #INTERLACE ON
+  ### units used on the map system, DD means degrees (latitude and longitude)
+  UNITS DD
+  ### Full filename of the symbolset to use
+  #SYMBOLSET "map/symbols35.sym"
+  SYMBOLSET "/var/www/htdocs/mirisk/map-fu/data/fonts/symbols.txt"
+  ### define the coordinate system to display the map  
+  PROJECTION
+  "proj=latlong"  # set the coordinate system, latitude and longitude    
+  "ellps=WGS84"   # define the ellipsoid system
+  "datum=WGS84"   # projection data used in shapefile(?)
+  "no_defs"       # ensure that no defaults are read from the defaults files.
+  END
+  ### define the web interface
+  WEB
+  ### path to the directory for writing temporary files and images
+  IMAGEPATH "map/images/"
+  IMAGEURL "map/images/"
+  ### format of query result
+  QUERYFORMAT text/html
+END
+
+LEGEND
+  STATUS ON
+  # KEYSIZE 18 12
+  # LABEL object
+  LABEL
+    TYPE bitmap
+    COLOR 0 0 0
+    SIZE small
+    ANTIALIAS TRUE
+  END
+  TEMPLATE "templates/legend.html"  ### HTML template file
+END
+
+#LEGEND
+#  ### Color to initialize the legend with, i.e. the color of background
+#  IMAGECOLOR 255 255 255
+#  ### Color to use for outlining symbol key boxes        
+#  OUTLINECOLOR 80 80 80
+#  ### Size of symbol key boxes(in pixels)
+#  KEYSIZE 12 8
+#  ### Spacing between symbol key boxes and labels(in pixels)
+#  KEYSPACING 10 6
+#  LABEL
+#    ### Text size
+#    SIZE MEDIUM
+#    ### Type of font to use(generally bitmap are fast to draw)
+#    #TYPE BITMAP
+#    TYPE TRUETYPE
+#    ### Padding around labels(in pixels)
+#    BUFFER 0
+#    ### Color to draw text with
+#    COLOR 0 0 89
+#    ### Minimum distance between duplicate labels(given in pixels)
+#    MINDISTANCE -1
+#    ### Minimum size a feature must be to be labeled
+#    MINFEATURESIZE -1
+#    ### Offset values for labels, relative to the lower left hand corner
+#    ### of the label and the label point(in pixels)
+#    OFFSET 0 0
+#    ### Whether text can run off the edge of the map
+#    PARTIALS TRUE
+#  END
+#  ### Where to place an embedded legend in the map
+#  POSITION LL
+#  ### Whether the legend image to be created
+#  STATUS ON
+#  ### HTML legend template file
+#  TEMPLATE "legend.html"
+#END
+
+QUERYMAP
+### Defines a mechanism to map results of a query
+  ### Color in which features are highlighted
+  COLOR 0 255 0
+  ### Size of the map in pixels (Default size is defined in the map object)
+  SIZE -1 -1
+  ### Whether the query map to be drawn
+  STATUS ON
+  ### Sets how selected features are to be handled
+  STYLE HILITE
+END
+
+#REFERENCE
+#### Defines how reference map are to be created
+#### A reference map is not used in the current ver. of MIRISK
+#  COLOR -1 -1 -1
+#  EXTENT -180 -90 180 90
+#  IMAGE "keymap.png"
+#  OUTLINECOLOR 0 0 255
+#  SIZE 100 75
+#  STATUS ON
+#  MARKER 0
+#  MARKERSIZE 0
+#  MINBOXSIZE 3
+#  MAXBOXSIZE 0 
+#END
+
+LAYER
+### Start of base layer, satellite image worldmap
+  ### Name for this layer, linking between the mapfile and web interfaces
+  NAME "BASEMAP"
+  ### The file name of the spatial data to process
+  ### file has to be in SHAPEPATH directory
+  DATA "worldbase.tif"
+  ### Specifies how the data should be drawn(define the type of data)
+  TYPE RASTER
+  ### Sets the status of the layer, on or off or default
+  STATUS DEFAULT
+  ### Passes a processing directive to be used with this layer
+  #PROCESSING "DITHER=YES"
+  PROJECTION
+  ### define the co-ordination system by co-ord number
+    "init=epsg:4326"
+  END
+END
+
+LAYER	
+  NAME "world world30"	
+  ### shapefile data source(.shp can be omitted, in case of shapefile)
+  ### Allows for arbitary data to be stored as name value pairs
+  METADATA
+    "DESCRIPTION" "Every 30 degree Lat and Long"
+  END
+  ### Type of connection, define the data source.(Default is local.)
+  CONNECTIONTYPE POSTGIS
+  ### PostGIS connection string(basically equal to that of PostgreSQL)
+  CONNECTION "dbname=MIRISK user=pgsql host=localhost port=5432 password=miriskdb"
+  ### <columnname> from <tablename> (in case of PostGIS layer)
+  #DATA "geom from project USING UNIQUE gid USING SRID=4326"
+  DATA "the_geom from world30"
+  TYPE POLYGON
+  ### Units of the layer coordinates, used for scale computation
+  UNITS DD
+  STATUS ON
+  ### Sensitivity for point based queries
+  ### i.e. via mouth and/or map coordinates
+  TOLERANCE 0
+  ### Units of the TOLERANCE value
+  TOLERANCEUNITS PIXELS
+  ### Sets the transparency level for a given layer
+  ### 100 is opaque and 0 is fully transparent
+  TRANSPARENCY 10
+    ### Signals the start of a CLASS object, defining thematic classes,
+    ### and at least one class must be included in each layer class.
+    CLASS
+      NAME "Grid"
+      ### Color to use for drawing features.
+      COLOR  102 153 255
+      ### Color to use for outlining polygons and certain marker symbols
+      OUTLINECOLOR 255 255 255
+      SYMBOL 0
+    END	
+END
+
+LAYER
+  NAME "Country Names"
+  GROUP "Countries"
+  #DATA "cntry02"
+  ### Type of connection, define the data source.(Default is local.)
+  CONNECTIONTYPE POSTGIS
+  ### PostGIS connection string(basically equal to that of PostgreSQL)
+  CONNECTION "dbname=MIRISK user=pgsql host=localhost port=5432 password=miriskdb"
+  ### <columnname> from <tablename> (in case of PostGIS layer)
+  DATA "the_geom from cntry02"
+  STATUS ON
+  TYPE POLYGON
+  SIZEUNITS PIXELS
+  LABELITEM "cntry_name"
+  LABELMAXSCALE 5e+07
+  LABELMINSCALE 1
+  CLASSITEM "cntry_name"
+  CLASS
+    NAME "Country Names"
+    LABEL
+      ANGLE 0.000000
+      ANTIALIAS TRUE
+      FONT "verdana"
+      MAXSIZE 256
+      MINSIZE 4
+      SIZE 9
+      MINDISTANCE 50
+      TYPE TRUETYPE
+      BUFFER 2
+      COLOR 20 20 20
+      OUTLINECOLOR 255 255 255
+      PARTIALS FALSE
+      POSITION CC
+    END
+    STYLE
+      ANGLE 360
+      OUTLINECOLOR 0 0 0
+      SYMBOL 0
+    END
+  END
+END
+
+LAYER	
+  NAME "Coastlines"
+  GROUP "Countries"
+  #DATA "gshhs_land"
+  ### Type of connection, define the data source.(Default is local.)
+  CONNECTIONTYPE POSTGIS
+  ### PostGIS connection string(basically equal to that of PostgreSQL)
+  CONNECTION "dbname=MIRISK user=pgsql host=localhost port=5432 password=miriskdb"
+  ### <columnname> from <tablename> (in case of PostGIS layer)
+  DATA "the_geom from gshhs_land"
+    METADATA 
+      "Group" "Countries"
+      "DESCRIPTION" "Country Coastlines"
+      "RESULT_FIELDS" "id"
+    END
+  TYPE LINE
+  UNITS DD
+  STATUS OFF
+  TOLERANCE 0
+  TOLERANCEUNITS PIXELS
+  TRANSPARENCY 40
+  ### Maximum scale at which this CLASS is drawn
+  #MAXSCALE 1200000000
+    CLASS
+      NAME "Coastlines"
+      OUTLINECOLOR 51 51 51
+      COLOR 255 255 255
+    END
+    ### Used as a global alternative to CLASS TEMPLATE,
+    ### Template file or URL to use in presenting query results to the user
+  TEMPLATE void
+END
+
+LAYER	
+  NAME "Lakes"
+  GROUP "Countries"
+  #DATA "hshhs_lake"
+  ### Type of connection, define the data source.(Default is local.)
+  CONNECTIONTYPE POSTGIS
+  ### PostGIS connection string(basically equal to that of PostgreSQL)
+  CONNECTION "dbname=MIRISK user=pgsql host=localhost port=5432 password=miriskdb"
+  ### <columnname> from <tablename> (in case of PostGIS layer)
+  DATA "the_geom from hshhs_lake"
+    METADATA 
+      "Group" "Countries"
+      "DESCRIPTION" "Lakes"
+      "RESULT_FIELDS" "id"
+    END
+  TYPE LINE
+  UNITS DD
+  STATUS ON
+  TOLERANCE 0
+  TOLERANCEUNITS PIXELS
+  TRANSPARENCY 40
+  ### Maximum scale at which this CLASS is drawn
+  #MAXSCALE 1200000000
+    CLASS
+      NAME "Lakes"
+      OUTLINECOLOR 51 51 51
+      COLOR 100 100 255
+    END
+    ### Used as a global alternative to CLASS TEMPLATE,
+    ### Template file or URL to use in presenting query results to the user
+  TEMPLATE void
+END
+
+LAYER	
+  NAME "Volcanic Hazard"	
+  GROUP "Volcanoes"
+  #DATA "volcano"
+  ### Type of connection, define the data source.(Default is local.)
+  CONNECTIONTYPE POSTGIS
+  ### PostGIS connection string(basically equal to that of PostgreSQL)
+  CONNECTION "dbname=MIRISK user=pgsql host=localhost port=5432 password=miriskdb"
+  ### <columnname> from <tablename> (in case of PostGIS layer)
+  DATA "the_geom from volcano"
+    METADATA
+      "Group" "Volcanoes"
+      "DESCRIPTION" "Volcanic hazard"
+      "RESULT_FIELDS" "hazard_lv"
+      "SHOWINLEGEND" "yes"
+    END
+  TYPE POLYGON
+  UNITS DD
+  STATUS ON
+  TOLERANCE 0
+  TOLERANCEUNITS PIXELS
+  TRANSPARENCY 100
+    CLASS			
+      NAME "Volcano LV1"
+      ### Define how to devide the feature in one layer,
+      ### according to some attribute data
+      EXPRESSION([hazard_lv]=1)
+      COLOR 255 255 255
+    END
+    CLASS			
+      NAME "Volcano LV3"
+      EXPRESSION([hazard_lv]=3)
+      COLOR 255 255 223
+    END
+    CLASS			
+      NAME "Volcano LV4"
+      EXPRESSION([hazard_lv]=4)
+      COLOR 255 255 191
+    END
+    CLASS			
+      NAME "Volcano LV5"
+      EXPRESSION([hazard_lv]=5)
+      COLOR 255 255 159
+    END
+    CLASS			
+      NAME "Volcano LV6"
+      EXPRESSION([hazard_lv]=6)
+      COLOR 255 255 128
+    END
+    CLASS			
+      NAME "Volcano LV7"
+      EXPRESSION([hazard_lv]=7)
+      COLOR 255 255 96
+    END
+    CLASS			
+      NAME "Volcano LV8"
+      EXPRESSION([hazard_lv]=8)
+      COLOR 255 255 64
+    END
+    CLASS			
+      NAME "Volcano LV9"
+      EXPRESSION([hazard_lv]=9)
+      COLOR 255 255 32
+    END
+    CLASS			
+      NAME "Volcano LV10"
+      EXPRESSION([hazard_lv]=10)
+      COLOR 255 255 0
+    END
+  TEMPLATE void
+END
+
+LAYER	
+  NAME "Flood Hazard"
+  GROUP "Flood"	
+  #DATA "flood"
+  ### Type of connection, define the data source.(Default is local.)
+  CONNECTIONTYPE POSTGIS
+  ### PostGIS connection string(basically equal to that of PostgreSQL)
+  CONNECTION "dbname=MIRISK user=pgsql host=localhost port=5432 password=miriskdb"
+  ### <columnname> from <tablename> (in case of PostGIS layer)
+  DATA "the_geom from flood"
+
+    METADATA
+      "Group" "Flood"
+      "DESCRIPTION" "flood hazard"
+      "RESULT_FIELDS" "hazard_lv"
+      "SHOWINLEGEND" "yes"
+    END
+  TYPE POLYGON
+  UNITS DD
+  STATUS ON
+  TOLERANCE 0
+  TOLERANCEUNITS PIXELS
+  TRANSPARENCY 45
+    CLASS			
+      NAME "Flood LV1"
+      EXPRESSION([hazard_lv]=1)
+      COLOR 255 255 255
+    END
+    CLASS			
+      NAME "Flood LV4"
+      EXPRESSION([hazard_lv]=4)
+      COLOR 204 204 255
+    END
+    CLASS			
+      NAME "Flood LV7"
+      EXPRESSION([hazard_lv]=7)
+      COLOR 153 153 255
+    END
+    CLASS			
+      NAME "Flood LV8"
+      EXPRESSION([hazard_lv]=8)
+      COLOR 102 102 255
+    END
+    CLASS			
+      NAME "Flood LV9"
+      EXPRESSION([hazard_lv]=9)
+      COLOR 51 51 255
+    END
+    CLASS			
+      NAME "Flood LV10"
+      EXPRESSION([hazard_lv]=10)
+      COLOR 0 0 255 
+    END
+  TEMPLATE void
+END
+
+LAYER	
+  NAME "Tropical Cyclone Hazard"
+  GROUP "Cyclone"	
+  #DATA "cyclone"
+  ### Type of connection, define the data source.(Default is local.)
+  CONNECTIONTYPE POSTGIS
+  ### PostGIS connection string(basically equal to that of PostgreSQL)
+  CONNECTION "dbname=MIRISK user=pgsql host=localhost port=5432 password=miriskdb"
+  ### <columnname> from <tablename> (in case of PostGIS layer)
+  DATA "the_geom from cyclone"
+    METADATA 
+      "Group" "Cyclone"
+      "DESCRIPTION" "Cyclone hazard"
+      "RESULT_FIELDS" "hazard_lv"
+      "SHOWINLEGEND" "yes"
+    END
+  TYPE POLYGON
+  UNITS DD
+  STATUS ON
+  TOLERANCE 0
+  TOLERANCEUNITS PIXELS
+  TRANSPARENCY 45
+    CLASS			
+      NAME "Cyclone LV1"
+      EXPRESSION([hazard_lv]=1)
+      COLOR 255 255 255
+    END
+    CLASS			
+      NAME "Cyclone LV5"
+      EXPRESSION([hazard_lv]=5)
+      COLOR 204 255 204 
+    END
+    CLASS			
+      NAME "Cyclone LV7"
+      EXPRESSION([hazard_lv]=7)
+      COLOR 153 255 153
+    END
+    CLASS			
+      NAME "Cyclone LV8"
+      EXPRESSION([hazard_lv]=8)
+      COLOR 102 255 102 
+    END
+    CLASS			
+      NAME "Cyclone LV9"
+      EXPRESSION([hazard_lv]=9)
+      COLOR 51 255 51 
+    END
+    CLASS			
+      NAME "Cyclone LV10"
+      EXPRESSION([hazard_lv]=10)
+      COLOR 0 255 0 
+    END
+  TEMPLATE void
+END
+
+LAYER	
+  NAME "Earthquake Hazard"
+  GROUP "Earthquake"
+  #DATA "eq_pga"
+  ### Type of connection, define the data source.(Default is local.)
+  CONNECTIONTYPE POSTGIS
+  ### PostGIS connection string(basically equal to that of PostgreSQL)
+  CONNECTION "dbname=MIRISK user=pgsql host=localhost port=5432 password=miriskdb"
+  ### <columnname> from <tablename> (in case of PostGIS layer)
+  DATA "the_geom from eq_pga"
+    METADATA
+      "Group" "Earthquake"
+      "DESCRIPTION" "Earthquake hazard(PGA,10% in 50 years)"
+      "RESULT_FIELDS" "hazard_lv"
+      "SHOWINLEGEND" "yes"
+    END
+  TYPE POLYGON
+  UNITS DD
+  STATUS ON
+  TOLERANCE 0
+  TOLERANCEUNITS PIXELS
+  TRANSPARENCY 45
+    CLASS			
+      NAME "PGA: 0.20-0.22g"
+      EXPRESSION([hazard_lv]=1)
+      COLOR 255 255 255
+    END
+    CLASS			
+      NAME "PGA: 0.22-0.23g"
+      EXPRESSION([hazard_lv]=2)
+      COLOR 255 227 227 
+    END
+    CLASS			
+      NAME "PGA: 0.23-0.25g"
+      EXPRESSION([hazard_lv]=3)
+      COLOR 255 198 198
+    END
+    CLASS			
+      NAME "PGA: 0.25-0.28g"
+      EXPRESSION([hazard_lv]=4)
+      COLOR 255 170 170
+    END
+    CLASS			
+      NAME "PGA: 0.28-0.30g "
+      EXPRESSION([hazard_lv]=5)
+      COLOR 255 142 142
+    END
+    CLASS			
+      NAME "PGA: 0.30-0.33g"
+      EXPRESSION([hazard_lv]=6)
+      COLOR 255 113 113
+    END
+    CLASS			
+      NAME "PGA: 0.33-0.37g"
+      EXPRESSION([hazard_lv]=7)
+      COLOR 255 85 85
+    END
+    CLASS			
+      NAME "PGA: 0.37-0.41g"
+      EXPRESSION([hazard_lv]=8)
+      COLOR 255 57 57
+    END
+    CLASS			
+      NAME "PGA: 0.41-0.45g"
+      EXPRESSION([hazard_lv]=9)
+      COLOR 255 28 28
+    END
+    CLASS			
+      NAME "PGA: > 0.46g"
+      EXPRESSION([hazard_lv]=10)
+      COLOR 255 0 0
+    END
+  TEMPLATE void
+END
+
+#LAYER	
+#  NAME "World Gazeteer"
+#  GROUP "Gazeteer"
+#  DATA "gaz"
+#  #CONNECTIONTYPE POSTGIS
+#  #CONNECTION "dbname=MIRISK user=pgsql host=localhost port=5432 password=miriskdb"
+#  ### <columnname> from <tablename> (in case of PostGIS layer)
+#  #DATA "the_geom from gaz"  
+#  ### Item name in attribute table to use for class annotation(i.e. labeling)
+#  LABELITEM "NAME"
+#    METADATA
+#      "Group" "Gazeteer"
+#      "DESCRIPTION" "Gaz"
+#      "RESULT_FIELDS" "name category descript within fips_cntry"
+#    END 
+#  TYPE 	POINT
+#  UNITS DD
+#  STATUS OFF
+#  TOLERANCE 2
+#  TOLERANCEUNITS PIXELS
+#  TEMPLATE void
+#  MAXSCALE 1000000
+#  ### Maximum scale at which the layer is labeled
+#  LABELMAXSCALE 1000000
+#  CLASS
+#    ### Signals the start of a STYLE object
+#    ### A class can contain multiple styles
+#    STYLE                                                                   
+#     COLOR 0 40 120
+#     ### Height of the symbol/pattern to be used(in pixels)
+#     SIZE 3
+#     ### The symbol name or number to use for all features
+#     ### if attribute tables are not used
+#     SYMBOL 'square'
+#    END
+#    LABEL
+#      COLOR 0 0 0
+#      ### Position of the label relative to the labeling point(layers only)
+#      POSITION AUTO
+#    END
+#  END	
+#END
+
+LAYER	
+  NAME "World Cities"
+  GROUP "Countries"
+  #DATA "cities"
+  CONNECTIONTYPE POSTGIS
+  CONNECTION "dbname=MIRISK user=pgsql host=localhost port=5432 password=miriskdb"
+  ### <columnname> from <tablename> (in case of PostGIS layer)
+  DATA "the_geom from cities"  
+  ### Item name in attribute table to use for class annotation(i.e. labeling)
+  LABELITEM "city_name"
+    METADATA
+      "Group" "Countries"
+      "DESCRIPTION" "Cities"
+      "RESULT_FIELDS" "city_name cntry_name fips_cntry status"
+    END 
+  TYPE 	POINT
+  UNITS DD
+  STATUS ON
+  TOLERANCE 2
+  TOLERANCEUNITS PIXELS
+  TEMPLATE void
+  MAXSCALE 11000000
+  ### Maximum scale at which the layer is labeled
+  LABELMAXSCALE 11000000
+  CLASS
+    ### Signals the start of a STYLE object
+    ### A class can contain multiple styles
+    STYLE                                                                   
+     COLOR 0 0 255
+     ### Height of the symbol/pattern to be used(in pixels)
+     SIZE 4
+     ### The symbol name or number to use for all features
+     ### if attribute tables are not used
+     SYMBOL 'square'
+     OUTLINECOLOR 0 255 255
+    END
+    LABEL
+      ANGLE 0.000000
+      ANTIALIAS TRUE
+      FONT "verdana"
+      MAXSIZE 256
+      MINSIZE 4
+      SIZE 8
+      MINDISTANCE 50
+      TYPE TRUETYPE
+      BUFFER 2
+      COLOR 0 0 0
+      OUTLINECOLOR 0 255 255
+      PARTIALS FALSE
+      #POSITION CC
+      ### Position of the label relative to the labeling point(layers only)
+      POSITION AUTO
+    END
+  END	
+END
+
+### Note: This layer is created by GSHAP raw data stored in PostgreSQL DB,
+###       and under construction.
+###       This layer is not set of grid, but of points currently. 
+#LAYER
+#  CONNECTIONTYPE postgis
+#  NAME "GSHAP"
+#  CONNECTION "user=postgres dbname=worldgisdb host=localhost password=1179sp port=5432"
+#  DATA "the_geom from GSHAP USING UNIQUE gid USING SRID=4326"
+#    METADATA 
+#      "DESCRIPTION" "EQHazard(GSHAP)"
+#      "RESULT_FIELDS" "PGA"
+#    END
+#  TYPE POINT
+#  UNITS DD
+#  STATUS ON
+#  TOLERANCE 2
+#  TOLERANCEUNITS PIXELS
+#  TRANSPARENCY 30
+#  FILTER "PGA >= 0"
+#  CLASS
+#    EXPRESSION ([PGA] >= 0 && [PGA] < 0.2)
+#    COLOR 255 255 255
+#  END
+#  CLASS
+#    EXPRESSION ([PGA] >= 0.2 && [PGA] < 0.4)
+#    COLOR 51 255 0
+#  END
+#  CLASS
+#    EXPRESSION ([PGA] >= 0.4 && [PGA] < 0.8)
+#    COLOR 0 204 0
+#  END
+#  CLASS
+#    EXPRESSION ([PGA] >= 0.8 && [PGA] < 1.6)
+#    COLOR 255 255 0
+#  END
+#  CLASS
+#    EXPRESSION ([PGA] >= 1.6 && [PGA] < 2.4)
+#    COLOR 255 204 0
+#  END
+#  CLASS
+#    EXPRESSION ([PGA] >= 2.4 && [PGA] < 3.2)
+#    COLOR 255 102 204
+#  END
+#  CLASS
+#    EXPRESSION ([PGA] >= 3.2 && [PGA] < 4.0)
+#    COLOR 204 0 102
+#  END
+#  CLASS
+#    EXPRESSION ([PGA] >= 4.0 && [PGA] < 4.8)
+#    COLOR 255 0 0
+#  END
+#  CLASS
+#    EXPRESSION ([PGA] >= 4.8)
+#    COLOR 153 51 0
+#  END
+#  TEMPLATE void
+#END
+
+LAYER
+  NAME "Volcano Location"
+  GROUP "Volcanoes"	
+  #DATA "volcanolist"
+  CONNECTIONTYPE POSTGIS
+  CONNECTION "dbname=MIRISK user=pgsql host=localhost port=5432 password=miriskdb"
+  ### <columnname> from <tablename> (in case of PostGIS layer)
+  DATA "the_geom from volcanolist"
+   METADATA
+      "Group" "Volcanoes"
+      "DESCRIPTION" "Volcano data"
+      "RESULT_FIELDS" "name location type elev"
+      #"RESULT_FIELDS" "name"
+      "SHOWINLEGEND" "yes"
+    END
+  TYPE POINT
+  UNITS DD
+  STATUS OFF
+  TOLERANCE 4
+  TOLERANCEUNITS PIXELS
+  TRANSPARENCY 100
+  CLASS		
+    NAME "Volcano Location"
+    STYLE 
+     COLOR 255 0 0
+     OUTLINECOLOR 0 0 0
+     SIZE 5
+     SYMBOL 'triangle'
+    END
+  END
+#  TEMPLATE void
+END
+
+LAYER
+  NAME "Project Locations"
+  GROUP "Projects"
+  METADATA
+      "Group" "Projects"
+      "SHOWINLEGEND" "yes"
+  END
+  TYPE POINT
+  STATUS ON
+  ### Type of connection, define the data source.(Default is local.)
+  CONNECTIONTYPE POSTGIS
+  ### PostGIS connection string(basically equal to that of PostgreSQL)
+  CONNECTION "dbname=MIRISK user=pgsql host=localhost port=5432 password=miriskdb"
+  ### <columnname> from <tablename> (in case of PostGIS layer)
+  DATA "the_geom from project2 USING UNIQUE gid USING SRID=4326"
+  LABELITEM "project_id"
+  CLASS
+    NAME "Project Location"
+    SYMBOL 'circle'
+    SIZE 5
+    COLOR 255 255 51
+    OUTLINECOLOR 0 0 0
+    LABEL
+      COLOR 255 255 51
+      OUTLINECOLOR 0 0 0
+      POSITION AUTO
+      SIZE LARGE
+    END
+  END
+END
+
+END

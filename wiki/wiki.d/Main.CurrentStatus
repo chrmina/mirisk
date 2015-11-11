@@ -1,0 +1,44 @@
+version=pmwiki-2.2.0-beta45 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4
+author=CM
+charset=ISO-8859-1
+csum=Online Help added
+ctime=1180508528
+host=130.54.131.180
+name=Main.CurrentStatus
+rev=9
+targets=
+text=== **MIRISK** Current Status Page ==%0a%0a* "{+Main+}": %25green%25 COMPLETED%0a* "{+Project Data+}": %25green%25 COMPLETED%0a* "{+Location / Hazard Data+}": %25green%25 COMPLETED.%0a* "{+Component (Asset) Data+}": %25green%25 COMPLETED%0a* "{+Analysis+}": %25green%25 COMPLETED.%0a* "{+Help+}": %25green%25 COMPLETED%0a* "{+About+}": %25green%25 COMPLETED%0a%0a== WHAT'S NEW ==%0a%0a* '''22JUN2007 :''' Online Help added.%0a* '''04JUN2007 :''' Added [[http://mirisk.dum.kyoto-u.ac.jp/mirisk/miriskdemo.html | MIRISK TUTORIAL/DEMO]] (flash movie).%0a* Added ability to delete project components from the map and the database.%0a* Help file (pdf) added in "Help"
+time=1182496510
+author:1182496510=CM
+csum:1182496510=Online Help added
+diff:1182496510:1180934397:=13d12%0a%3c * '''22JUN2007 :''' Online Help added.%0a
+host:1182496510=130.54.131.180
+author:1180934397=CAM
+diff:1180934397:1180933740:minor=13c13%0a%3c * '''04JUN2007 :''' Added [[http://mirisk.dum.kyoto-u.ac.jp/mirisk/miriskdemo.html | MIRISK TUTORIAL/DEMO]] (flash movie).%0a---%0a> * '''04JUN2007 :''' Added [[http://mirisk.dum.kyoto-u.ac.jp/mirisk/miriskdemo.html | MIRISK usage DEMO]] (flash movie).%0a
+host:1180934397=130.54.130.61
+author:1180933740=CAM
+csum:1180933740=Dates
+diff:1180933740:1180933653:minor=13d12%0a%3c * '''04JUN2007 :''' Added [[http://mirisk.dum.kyoto-u.ac.jp/mirisk/miriskdemo.html | MIRISK usage DEMO]] (flash movie).%0a15c14,15%0a%3c * Help file (pdf) added in "Help"%0a\ No newline at end of file%0a---%0a> * Help file (pdf) added in "Help"%0a> * Added [[http://mirisk.dum.kyoto-u.ac.jp/mirisk/miriskdemo.html | MIRISK usage DEMO]] (flash movie).%0a\ No newline at end of file%0a
+host:1180933740=130.54.130.61
+author:1180933653=CAM
+csum:1180933653=Demo added
+diff:1180933653:1180673523:=15d14%0a%3c * Added [[http://mirisk.dum.kyoto-u.ac.jp/mirisk/miriskdemo.html | MIRISK usage DEMO]] (flash movie).%0a\ No newline at end of file%0a
+host:1180933653=130.54.130.61
+author:1180673523=CAM
+diff:1180673523:1180608886:minor=13c13%0a%3c * Added ability to delete project components from the map and the database.%0a---%0a> * Added ability to delete projects from the map and the database.%0a
+host:1180673523=130.54.130.61
+author:1180608886=CAM
+diff:1180608886:1180518070:minor=4c4%0a%3c * "{+Project Data+}": %25green%25 COMPLETED%0a---%0a> * "{+Study Data+}": %25green%25 COMPLETED%0a6c6%0a%3c * "{+Component (Asset) Data+}": %25green%25 COMPLETED%0a---%0a> * "{+Asset Data+}": %25green%25 COMPLETED%0a
+host:1180608886=130.54.130.61
+author:1180518070=CM
+diff:1180518070:1180517977:minor=5c5%0a%3c * "{+Location / Hazard Data+}": %25green%25 COMPLETED.%0a---%0a> * "{+Location / Hazard Data+}": %25green%25 COMPLETED.%25%25%0a8,10c8,11%0a%3c * "{+Help+}": %25green%25 COMPLETED%0a%3c * "{+About+}": %25green%25 COMPLETED%0a%3c %0a---%0a> * "{+Help+}": %25green%25 Help file added (pdf)%0a> * "{+About+}": %25green%25 OK%0a> * Other: %25green%25 Created Wiki%0a> %0a14d14%0a%3c * Help file (pdf) added in "Help"%0a
+host:1180518070=130.54.130.61
+author:1180517977=CM
+csum:1180517977=Added what's new and updated status
+diff:1180517977:1180508528:=5c5%0a%3c * "{+Location / Hazard Data+}": %25green%25 COMPLETED.%25%25%0a---%0a> * "{+Location / Hazard Data+}": %25green%25 Query, Add Project COMPLETED.%25%25 %25red%25 Working on Remove Project. %25%25%0a10,14c10%0a%3c * Other: %25green%25 Created Wiki%0a%3c %0a%3c == WHAT'S NEW ==%0a%3c %0a%3c * Added ability to delete projects from the map and the database.%0a---%0a> * Other: %25green%25 Created Wiki%0a\ No newline at end of file%0a
+host:1180517977=130.54.130.61
+author:1180508528=CM
+csum:1180508528=Initial Change
+diff:1180508528:1180508528:=1,10d0%0a%3c == **MIRISK** Current Status Page ==%0a%3c %0a%3c * "{+Main+}": %25green%25 COMPLETED%0a%3c * "{+Study Data+}": %25green%25 COMPLETED%0a%3c * "{+Location / Hazard Data+}": %25green%25 Query, Add Project COMPLETED.%25%25 %25red%25 Working on Remove Project. %25%25%0a%3c * "{+Asset Data+}": %25green%25 COMPLETED%0a%3c * "{+Analysis+}": %25green%25 COMPLETED.%0a%3c * "{+Help+}": %25green%25 Help file added (pdf)%0a%3c * "{+About+}": %25green%25 OK%0a%3c * Other: %25green%25 Created Wiki%0a\ No newline at end of file%0a
+host:1180508528=130.54.130.61

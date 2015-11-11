@@ -1,0 +1,151 @@
+<?php
+
+if($_REQUEST["selectstudy"])
+{
+   $OIDvalue = $_REQUEST["selectstudy"];
+   // connect to the database
+   include "./connect_pg.php";
+   @$conn = connect_pg("MIRISK");
+   if(!$conn)
+   {
+     echo "Failed to connect to the database...";
+     exit();
+   }
+
+   $sql = "SELECT study_id, study_name, study_start, study_end, study_country,
+   study_location, study_components, team_members, team_leader,
+   other_notes FROM studydata WHERE oid=$OIDvalue";
+
+   $res = pg_query($conn,$sql) or die("Failed to retrieve the study data...");
+
+   $fieldnum = pg_num_fields($res);
+
+   for($j=0;$j<$fieldnum;$j++)
+   {
+     $arr[$j] = pg_fetch_result($res,$j);
+   }
+
+   $sql2 = "SELECT cntry_name FROM cntry02 ORDER BY cntry_name";
+   $cntryres = pg_query($conn,$sql2) or die("Failed to retrieve the country data...");
+   $datarows = pg_num_rows($cntryres);
+   for($i=0;$i<$datarows;$i++)
+   {
+     $temparr = pg_fetch_row($cntryres,$i);
+     $cntryarr[$i]=$temparr[0];
+     //$cntryarr[$i][1]=$temparr[1];
+   }
+   $sql3 = "SELECT project_id FROM project2 where project_study_oid = $OIDvalue";
+   $projres = pg_query($conn,$sql3) or die("Failed to retrieve the project data...");
+   $projrows = pg_num_rows($projres);
+   for($i=0;$i<$projrows;$i++)
+   {
+     $tempprojarr = pg_fetch_row($projres,$i);
+     $projarr[$i]=$tempprojarr[0];
+   }
+}
+?>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>MIRISK - loadstudy.phtml</title>
+  <meta name="description" content="Mitigation Information and Risk Identification System">
+  <meta name="author" content="MIRISK Team">
+  <meta name="keywords" content="MIRISK">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="abstract" content="MIRISK">
+  <meta name="description" content="MIRISK">
+  <meta name="keywords" content="MIRISK">
+  <link href="../dbstyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form method="post" action="./updatestudy.php">
+<input type="hidden" name="OID" value=<?php echo $OIDvalue; ?>>
+<table cellpadding="5">
+  <tr>
+    <td align="right" width="25%">Project ID</td>
+    <td><textarea name="ID" rows="2" cols="58"><?php echo $arr[0]; ?></textarea></td>
+  </tr>
+  <tr>
+    <td align="right">Project Name</td>
+    <td><textarea name="name"  rows="2" cols="58"><?php echo $arr[1]; ?></textarea></td>
+  </tr>
+  <tr>
+    <td align="right">Start Date</td>
+    <td><textarea name="begin" rows="2" cols="58"><?php echo $arr[2]; ?></textarea></td>
+  </tr>
+  <tr>
+    <td align="right">Completion Date</td>
+    <td><textarea name="deadline" rows="2" cols="58"><?php echo $arr[3]; ?></textarea></td>
+  </tr>
+  <tr>
+    <td align="right">Country</td>
+    <td>
+    <select name="cboCountry" id="cboCountry"><br>
+<?php
+   for($j=0;$j<$datarows;$j++){
+     if ($arr[4]==$cntryarr[$j])
+        echo "<option value=\"", $cntryarr[$j], "\"selected>",$cntryarr[$j],"</option><br>\n";
+
+     else
+	echo "<option value=\"", $cntryarr[$j], "\">",$cntryarr[$j],"</option><br>\n";
+   }
+?>
+    <br>
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">Location (State, Province, etc.)</td>
+    <td><textarea name="district" rows="2" cols="58"><?php echo $arr[5]; ?></textarea></td>
+  </tr>
+  <tr>
+    <td align="right">Project Components (i.e. Assets)</td>
+    <td><textarea name="components" rows="2" cols="58"><?php echo $arr[6]; ?></textarea></td>
+  </tr>
+  <tr>
+    <td align="right">Components associated with the Project (ID's): </td>
+    <td>
+      <?php
+      for($i=0;$i<$projrows;$i++)
+      {
+      if ($i == $projrows-1)
+      {
+      echo "<A HREF=\"./requestprojinfo.php?projID=", $projarr[$i],
+      "\" onClick=\"window.open('./requestprojinfo.php?projID=",
+      $projarr[$i],
+      "','results','width=600,height=450,noresizable');return false;\"
+      target=\"_blank\">", $projarr[$i], "</A>";
+      }
+      else
+      {
+      echo "<A HREF=\"./requestprojinfo.php?projID=", $projarr[$i],
+      "\" onClick=\"window.open('./requestprojinfo.php?projID=",
+      $projarr[$i],
+      "','results','width=600,height=450,noresizable');return false;\"
+      target=\"_blank\">", $projarr[$i], "</A>, ";
+      }
+      }
+      ?>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">Project Team Members</td>
+    <td><textarea name="members" rows="2" cols="58"><?php echo $arr[7]; ?></textarea></td>
+  </tr>
+  <tr>
+    <td align="right">Project Team Leader</td>
+    <td><textarea name="leader" rows="2" cols="58"><?php echo $arr[8]; ?></textarea></td>
+  </tr>
+  <tr>
+    <td align="right">Other notes</td>
+    <td><textarea name="notes" rows="4" cols="58"><?php echo $arr[9]; ?></textarea></td>
+  </tr>
+  <tr>
+    <td align="right"><input type="submit" name="save" value="Save"></td>
+    <td><input type="reset" name="reset" value="Reset"></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

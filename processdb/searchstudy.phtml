@@ -1,0 +1,66 @@
+<?php
+
+// connect to the database
+
+  include "./connect_pg.php";
+
+  @$conn = connect_pg("MIRISK");
+
+  if(!$conn){
+   echo "Fail to connect to the database";
+   exit();
+  }
+
+$sql2 = "SELECT cntry_name FROM cntry02 ORDER BY cntry_name";
+
+$cntryres = pg_query($conn,$sql2) or die("fail to load the data");
+
+$datarows = pg_num_rows($cntryres);
+
+ for($i=0;$i<$datarows;$i++)
+   {
+     $temparr = pg_fetch_row($cntryres,$i);
+     $cntryarr[$i]=$temparr[0];
+     // $cntryarr[$i][1]=$temparr[1];
+   }
+?>
+
+<html>
+<head>
+  <title>MIRISK - searchtudy.phtml</title>
+  <meta name="description" content="Mitigation Information and Risk Identification System">
+  <meta name="author" content="MIRISK Team">
+  <meta name="keywords" content="MIRISK">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="abstract" content="MIRISK">
+  <meta name="description" content="MIRISK">
+  <meta name="keywords" content="MIRISK">
+  <link href="../dbstyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<CENTER>
+<form method="POST" action="./searchresults.phtml" target="searchresults">
+<H3>Search Parameters</H3>
+<BR>
+<B>Project ID<B><BR>
+<textarea name="searchID" rows="1" cols="35"></textarea><BR><BR>
+<B>Country</B><BR>
+    <select name="searchDistrict" id="searchDistrict"><br>
+<?php
+   for($j=0;$j<$datarows;$j++){
+     if ($arr[4]==$cntryarr[$j])
+       echo "<option value=\"", $cntryarr[$j], "\"selected>",$cntryarr[$j],"</option><br>\n";
+     else
+       echo "<option value=\"", $cntryarr[$j], "\">",$cntryarr[$j],"</option><br>\n";
+   }
+?>
+    <br>
+    </select>
+<BR><BR>
+<input type="submit" value="Search">
+</form>
+
+</body>
+
+</html>

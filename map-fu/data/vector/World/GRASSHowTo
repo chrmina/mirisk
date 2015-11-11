@@ -1,0 +1,42 @@
+Please do the following steps to import countries_simpl into a grass location:
+
+1. Create location
+ Location: <some name>
+ Mapset: <a name>
+ Database: <a path to a writable directory
+
+ Coordinate system: B, Latitude-Longitude
+ description: <some description>
+ geodatic datum: no
+ ellipsoid: grs80
+
+ region:
+  	north: 90
+  	south: -90
+  	west: -180
+  	east: 180
+ grid resolution: not important
+
+2. import data
+> v.in.ogr dsn=/usr/share/geo-data/country_geodata/countries_simpl.shp output=countries
+
+3. you can now load /usr/share/geo-data/country_geodata/pop.gm with the GRASS
+data manager to have a first look on the data and to print them.
+
+4. Print colorcoded maps
+
+#start monitor fo visualization
+d.mon x0
+
+# print china in red
+d.vect map=countries type=area where="fibs='CH'" fcolor=255:0:0
+
+# print countries with total population < 5000000 in green
+d.vect map=countries type=area where="total<5000000" fcolor=0:255:0
+
+# erase all objects from monitor
+d.erase
+
+# stop monitor
+d.mon stop=x0
+

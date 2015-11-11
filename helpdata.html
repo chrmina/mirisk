@@ -1,0 +1,1466 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
+    <title>MIRISK HELP</title>
+    <meta name="description" content="Mitigation Information and Risk Identification System">
+    <meta name="author" content="MIRISK Team">
+    <meta name="keywords" content="MIRISK">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="abstract" content="MIRISK">
+    <meta name="description" content="MIRISK">
+    <meta name="keywords" content="MIRISK">
+    <link href="./dbstyle.css" rel="stylesheet" type="text/css">
+  </HEAD>
+  
+  <BODY>
+    
+    <TABLE WIDTH="750" BORDER="0">
+      <TR>
+	<TD ALIGN="right">
+	  <img src="./images/printicon.gif" onClick="window.print()"><img src="./images/pdficon.gif">
+	</TD>
+      </TR>
+    </TABLE>
+    
+    <P>
+      Please click <B><FONT SIZE="2"><A HREF="./MIRISK-HELP.pdf" TARGET="_blank">HERE</A></FONT></B> to view MIRISK
+      help file in pdf format. (v. 0.1: 21 May 07)
+      <BR><BR>
+      For a <u>TUTORIAL/DEMO</U> of how to use MIRISK, please click
+      <b><font size="2">
+	  <A HREF="./miriskdemo.html" TARGET="_blank">HERE.</A>
+      </FONT></b> File size is 5MB. Depending on your connection and server traffic,
+      it may take some time to download.
+    </P>
+    
+    <H3><A name="thetop">MIRISK HELP</A></H3>
+    <H4 style="font-size:80%">(v0.2: 21 June 07)</H4>
+    <P>
+      This HELP includes an Overview, Work Flow explanation, and more
+      detailed Technical Information, and consists of the following sections
+      (click to go directly to a section):
+    </P>
+    
+    <ol>
+      <li><A href="#section1">How to Use This Help</A></li>
+      <li><A href="#section2">MIRISK Overview</A></li>
+      <li><A href="#section3">Work Flow</A>
+	<ol>
+	  <li><A href="#section3.1">Study Data</A></li>
+	  <li><A href="#section3.2">Location/Hazard Data</A></li>
+	  <li><A href="#section3.3">Asset Data</A></li>
+	  <li><A href="#section3.4">Analysis/Results</A></li>
+	</ol>
+      </li>
+      <li><A href="#section4">Example Analysis</A></li>
+      <li><A href="#section5">Technical Information</A>
+	<ol>
+	  <li><A href="#section5.1">Location/Hazard Data</A></li>
+	  <li><A href="#section5.2">Asset Data</A></li>
+	  <li><A href="#section5.3">Analysis/Results</A></li>
+	</ol>
+      </li>
+      <li><A href="#section6">Glossary</A></li>
+    </ol>
+    
+    <H3><A name="section1">1 How to Use This Help</A></H3>
+    <P>
+      First time users should read the Overview and Work Flow (the next two
+      sections).  More detailed technical information follows, which users
+      may refer to as they continue to use MIRISK, so as to better
+      understand the basis for the data and analyses MIRISK provides
+      (including the limitations thereof).  A Glossary is provided, to
+      define jargon and specialist terms.<BR><BR>
+      Note that there is a MIRISK Tutorial, accessed from the MAIN Page.<BR>  
+      <B><U>First Time Users should take the 10 minute Tutorial.</U></B> 
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+    
+    <H3><A name="section2">2 MIRISK Overview</A></H3>
+    <P>
+      <B>A Natural Disaster can destroy years of Development in a few seconds.</B><BR>
+      <B>This is because building design codes are only a minimum level of design.</B><BR>  
+      That is, the purpose of normal building design codes is not to
+      eliminate all damage given a major earthquake, flood or tropical
+      cyclone.  Rather, the code's purpose is to prevent major loss of
+      life - significant damage is acceptable per modern building codes,
+      if not many people die.<BR>  
+      It can be very wise, and cost-effective, for a Development Manager to
+      require a moderately enhance level of construction for natural
+      hazards for a Project.<BR>
+      This is especially true when one considers the total costs of damage,
+      in terms of Project loss of use ("business interruption").<BR> 
+      MIRISK (Mitigation Information and Risk Identification System) is a
+      tool to help Development Managers consider natural hazards risk, and
+      ways to reduce that risk, by:
+    </P>
+    <ul>
+      <li><B>identifying</B> natural hazards affecting a region</li>
+      <li><B>defining</B> the kinds of infrastructure ("assets") that make up
+	typical Development projects</li>
+      <li><B>describing</B> the vulnerability of these assets to natural hazards,
+	and how vulnerability can be reduced</li>
+      <li><B>analyzing</B> the natural hazards and vulnerability data, to assess
+	whether Projects should follow normal design practices, or whether
+	the cost of some enhanced design for natural hazards is justified by
+	the benefits (of avoided losses).</li>
+    </ul>
+    <P>
+      Natural hazards currently considered are earthquakes, flood, tropical
+      cyclone, and volcanism.<BR>
+      MIRISK's basic purpose is to allow a Development Manager to quickly
+      learn if natural hazards are very significant in a region where the
+      Manager is considering development.  If so, MIRISK provides
+      information on what can be done, and permits estimation of the added
+      cost for a moderately enhanced level of construction for natural
+      hazards.  An 'optimum' level of enhanced construction is
+      estimated, based on the degree of hazard, the type of facility, and
+      the Project's benefit cost ratio (BCR, used to account for
+      indirect costs of damage). 
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+    
+    <H3><A name="section3">3 Work Flow</A></H3>
+    <P>
+      A MIRISK user accesses four basic tabs or screens:
+    </P>
+    <ol>
+      <li><B>Project Data</B></li>
+      <li><B>Location/Hazard Data</B></li>
+      <li><B>Component (Asset) Data</B></li>
+      <li><B>Analysis/Report</B></li>
+    </ol>
+    <P>  
+      as well the Main, Help, About and Feedback tabs.  Tabs 1-4 however are
+      all that need be followed to perform an analysis.  Sections 3.1 to 3.4
+      describe Tabs 1-4.<BR><BR>
+      <img src="./helpimages/section3-01.jpg" alt="MIRISK Tabs">
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+    
+    <H4><A name="section3.1"><I>3.1 Project Data</I></A></H4>
+    <P>
+      This screen is for administrative purposes - the user enters data
+      for a new project, or resumes a previously saved project.  Information
+      recorded here are project identifier data, users names, and related
+      information needed for administrative purposes. 
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+    
+    <H4><A name="section3.2"><I>3.2 Location/Hazard Data</I></A></H4>
+    <P>
+      The first step in risk analysis is to learn if a project component is located in
+      a high hazard region (ie, <I>what nature may put there</I>).<BR>  
+      When the LOCATION/HAZARD tab is clicked, a map of the world is seen
+      (and possibly some components numbers showing the Users previously
+      identified component).  Users locate their component by:
+    </P>
+    <ul>
+      <li>Clicking on Zoom In, and draw a box around a region, and so on, to
+	zoom into the region of interest.</li>  
+      <li>Entering lat/long, or</li> 
+      <li>Entering a place name (which is searched for via a built-in
+	gazetteer).</li>
+    </ul>
+    <P> 
+      When the region is located, the degree of Earthquake, Wind, Flood or
+      Volcano risk for a region can be seen via color codes (click Key tab
+      on the bottom to see the degrees of risk, which are explained further
+      below, under HAZARD DATA).<BR> 
+      The LAYERS tab on the left controls what is visible on the map -
+      all Hazards, Components and other information can be turned on or
+      off. The map can also be queried to learn the degree of risk at any
+      location. 
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+    
+    <H4><A name="section3.3"><I>3.3 Component (Asset) Data</I></A></H4>
+    <P>
+      The second step in risk analysis is to define what the component
+      consists of, in terms of types of facilities and construction (ie,
+      <I>what you are thinking of  putting there</I>).<BR>  
+      On the page you define your component by clicking on some menus, and
+      MUST input <U>ASSET VALUE DATA</U> (e.g. anticipated component cost, for
+      construction and including overhead) and component <U>BENEFIT COST RATIO</U>
+      (BCR). The component cost and BCR are used for a benefit-cost
+      assessment.  BCR is the estimate of the total component benefit
+      (including some monetized estimate of future social benefits), divided
+      by the total component cost.<BR>
+      To Define the component when the ASSET tab is clicked, you can
+      either:
+    </P>
+    <ul>
+      <li>Retrieve an existing component, using the menus on the left, or</li>
+      <li>Define a new Asset, using the menus on the right. These menus first
+	ask you to define one of three ASSET CATEGORY:
+	<ul>
+	  <li>Buildings</li>
+	  <li>Transportation</li>
+	  <li>Utilities / Industry</li>
+	</ul>
+      </li>
+      <li>For each of the three Asset Categories, the User then defines a
+	CATEGORY CLASS, such as 
+	<ul>
+	  <li>Buildings
+	    <ul>
+	      <li>Wood</li>
+	      <li>Light Metal</li>
+	      <li>Low-rise Reinforced Masonry or Reinforced Concrete, etc</li> 
+	    </ul>
+	  </li>
+	  <li>Transportation
+	    <ul>
+	      <li>Bridges, conventional</li>
+	      <li>Bridges, Major</li>
+	      <li>Tunnels, etc</li>
+	    </ul>
+	  </li>
+	  <li>Utilities / Industry
+	    <ul>
+	      <li>Chimneys</li> 
+	      <li>Cranes</li>
+	      <li>Conveyor systems etc</li>
+	    </ul>
+	  </li>
+	</ul>
+      </li>
+    </ul>
+    <P>    
+      When the Category Class (e.g. Low Rise Reinforced Masonry or
+      Reinforced Concrete) is selected, the DESCRIPTION, DAMAGE AND DESIGN
+      INFORMATION ON ASSETS pane changes, to provide photographs and a
+      description of the class, its Vulnerability to various hazards and how
+      to reduce (mitigate) the vulnerability. By reading these descriptions,
+      a Development Manager can quickly gain some familiarity with what
+      these various Classes are, how they are damaged by natural hazards
+      and, in general, what are some of the techniques used to reduce their
+      vulnerability to natural hazards.  This information provides a good
+      background for users not expert in natural hazards mitigation. 
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+    
+    <H4><A name="section3.4"><I>3.4 Analysis/Report</I></A></H4>
+    <P>
+      This MIRISK tab summarizes the input information, and uses it to
+      estimate:
+    </P>
+    <ul>
+      <li>potential losses due to a natural hazard for the identified site and</li> 
+      <li>the cost of enhanced design for that hazard, to identify if enhanced
+	design may be warranted, given the regional hazards for the project
+	location and the value of the project.</li>
+    </ul>
+    <P>
+      The page can be printed out (hard copy or pdf) as a report for your
+      project, using the icons on the upper right.<BR><BR> 
+      The Results are provided for the various hazards, and consist of the
+      expected cost of construction for minimum code, and for some
+      moderately enhanced level of construction (for natural hazards).  The
+      enhanced level is shown as a factor (eg, 1.02) which represents
+      designing the component (asset) for "2%" more than the minimum code
+      requirement for the component for that site.  Enhancing the level of
+      construction increases the cost of construction, and an estimate of
+      that increased cost is shown in the table on this tab.<BR><BR>  
+      When a natural hazard occurs, such as an earthquake or tropical
+      cyclone, damage is likely to occur, especially if the component was
+      designed only per the minimum building code requirements. <B>This is
+	because the purpose of normal building design codes is not to
+	eliminate all damage given a major earthquake, flood or tropical
+	cyclone.</B> Rather, the code's purpose is to prevent major loss of
+      life - significant damage is acceptable per modern building codes,
+      if not many people die.<BR><BR>
+      Therefore, the cost of damage and associated losses are estimated for
+      minimal code level design.  The technical details of this estimation
+      are discussed further below, but basically the MIRISK estimates the
+      cost of damage from a database of such costs for various hazards and
+      types of facilities. It includes in this loss estimate not only the
+      direct cost of repairs to the facility, but also the associated costs
+      of loss of use of the facility (eg, renting another facility while the
+      first is repaired).  These associated costs are estimated using the
+      BCR input by the User.<BR><BR>
+      In return for the increased expenditure for natural hazards, the
+      enhanced level of construction should have less damage when a natural
+      hazard occurs.  Therefore, the cost of damage and associated losses
+      are estimated for not only for minimal code level design, but also for
+      each level of design, from 1.0 (minimum code requirement) to 1.4 (40%
+      greater than minimum code).  These are tabulated in the Results
+      Table.<BR><BR>
+      Lastly, the Total Cost of the component, which is the sum of the cost of
+      construction (increasing with enhanced level of design) plus the cost
+      of damage and associated losses (decreasing with enhanced level of
+      design), are tabulated.<BR><BR>  
+      <B>The minimum Total Cost is the 'optimum' enhanced level of
+	construction design for the component.</B><BR><BR>
+      The results are presented in tabular form, and graphically, for each
+      hazard.
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+    
+    <H3><A name="section4">4 Example Analysis</A></H3>
+    <P>
+      This section walks the User through an example analysis.<BR><BR> 
+      This is the opening screen.<BR><BR>
+      <img src="./helpimages/section4-01.jpg" alt="MIRISK Opening Screen">
+      
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+    
+    <P>
+      This is Tab 1: Project Data. You can enter project admin data here.<BR><BR>
+      <img src="./helpimages/section4-02.jpg" alt="MIRISK Tab 1">
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+    
+    <P>
+      This is Tab 2: Location/Hazard Data.<BR><BR>
+      <img src="./helpimages/section4-03.jpg" alt="MIRISK Tab 2">
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+    
+    <P>
+      Adding a component:
+    </P>
+    <ol>
+      <li>Click on the "Add Component" tool (LHS)</li>
+      <li>Click on the desired location on the map</li>
+      <li>Input the component's name</li>
+      <li>Select the associated project from the drop-down menu</li>
+      <li>Click "Save Data" (only once)</li>
+    </ol>
+    <P>
+      <img src="./helpimages/section4-04.jpg" alt="Add component">
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+    
+    <P>
+      This is Tab 3: Component (Asset) Data. Here you can enter the
+      component (asset) data needed for the cost benefits assessment
+      calculations and also get information on various types of assets,
+      their natural hazards vulnerabilities and mitigations.<BR>
+      Here is the procedure to follow:
+    </P>
+    <ol>
+      <li>Select a component from the drop-down menu</li>
+      <li>Click on "Load Component Data". The data will be loaded on
+	the right pane.</li>
+      <li>Select an asset category from the drop-down menu</li>
+      <li>Select a category class from the drop-down menu. The bottom
+	pane (see next picture) will load data specific to the selected
+	category class</li>
+      <li>Input "Component Value", "Currency", "Benefit to Cost
+	Ratio" and "Real Interest Rate" in the text boxes.</li>
+      <li>Click on "Save" (only once). A pop-up window will appear for
+	you to verify the correctness of the inputted data.</li>
+    </ol>
+    <P>
+      <img src="./helpimages/section4-05.jpg" alt="MIRISK Tab 3">
+      <BR><BR>
+      The bootom pane of the "Component (Asset) Data".
+      <BR><BR>
+      <img src="./helpimages/section4-06.jpg" alt="MIRISK Tab 3">
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+
+    <P>
+      This is Tab 4: Analysis/Report. User (1) selects project and
+      component; (2) clicks on "Analysis & Report", and then below
+      Results appear, consisting of Project Input data etc,
+      and estimated Expected Annualized Loss
+      (EAL) for design level factor = 1 (minimum code), related data,
+      and tabulated and graphed results of a benefit-cost analysis for
+      various natural hazards affecting the component (asset) at the specified
+      site. Optimum enhanced code levels are easily seen, as well as
+      added construction cost and Total Cost Savings for the
+      component. Icons permit printing or creating a pdf. 
+      <BR><BR>
+      <img src="./helpimages/section4-07.jpg" alt="MIRISK Tab 4">
+      <BR><BR>
+      Analysis results in tabular and graphical form.
+      <BR><BR>
+      <img src="./helpimages/section4-08.jpg" alt="MIRISK Tab 4">
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+
+    <H3><A name="section5">5 Technical Background</A></H3>
+    
+    <H4><A name="section5.1"><I>5.1 Location/Hazard Data</I></A></H4>
+    <P>
+      <B><U>LOCATION:</U></B> Location is specified in MIRISK in one of three ways:
+      by specifying a lat/long, by inputting a geographic place name, or
+      by zooming in on the global composite photograph and clicking on a
+      point.  Of the three methods, zooming and clicking is by far the
+      easiest, and more accurate than specifying a place name.  If
+      accurate lat/long data are available for the site of interest,
+      this should be employed. The place name gazetteer currently
+      employed in MIRISK is rather limited, with only about 2,000 place
+      names.  Much larger gazetteers are available, and an 80,000 place
+      name data set was initially tried in MIRISK, but this dataset
+      proved problematic.  In the future, a more extensive gazetteer
+      should be employed in MIRISK, although any international gazetteer
+      will always have orthographic issues.
+      <BR><BR> 
+      <B><U>HAZARD:</U></B> The HAZARD data used in MIRISK version 1.0 are derived from
+      the Global Hotspots* data set, which itself is a compilation of
+      other datasets on a 2 by 2 degree lat/long grid.  As noted in the
+      Hotspots report: "<I>...globally uniform data do not yet exist to
+	produce a justifiable measure of hazard severity that can be
+	applied consistently across multiple hazards.</I>"  That is, both
+      the Hotspots project and MIRISK have had to make assumptions at
+      several stages, in order to permit any analysis at all to be
+      performed.  Best professional judgment was used, and the results
+      are believed to be approximately correct, although significant
+      improvements are possible with further work. Specific Hotspots
+      data employed in MIRISK are:
+    </P>
+    <ul>
+      <li><B>Earthquake:</B>  The Hotspots report used the GSHAP** map, and
+	averaged GSHAP seismic hazard data over 2 by 2 degree lat/long
+	grid.  In the process, substantial hazard data was lost, as the
+	GSHAP data is much more detailed. GSHAP data are peak ground
+	accelerations corresponding to a 0.0021 annual probability of
+	exceedance.   Thus, seismic hazard data in MIRISK are peak ground
+	accelerations corresponding to a 0.0021 annual probability of
+	exceedance, averaged over a 2 by 2 degree lat/long grid.</li>
+      <li><B>Tropical Cyclone:</B> The Hotspots treatment of tropical cyclone data
+	is summarized in Appendix A.1 of the Hotspots report, and appears
+	to be a decile ranking of frequencies of tropical cyclone
+	occurrence within a grid cell, based on the 1981-2000 data set.
+	For MIRISK, this decile ranking was assumed equivalent to a range
+	from 120 kph to 300 kph wind speeds, with corresponding annual
+	probability of exceedance of 0.01.</li>
+      <li><B>Flood:</B> Hotspots used a global compilation of flooding for the
+	period 1985-2003, developed by the Dartmouth Flood Observatory.
+	The resulting dataset appears to be a decile ranking of flood
+	occurrence within a grid cell. For MIRISK, this decile ranking was
+	assumed equivalent to a flood depth of 0 to 3.0 m, with
+	corresponding annual probability of exceedance of 0.01.</li>
+      <li><B>Volcano:</B> Volcano locations are currently depicted in MIRISK, but
+	no analytical capability is provided. This is an area for future
+	enhancement.</li>
+    </ul>
+    <P>
+      * Dilley, M., Chen, R. S., Deichmann, U., Lemer-Lam, A. L., and
+      Arnold, M. (2005). "Natural Disaster Hotspots: A Global Risk
+      Analysis." No. 5, Hazards Management Unit, The World Bank,
+      Washington, 142pp<BR><BR>
+      ** GSHAP: Global Seismic Hazard Map, Produced by the Global Seismic
+      Hazard Assessment Program (GSHAP), a demonstration project of the
+      UN/International Decade of Natural Disaster Reduction, conducted
+      by the International Lithosphere Program. Global map assembled by
+      D. Giardini, G. Grünthal,
+      1999. (<A HREF="http://www.seismo.ethz.ch/GSHAP/" target="_blank">www.seismo.ethz.ch/GSHAP/</A>)
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+
+    <H4><A name="section5.2"><I>5.2 Asset Data</I></A></H4>
+    <P>
+      The ASSET data set consists of:
+      <BR><BR> 
+      <B><U>Taxonomy</U></B>, consisting of three Asset Categories (Buildings,
+      Transportation, Utilities) which are further divided into a total of
+      32 Category classes (eg, wood buildings, chimneys, at grade tanks,
+      etc).
+    </P>
+    <ul>
+      <li>For each Category class, a description of what the asset is. For
+	example, for Light metal buildings, the description is:<BR><BR>
+	<I>Light metal (LM) buildings are low-rise buildings, consisting of
+	  braced or moment frame with a light metal wall and roof covering. They
+	  typically range from small commercial to larger for industrial,
+	  assembly and other occupancies, are pre-engineered and prefabricated
+	  with transverse rigid frames. The roof and walls consist of
+	  lightweight panels, usually corrugated metal. The frames are designed
+	  for maximum efficiency, often with tapered beam and column sections
+	  built up of light steel plates. The frames are built in segments and
+	  assembled in the field with bolted joints. Tension rod bracing
+	  typically resists loads in the longitudinal direction.</I><BR><BR>
+	Most of these descriptions are accompanied with a photograph.</li>  
+      <li>For each category class, for the hazards of earthquake, tropical
+	cyclone and flood, a description of the typical performance (ie, kinds
+	of damage) given the hazard, and a description of typical measures
+	used to mitigate such damage.  Damage and mitigation are also
+	accompanied with a photograph, in many cases.</li>
+    </ul>
+    <P> 
+      The taxonomy and associated vulnerability data (discussed below) are
+      based on the ATC-13 data set*.  The ATC-13 data set were developed
+      specific to California construction.  For MIRISK, some adjustments
+      were made since most MIRISK applications will be in developing
+      countries, although it should be noted that most MIRISK applications
+      will be for <U>new construction</U> per modern building codes per typical
+      World Bank practice.   That is, MIRISK applications are not for
+      existing construction, which may be of much poorer quality than that
+      built under Bank funding. Nevertheless, additional work for more
+      accurate vulnerability data is an area for potential MIRISK
+      improvement.
+      <BR><BR>
+      * Applied Technology Council. (1985). "Earthquake Damage Evaluation
+      Data for California." ATC-13, Applied Technology Council, Redwood
+      City, 492pp.
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+
+   <H4><A name="section5.3"><I>5.3 Analysis/Results</I></A></H4>
+    <P>
+      The Analysis methodology follows a standard benefit-cost framework, in
+      which normal code design is taken as a given baseline.   Normal
+      building codes are written to assure life safety, and not to minimize
+      property damage, so that significant property damage is likely to be
+      sustained by even new construction designed per modern building codes,
+      when subjected to higher intensity natural hazards.  This is
+      well-known*, and has led to the recent emergence of performance-based
+      design in the structural engineering field**.  Consequently, there is
+      a substantial risk of economic loss given normal building code
+      design.  This loss is not only direct property loss (ie, cost of
+      repair) but also the attendant loss of use and associated expenses
+      (so-called indirect loss).
+      <BR><BR>
+      Direct loss is accounted for by using the vulnerability functions of
+      ATC-13 for the specific Category class, and the hazard as determined
+      for the site from the Hotspots data (including the assumptions as
+      discussed above).  The hazard is however only a point estimate, and
+      the entire hazard curve is calculated based on the assumption that the
+      hazard frequency follows the Ishimoto-Iida law (ie, log-log relation)
+      with a slope of 1.0.
+      <BR><BR>
+      Indirect loss is accounted for by multiplying the direct loss by the
+      Benefit-Cost Ratio (BCR) for the Component, as input by the User.
+      Bank project BCRs vary from 1 to as much as 10, with an average value
+      being about 6.0.
+      <BR><BR>
+      The expected annual loss (EAL) for the Component is then calculated by
+      numerical integration of the vulnerability and hazard functions, over
+      all values of hazard.  The present value of all future losses is then
+      calculated as the EAL divided by the real interest rate (this assumes
+      an infinite economic life, which slightly overestimates the present
+      value, but is not a bad assumption in general).  Real interest rates
+      vary, but an average value of 0.03 per annum is a reasonable value in
+      many cases.
+      <BR><BR>
+      The above algorithm can be applied for normal code design (denoted as
+      DLF, or Design Level Factor, 1.0), or for any enhanced design.  If the
+      normal code requirement for a natural hazard is increased by 10% (eg,
+      earthquake design is for 0.22g, rather than for 0.20g, lateral force),
+      this is denoted as a DLF=1.10.  If a Component is designed for a
+      DLF=1.1, damage due to natural hazards will be significantly
+      decreased, with only a marginally higher capital investment for the
+      increased design. As DLF increases, damage drops sharply at first, and
+      then diminishingly less, while capital investment is very modest at
+      first, and then increases rapidly.  For any given DLF, the sum of the
+      present value of all future damages, and the increase in capital
+      investment, is the Total Cost above normal building code design. The
+      curve of Total Cost as a function of DLF has a typical U shape, where
+      the minimum Total Cost is the optimum DLF.
+      <BR><BR>
+      MIRISK calculates the present value of all future damages, the
+      increase in capital investment, the Total Cost above normal building
+      code design, and presents these results in summary form for
+      earthquake, tropical cyclone and flood, and in a detailed tabulation
+      (with the optimum DLF highlighted in yellow),  and graph.  If any
+      hazard is particularly low, the results are not presented, but simply
+      it is noted that that particular hazard is 'not applicable'.
+      <BR><BR>  
+      The optimum DLF is what makes economic sense. While the MIRISK data
+      and methods are only preliminary, they provide guidance as to what
+      hazards exist for a site, what the natural hazards performance is
+      likely to be for the Component to be constructed, what is an optimum
+      DLF for the situation, what should be budgeted by the Bank to achieve
+      an economic optimum performance considering natural hazards, and what
+      the savings are given this policy.
+      <BR><BR>
+      * Hamburger, R.O. (2003) Building Code Provisions for Seismic
+      Resistance, chapter in Chen, W.-F., and Scawthorn,
+      C. (2003). "Earthquake Engineering Handbook." New Directions in Civil
+      Engineering, CRC Press, CRCnetBASE (Online service), Co-published by
+      the International Conference of Building Officials and co-sponsored by
+      the National Council of the Structural Engineers Association, Boca
+      Raton, Fla., 1512pp.
+      <BR><BR>
+      ** SEAOC. 1996.Vision 2000, A Framework for Performance-based Seismic
+      Design, Structural Engineers Association of California, Sacramento,
+      CA.
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+    
+    <H3><A name="section6">6 Glossary</A></H3>
+    <BR><BR>
+
+    <CENTER>
+      <table border="1" cellpadding="5" width="750">
+	
+	<tr>
+	  <th colspan="2">- A -</th>
+	</tr>
+
+	<tr>
+	  <td width="150"><B>Aa</B></td>
+	  <td>Hawaiian word used to describe a lava flow whose
+	    surface is broken into rough angular fragments.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Active volcano</B></td>
+	  <td>A volcano that is erupting. Also, a volcano that is
+	    not presently erupting but that has erupted within
+	    historical time and is considered likely to do so in the
+	    future. </td>
+	</tr>
+	
+	<tr>
+	  <td><B>Andesite</B></td>
+	  <td>Volcanic rock (or lava) characteristically medium dark
+	    in color and containing 54 to 62 percent silica and
+	    moderate amounts of iron and magnesium. </td>
+	</tr>
+	
+	<tr>
+	  <td><B>Ash</B></td>
+	  <td>Fine particles of pulverized rock blown from an
+	    explosion vent. Measuring less than 1/10 inch in diameter,
+	    ash may be either solid or molten when first erupted. By
+	    far the most common variety is vitric ash, glassy particles
+	    formed by gas bubbles bursting through liquid magma.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Ash flow</B></td>
+	  <td>A turbulent mixture of gas and rock fragments, most of
+	    which are ash-sized particles, ejected violently from a
+	    crater or fissure. The mass of pyroclastics is normally of
+	    very high temperature and moves rapidly down the slopes, or
+	    even along a level surface.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Ashfall (Airfall)</B></td>
+	  <td>Volcanic ash that has fallen through the air from an
+	    eruption cloud. A deposit so formed is usually well sorted
+	    and layered.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Attenuation</B></td>
+	  <td>The rate at which earthquake ground motion decreases
+	    with distance.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Avalanche</B></td>
+	  <td>A large mass of material or mixtures of material
+	    falling or sliding rapidly under the force of
+	    gravity. Avalanches often are classified by their content,
+	    such as snow, ice, soil, or rock avalanches. A mixture of
+	    these materials is a debris avalanche.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Average wind speed</B></td>
+	  <td>Speed of the wind averaged over the previous 10 minutes
+	    (mean surface wind) as read from the anemogram or the 3
+	    minutes mean determined with the non-recording anemometer
+	    or estimated wind at sea by the mariners using the Beaufort scale.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- B -</th>
+        </tr>
+	
+	<tr>
+	  <td><B>Basalt</B></td>
+	  <td>Volcanic rock (or lava) that characteristically is
+	    dark in color, contains 45 to 54 percent silica, and
+	    generally is rich in iron and magnesium.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Benefit-cost Ratio (BCR)</B></td>
+	  <td>BCR is the estimate of the total project benefit
+	    (including some monetized estimate of future social
+	    benefits), divided by the total project cost.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Block</B></td>
+	  <td>Angular chunk of solid rock ejected during an
+	    eruption.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Bomb</B></td>
+	  <td>Fragment of molten or semi-molten rock, 2 1/2 inches
+	    to many feet in diameter, which is blown out during an
+	    eruption. Because of their plastic condition, bombs are
+	    often modified in shape during their flight or upon impact.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- C -</th>
+        </tr>
+	
+	<tr>
+	  <td><B>Caldera</B></td>
+	  <td>The Spanish word for cauldron, a basin-shaped volcanic
+	    depression; by definition, at least a mile in
+	    diameter. Such large depressions are typically formed by
+	    the subsidence of volcanoes. Crater Lake occupies the
+	    best-known caldera in the Cascades.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Central pressure of a tropical cyclone</B></td>
+	  <td>Surface pressure at the centre of the tropical cyclone
+	    as measured or estimated.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Centre of the tropical cyclone</B></td>
+	  <td>The centre of the cloud eye, or if not discernible, of
+	    the wind/pressure centre.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Cinder cone</B></td>
+	  <td>A volcanic cone built entirely of loose fragmented
+	    material (pyroclastics.)</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Composite volcano</B></td>
+	  <td>A steep volcanic cone built by both lava flows and
+	    pyroclastic eruptions.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Continental crust</B></td>
+	  <td>Solid, outer layers of the earth, including the rocks
+	    of the continents.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Continental drift</B></td>
+	  <td>The theory that horizontal movement of the earth's
+	    surface causes slow, relative movements of the continents
+	    toward or away from one another.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Crater</B></td>
+	  <td>A steep-sided, usually circular depression formed by
+	    either explosion or collapse at a volcanic vent.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Cyclone</B></td>
+	  <td>Tropical cyclone</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Cyclonic storm</B></td>
+	  <td>A cyclonic disturbance in which the maximum average
+	    surface wind speed is in the range of 34 to 47 knots (62 to
+	    88 km/h).</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- D -</th>
+        </tr>
+	
+	<tr>
+	  <td><B>Dacite</B></td>
+	  <td>Volcanic rock (or lava) that characteristically is
+	  light in color and contains 62 to 69 percent silica and
+	  moderate amounts of sodium and potassium.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Damage</B></td>
+	  <td>Physical disruption, such as cracking in walls,
+	    overturning of cabinets etc (often used synonymously with loss)</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Debris avalanche</B></td>
+	  <td>A rapid and unusually sudden sliding or flowage of
+	    unsorted masses of rock and other material. As applied to
+	    the major avalanche involved in the eruption of Mount
+	    St. Helens, a rapid mass movement that included fragmented
+	    cold and hot volcanic rock, water, snow, glacier ice,
+	    trees, and some hot pyroclastic material. Most of the May
+	    18 deposits in the upper valley of the North Fork Toutle
+	    River and in the vicinity of Spirit Lake are from the
+	    debris avalanche.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Depression</B></td>
+	  <td>A cyclonic disturbance in which the maximum sustained
+	    surface wind speed is between 17 and 33 knots (31 and 61
+	    km/h). If the maximum sustained wind speed lies in the
+	    range 28 knots (52 km/h) to 33 knots (61 km/h) the system
+	    may be called a "deep depression".*<BR> 
+	    A cyclonic disturbance in which the maximum sustained surface wind
+	    speed is between 22 and 33 knots (41 and 61 km/h. If the
+	    maximum sustained wind speed lies in the range 28 knots (52
+	    km/h) to 33 knots (61 km/h) the system may be called a
+	    "deep depression".+</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Detachment plane</B></td>
+	  <td>The surface along which a landslide disconnects from
+	    its original position.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Dome</B></td>
+	  <td>A steep-sided mass of viscous (doughy) lava extruded
+	    from a volcanic vent, often circular in plane view and
+	    spiny, rounded, or flat on top. Its surface is often rough
+	    and blocky as a result of fragmentation of the cooler,
+	    outer crust during growth of the dome.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Dormant volcano</B></td>
+	  <td>Literally, "sleeping." The term is used to describe a
+	    volcano which is presently inactive but which may erupt
+	    again. Most of the major Cascade volcanoes are believed to
+	    be dormant rather than extinct.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Ductile detailing</B></td>
+	  <td>Special requirements such as, for reinforced concrete
+	  and masonry, close spacing of lateral reinforcement to
+	  attain confinement of a concrete core, appropriate relative
+	  dimensioning of beams and columns, 135 degree hooks on
+	  lateral reinforcement, hooks on main beam reinforcement
+	  within the column, etc)</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Ductile frames</B></td>
+	  <td>Frames required to furnish satisfactory load-carrying
+	    performance under large deflections (i.e., ductility).  in
+	    reinforced concrete and masonry this is achieved by ductile detailing.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Ductility factor</B></td>
+	  <td>The ratio of the total displacement (elastic plus
+	    inelastic) to the elastic [i.e., yield] displacement.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- E -</th>
+        </tr>
+	
+	<tr>
+	  <td><B>Ejecta</B></td>
+	  <td>Material that is thrown out by a volcano, including
+	    pyroclastic material (tephra) and, from some volcanoes,
+	    lava bombs.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Epicenter</B></td>
+	  <td>The projection on the surface of the earth directly
+	  above the hypocenter.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Eruption</B></td>
+	  <td>The process by which solid, liquid, and gaseous
+	    materials are ejected into the earth's atmosphere and onto
+	    the earth's surface by volcanic activity. Eruptions range
+	    from the quiet overflow of liquid rock to the tremendously
+	    violent expulsion of pyroclastics.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Eruption cloud</B></td>
+	  <td>The column of gases, ash, and larger rock fragments
+	    rising from a crater or other vent. If it is of sufficient
+	    volume and velocity, this gaseous column may reach many
+	    miles into the stratosphere, where high winds will carry it
+	    long distances.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Eruptive vent</B></td>
+	  <td>The opening through which volcanic material is
+	  emitted.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Extinct volcano</B></td>
+	  <td>A volcano that is not presently erupting and is not
+	    likely to do so for a very long time in the future.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Eye of the tropical cyclone</B></td>
+	  <td>The relatively clear and calm area inside the circular
+	    wall of convective clouds, the geometric centre of which is
+	    the centre of the tropical cyclone.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- F -</th>
+        </tr>
+	
+	<tr>
+	  <td><B>Far-field</B></td>
+	  <td>(beyond near-field), also termed teleseismic.</td>
+	</tr>
+	
+	<tr>
+	  <td><B>Fault</B></td>
+	  <td>A zone of the earth's crust within which the two
+	    sides have moved - faults may be hundreds of miles long,
+	    from one to over one hundred miles deep, and not readily
+	    apparent on the ground surface.<BR>
+	    A crack or fracture in the earth's surface. Movement along the fault
+	    can cause earthquakes or, in the process of
+	    mountain-building, can release underlying magma and permit
+	    it to rise to the surface.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Fissures</B></td>
+	  <td>Elongated fractures or cracks on the slopes of a
+	    volcano. Fissure eruptions typically produce liquid flows,
+	    but pyroclastics may also be ejected.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Flank eruption</B></td>
+	  <td>An eruption from the side of a valcano (in contrast to
+	    a summit eruption.)</td>
+	</tr>
+
+	<tr>
+	  <td><B>Focal mechanism</B></td>
+	  <td>Refers to the direction of slip in an earthquake, and
+	    the orientation of the fault on which it occurs.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Fracture</B></td>
+	  <td> A general term for any break in a rock including
+	    cracks, joints, and faults.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Fragility</B></td>
+	  <td>The probability of having a specific level of damage
+	  given a specified level of hazard.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Fumarole</B></td>
+	  <td>A vent or opening through which issue steam, hydrogen
+	    sulfide, or other gases. The craters of many dormant
+	    volcanoes contain active fumaroles.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- G -</th>
+        </tr>
+
+	<tr>
+	  <td><B>Gale force wind</B></td>
+	  <td>Average surface wind speed of 34 to 47 knots (62 to 88
+	    km/h).</td>
+	</tr>
+
+	<tr>
+	  <td><B>Gust</B></td>
+	  <td>Instantaneous peak value of surface wind speed,
+	    recorded or expected.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- H -</th>
+        </tr>
+
+	<tr>
+	  <td><B>Hazard</B></td>
+	  <td>The potential for or occurrence of natural phenomena,
+	    such as ground shaking, liquefaction, tsunami, etc, which
+	    might lead to loss.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Hurricane force wind</B></td>
+	  <td>Average surface wind speed 64 knots or more.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Hypocenter</B></td>
+	  <td>The location of initial radiation of seismic waves
+	    (i.e., the first location of dynamic rupture).</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- I -</th>
+        </tr>
+
+	<tr>
+	  <td><B>Intensity</B></td>
+	  <td>A metric of the effect, or the strength, of an
+	    earthquake hazard at a specific location, commonly measured
+	    on qualitative scales such as MMI, MSK and JMA.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- J -</th>
+        </tr>
+
+        <tr>
+          <th colspan="2">- K -</th>
+        </tr>
+
+        <tr>
+          <th colspan="2">- L -</th>
+        </tr>
+
+	<tr>
+	  <td><B>Lahar</B></td>
+	  <td>A torrential flow of water-saturated volcanic debris
+	    down the slope of a volcano in response to gravity. A type
+	    of mudflow. Also known as a "glowing avalanche."</td>
+	</tr>
+
+	<tr>
+	  <td><B>Lapilli</B></td>
+	  <td>Literally, "little stones;" round to angular rock
+	    fragments measuring 1/10 inch to 2 1/2 inches in diameter,
+	    which may be ejected in either a solid or molten state.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Lateral force resisting system</B></td>
+	  <td>A structural system for resisting horizontal forces,
+	    due for example to earthquake or wind [as opposed to the
+	    vertical force resisting system, which provides support
+	    against gravity].</td>
+	</tr>
+
+	<tr>
+	  <td><B>Lava</B></td>
+	  <td>Magma which has reached the surface through a volcanic
+	    eruption. The term is most commonly applied to streams of
+	    liquid rock that flow from a crater or fissure. It also
+	    refers to cooled and solidified rock.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Lava Flow</B></td>
+	  <td>An outpouring of lava onto the land surface from a
+	    vent or fissure. Also, a solidified tongue like or sheet
+	    like body formed by outpouring lava.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Liquefaction</B></td>
+	  <td>A process resulting in a soil's loss of shear
+	    strength, due to a transient excess of pore water pressure.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Loss</B></td>
+	  <td>The human or financial consequences of damage, such as
+	    human injury or cost of repairs.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Low or Low pressure area</B></td>
+	  <td>An area enclosed by a closed isobar with minimum
+	    pressure inside when mean surface wind is less than 17
+	    knots (31 km/h).</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- M -</th>
+        </tr>
+
+	<tr>
+	  <td><B>Magma</B></td>
+	  <td>Molten rock beneath the surface of the earth.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Magnitude</B></td>
+	  <td>A unique measure of an individual earthquake's
+	    release of strain energy, measured on a variety of scales,
+	    of which the moment magnitude Mw (derived from seismic
+	    moment) is preferred.<BR>
+	    A numerical expression of the amount of energy released by an
+	    earthquake, determined by measuring earthquake waves on
+	    standardized recording instruments (seismographs.) The
+	    number scale for magnitudes is logarithmic rather than
+	    arithmetic; therefore, deflections on a seismograph for a
+	    magnitude 5 earthquake, for example, are 10 times greater
+	    than those for a magnitude 4 earthquake, 100 times greater
+	    than for a magnitude 3 earthquake, and so on.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Magnitude-frequency relation</B></td>
+	  <td>The probability of occurrence of a selected magnitude
+	    - the commonest is log10 n(m) = a - bm [Gutenberg And
+	    Richter, 1954]</td>
+	</tr>
+
+	<tr>
+	  <td><B>Maximum sustained wind</B></td>
+	  <td>Maximum value of the average wind speed at the surface.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Mitigation</B></td>
+	  <td>Literally the moderating of a force or intensity of
+	    something that causes suffering, and is used in earthquake
+	    engineering as synonymous with reducing earthquake risk.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Mudflow</B></td>
+	  <td>A flowage of water-saturated earth material possessing
+	    a high degree of fluidity during movement. A less-saturated
+	    flowing mass is often called a debris flow. A mudflow
+	    originating on the flank of a volcano is properly called a
+	    lahar.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- N -</th>
+        </tr>
+
+	<tr>
+	  <td><B>Non-ductile frames</B></td>
+	  <td>Frames lacking ducility or energy absorption capacity
+	    due to lack of ductile detailing - ultimate load is
+	    sustained over a smaller deflection (relative to ductile
+	    frames), and for fewer cycles.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Normal fault</B></td>
+	  <td>A fault that exhibits dip-slip motion, where the two
+	    sides are in tension and move away from each other.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Nuee ardente</B></td>
+	  <td>A French term applied to a highly heated mass of
+	    gas-charge ash which is expelled with explosive force, and
+	    hurricane speed, down the mountainside.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- O -</th>
+        </tr>
+
+        <tr>
+          <th colspan="2">- P -</th>
+        </tr>
+
+	<tr>
+	  <td><B>Peak ground acceleration (PGA)</B></td>
+	  <td>The maximum amplitude of recorded acceleration (also
+	    termed the ZPA, or zero period acceleration).</td>
+	</tr>
+
+	<tr>
+	  <td><B>Phreatic eruption (explosion)</B></td>
+	  <td>An explosive volcanic eruption caused when water and
+	    heated volcanic rocks interact to produce a violent
+	    expulsion of steam and pulverized rocks. Magma is not
+	    involved.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Plate tectonics</B></td>
+	  <td>The theory that the earth's crust is broken into about
+	    10 fragments (plates,) which move in relation to one
+	    another, shifting continents, forming new ocean crust, and
+	    stimulating volcanic eruptions.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Pounding</B></td>
+	  <td>The collision of adjacent buildings during an
+	    earthquake due to insufficient lateral clearance.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Pyroclastic</B></td>
+	  <td>Pertaining to fragmented (clastic) rock material
+	    formed by a volcanic explosion or ejection from a volcanic
+	    vent.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Pyroclastic flow</B></td>
+	  <td>Lateral flowage of a turbulent mixture of hot gases
+	    and unsorted pyroclastic material (volcanic fragments,
+	    crystals, ash, pumice, and glass shards) that can move at
+	    high speed (50 to 100 miles an hour.) The term also can
+	    refer to the deposit so formed.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- Q -</th>
+        </tr>
+
+        <tr>
+          <th colspan="2">- R -</th>
+        </tr>
+
+	<tr>
+	  <td><B>Reverse fault</B></td>
+	  <td>A fault that exhibits dip-slip motion, where the two
+	    sides are in compression and move away towards each other.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Ring of fire</B></td>
+	  <td>A zone of major global seismicity due to the
+	    interaction (collision and subduction) of the Pacific plate
+	    with several other plates.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Risk</B></td>
+	  <td>The potential for loss.  Risk can be expressed in
+	    absolute terms such as 'the risk of collapse', or in
+	    probabilistic terms, such as 'the risk per year is $1,000'.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- S -</th>
+        </tr>
+
+	<tr>
+	  <td><B>Sand boils or mud volcanoes</B></td>
+	  <td>Ejecta of solids (i.e., sand, silt) carried to the
+	    surface by water, due to liquefaction.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Seismic gap</B></td>
+	  <td>A portion of a fault or seismogenic zone which can be
+	    deduced to be likely to rupture in the near term, based on
+	    patterns of seismicity and geological evidence.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Seismic hazards</B></td>
+	  <td>The phenomena and/or expectation of an
+	    earthquake-related agent of damage, such as  fault rupture,
+	    vibratory ground motion (i.e., shaking), inundation (e.g.,
+	    tsunami, seiche, dam failure), various kinds of permanent
+	    ground failure (e.g. liquefaction), fire or hazardous
+	    materials release.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Seismic risk</B></td>
+	  <td>The product of the hazard and the vulnerability
+	    (i.e., the expected damage or loss, or the full
+	    probability distribution).</td>
+	</tr>
+
+	<tr>
+	  <td><B>Seismograph</B></td>
+	  <td>An instrument that records seismic waves; that is,
+	    vibrations of the earth.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Soft story</B></td>
+	  <td>A story of a building significantly less stiff than
+	    adjacent stories (that is, the lateral stiffness is 70% or
+	    less than that in the story above, or less than 80% of the
+	    average stiffness of the three stories above [BSSC, 1994]).</td>
+	</tr>
+
+	<tr>
+	  <td><B>Squally wind</B></td>
+	  <td>When sudden increases of wind speed occur in squalls
+	    with the increased speed reaching a minimum of 22 knots (40
+	    km/h) and persist for at least one minute.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Storm force wind</B></td>
+	  <td>Average surface wind speed of 48 to 63 knots.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Storm surge</B></td>
+	  <td>The difference between the actual water level under the
+	    influence of a meteorological disturbance (storm tide) and
+	    the level which would have been attained in the absence of
+	    the meteorological disturbance (i.e. astronomical tide).
+	    (Storm surge results mainly from the shoreward movement of water
+	    under the action of wind stress. A minor contribution is
+	    also made by the hydrostatic rise of water resulting from
+	    the lowered barometric pressure).</td>
+	</tr>
+
+	<tr>
+	  <td><B>Storm tide</B></td>
+	  <td>The actual water level as influenced by a weather
+	    disturbance. The storm tide consists of the normal
+	    astronomical tide and the storm surge.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Stratovolcano</B></td>
+	  <td>A volcano composed of both lava flows and pyroclastic
+	    material.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Strike-slip fault</B></td>
+	  <td>A nearly vertical fault with side-slipping
+	    displacement.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Subduction</B></td>
+	  <td>Refers to the plunging of a tectonic plate (e.g., the
+	    Pacific) beneath another (e.g., the North American) down
+	    into the mantle, due to convergent motion.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Subduction zone</B></td>
+	  <td>The zone of convergence of two tectonic plates, one of
+	    which usually overrides the other.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- T -</th>
+        </tr>
+
+	<tr>
+	  <td><B>Tectonic</B></td>
+	  <td>Relating to, causing, or resulting from structural
+	    deformation of the earth's crust. [from Greek tektonikos,
+	    from tekti, builder]</td>
+	</tr>
+
+	<tr>
+	  <td><B>Tephra</B></td>
+	  <td>Materials of all types and sizes that are erupted from
+	    a crater or volcanic vent and deposited from the air.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Thrust fault</B></td>
+	  <td>Low-angle reverse faulting (blind thrust faults are
+	    faults at depth occurring under anticlinal folds - they
+	    have only subtle surface expression).</td>
+	</tr>
+
+	<tr>
+	  <td><B>Trans-alpide belt</B></td>
+	  <td>A zone of major global seismicity, extending  from the
+	    Mediterranean through the Middle East, Himalayas and
+	    Indonesian archipelago, resulting from the collision of
+	    several major tectonic plates.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Transform or strike slip fault</B></td>
+	  <td>A fault where relative fault motion occurs in the
+	    horizontal plane, parallel to the strike of the fault.</td>
+	</tr>
+
+	<tr>
+	  <td><B>Tropical cyclone</B></td>
+	  <td>Generic term for a non-frontal synoptic scale cyclone
+	    originating over tropical or sub-tropical waters with
+	    organized convection and definite cyclonic surface wind
+	    circulation. The term is also used for a storm in the
+	    South-West Indian Ocean in which the maximum of sustained
+	    wind speed* is estimated to be in the range of 64 to 90
+	    knots and in the South Pacific and South-East Indian Ocean
+	    with the maximum of the sustained wind speed over 33 knots. 
+	    (Note: *Maximum sustained wind speed: Average period of one, three,
+	    or ten minutes depending upon the regional practices.)</td>
+	</tr>
+
+	<tr>
+	  <td><B>Tsunami</B></td>
+	  <td>A great sea wave produced by a submarine earthquake,
+	    volcanic eruption, or large landslide.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- U -</th>
+        </tr>
+
+	<tr>
+	  <td><B>Uniform hazard spectra</B></td>
+	  <td>Response spectra with the attribute that the
+	    probability of exceedance is independent of frequency.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- V -</th>
+        </tr>
+
+	<tr>
+	  <td><B>Vulnerability</B></td>
+	  <td>The expected damage given a specified value of a
+	    hazard parameter.</td>
+	</tr>
+
+        <tr>
+          <th colspan="2">- W -</th>
+        </tr>
+
+        <tr>
+          <th colspan="2">- X -</th>
+        </tr>
+
+        <tr>
+          <th colspan="2">- Y -</th>
+        </tr>
+
+        <tr>
+          <th colspan="2">- Z -</th>
+        </tr>
+
+      </table>
+      </CENTER>
+
+    <P>
+      <BR><BR>
+      <A href="#thetop">Back to top</A>
+    </P>
+   
+  </BODY>
+</HTML>

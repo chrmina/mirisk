@@ -1,0 +1,88 @@
+Map-Fu - RELEASE
+----------------
+
+Current Release:
+
+0.14 - Apr. 17 2007
+
+Changes
+
+  - Sample data is now provided by default
+
+  - Google geocoder abstraction is included.  See SETUP for details on
+    how to use it.  ZoomTo tool makes use of it out of the box.
+
+  - Panning works much better, the map image drags with your cursor
+
+  - Legends are built in.  Look at SampleDatasource.php for how its
+    being created/updated.  The legend is created in map.php using a
+    mapserver template which is under templates/legend.html.
+
+------------------------------------------------------------------------
+
+0.13 - Dec. 8th 2006
+
+Changes:
+
+ - New print tool for displaying the current map image in a popup for
+   printing.
+
+ - Converged all general configuration files into one.
+
+ - The general configuration file and Datasource configuration file
+   are now templates, to be copied and setup by each user of map-fu to
+   fit their environment.
+
+ - New scheme is used for finding the base map-fu directory from any
+   subdirectory since PHP doesn't provide a way to do this.  Each
+   subdirectory may now have a .root_config.php file containing the
+   variable $ROOT which defines the relative path to the base
+   directory.
+
+ - Moved most php files floating around in includes/ into
+   includes/php.  $php_path is now defined in config.
+
+ - svn:keywords has been setup in most files.  Any new files added to
+   the repository should have them.  This can be setup to be done
+   automatically.
+
+Bug Fixes:
+
+ - Fixed rounding issue for data in decimal degree, see 1607285
+
+------------------------------------------------------------------------
+
+0.12 Alpha - Nov. 6th 2006
+
+Changes since release:
+
+Features:
+
+- Created ScaleZoomMenu selector providing a drop-down menu for
+  zooming to a specific map extent.  Used by the ScaleZoom tool.
+
+Code Changes:
+
+- Updated ScaleZoom Tool defining the zoom selector externally.
+
+- Added afterMapUpdate method to Component class allowing components
+  defined server side to be updated after each map update.
+
+- To make the afterMapUpdate method possible, the JS Map object,
+  formerly defined in map.js, is now generated server-side and
+  inserted as inline JS.
+
+- JS code responsible for creating and managing the map is now
+  generated server-side and inserted inline (formerly map.js).  This
+  allows interaction with JS objects generated server-side to be
+  defined server-side.  For example,
+
+- Map image is now displayed within an IMG tag instead of making it
+  the background image for the map container.  This increases the
+  number of JS events available.  This was not done before because
+  drag events allowed by the IMG tag were conflicting with the box
+  drawing functionality (rubber band).  A second transparent container
+  is now placed over the image and handles the box drawing.
+
+$Id: HISTORY 107 2007-02-17 18:57:22Z tim_j_welch $
+$URL: https://svn.sourceforge.net/svnroot/map-fu/trunk/HISTORY $

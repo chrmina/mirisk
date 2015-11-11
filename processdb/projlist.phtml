@@ -1,0 +1,94 @@
+<?
+
+// connect to the database(to get the study and project list)
+include "./connect_pg.php";
+
+@$conn = connect_pg("MIRISK");
+
+if(!$conn){
+  echo "Failed to connect to the database and get the project list.";
+  exit();
+}
+
+if(!$_POST["study"]){
+@$sql = "SELECT study_id FROM studydata";
+@$studyres = pg_query($conn,$sql) or die("Unable to retrieve the study data...");
+$temparr = pg_fetch_array($studyres,0);
+$study_id = $temparr[0];
+}else{
+  $study_id = $_POST["study"];
+}
+
+@$sql = "SELECT study_id, study_name FROM studydata";
+@$sql2 = "SELECT project_id, project_name FROM project2 where project_study_id = '$study_id'";
+
+@$studyres = pg_query($conn,$sql) or die("Unable to retrieve the study data...");
+$studyrows = pg_num_rows($studyres);
+
+@$projres = pg_query($conn,$sql2) or die("Unable to retrieve the project data...");
+$projrows = pg_num_rows($projres);
+
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>MIRISK - Analysis and Report</title>
+  <meta name="description" content="Mitigation Information and Risk Identification System">
+  <meta name="author" content="MIRISK Team">
+  <meta name="keywords" content="MIRISK">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="abstract" content="MIRISK">
+  <meta name="description" content="MIRISK">
+  <meta name="keywords" content="MIRISK">
+  <link href="../dbstyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<center>
+<table align="center" border="0">
+  <tr>
+    <th>PROJECT</th>
+    <th>COMPONENT</th>
+    <th>RESULTS</th>
+  </tr>
+  <tr>
+  <form method="POST" name="chooseproj" action="./projlist.phtml">
+    <td>
+       <select name='study' onchange='chooseproj.submit()'>
+<?php
+     for($i=0;$i<$studyrows;$i++){
+       $studyrec = pg_fetch_array($studyres,$i);
+       echo "<option value=\"", $studyrec[0], "\"";
+       if($studyrec[0] == $study_id){
+         echo " SELECTED";
+       }
+       echo ">";
+       echo $studyrec[1];
+       echo "</option>\n";
+     }
+     echo "</select>\n"
+?>
+     </td>
+     </form>
+     <form method="POST" name="projlist" action="./analysis.php" target="output">
+     <td>
+       <select name='project'>
+<?php 
+        for($j=0;$j<$projrows;$j++){
+          $projrec = pg_fetch_array($projres,$j);
+          echo "<option value=\"", $projrec[0], "\">";
+          echo $projrec[1];
+          echo "</option>\n";
+        }
+       ?>
+	</select>
+      </td>
+      <td colspan="2" align="center">
+	<input type="submit" value="Analysis & Report" name="output">
+      </td>
+      </form>
+    </tr>
+</table>
+</center>
+</body>
+</html>

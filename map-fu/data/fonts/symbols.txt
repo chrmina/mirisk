@@ -1,0 +1,333 @@
+      Symbol
+	      name "DownwardDiagonalFillNarrow"
+	      type vector
+	      transparent 0
+	      points 
+		      0 1
+		      1 0
+	      end
+      end	
+  
+      Symbol
+	      name "DownwardDiagonalFill"
+	      type vector
+	      transparent 0
+	      points 
+		      0 6
+		      6 0
+	      end
+      end	
+  
+      SYMBOL
+              Name "I"
+              Type TrueType
+              font century
+              antialias true
+              Character "I"
+	      gap 15
+      END
+      
+      SYMBOL
+              Name "Circle"
+              Filled true
+              type ellipse
+              points 1 1 end
+      end
+
+      symbol
+              name "CircleDash"
+              type ellipse
+              points
+                      1 1
+              end
+	      filled true
+              style
+		      1 30 1 30
+	      end
+      end
+
+      symbol
+              name "CircleDash1"
+              type ellipse
+              points
+                      1 1
+              end
+	      filled true
+              style
+		10 10
+	      end
+      end      
+
+      symbol
+              name "LineSolid"
+              type ellipse
+              points
+                      1 1
+              end
+              filled true
+      end
+      
+      symbol 
+	      name "FillHatch"
+	      TYPE HATCH
+	      transparent 0
+      end
+
+      
+      symbol
+              name "LineDash14"
+              type cartoline
+              linecap butt
+              linejoin miter
+              linejoinmaxsize 1
+              style
+              4   8
+              end
+      end
+      
+	SYMBOL
+    		NAME "LineHatch"
+		type cartoline
+              	linecap butt
+             	 linejoin miter
+             	 linejoinmaxsize 1
+              	style
+              	1   10
+             	 end
+	END
+      symbol
+              name "LineDash38"
+              type cartoline
+              linecap butt
+              linejoin miter
+              linejoinmaxsize 1
+              style
+                      3 8
+              end
+      end
+      
+      symbol
+              name "LineDash"
+              type cartoline
+              linecap butt
+              linejoin miter
+              linejoinmaxsize 1
+              style
+                      6 10
+              end
+      end
+
+      symbol
+		name "Square"
+		type vector
+		points
+			0 0
+			0 1
+			1 1
+			1 0
+			0 0
+		end
+		filled true
+	end
+
+
+SYMBOL
+  NAME "airport"
+  TYPE TRUETYPE
+  FONT esri_infra
+  FILLED true
+  ANTIALIAS true
+  CHARACTER "e"
+END
+
+SYMBOL
+  NAME "circlesquare_ttf"
+  TYPE TRUETYPE
+  FONT esri_base
+  FILLED true
+  ANTIALIAS true
+  CHARACTER "k"
+END
+
+SYMBOL
+  NAME "circledot_ttf"
+  TYPE TRUETYPE
+  FONT esri_base
+  FILLED true
+  ANTIALIAS true
+  CHARACTER "k"
+END
+
+SYMBOL
+  NAME "circledotbold_ttf"
+  TYPE TRUETYPE
+  FONT esri_base
+  FILLED true
+  ANTIALIAS true
+  CHARACTER "k"
+END
+
+SYMBOL
+  NAME "squaredotb_ttf"
+  TYPE TRUETYPE
+  FONT esri_base
+  FILLED true
+  ANTIALIAS true
+  CHARACTER "I"
+END
+
+Symbol
+Name 'tent'
+Type VECTOR
+Filled TRUE
+Points
+0 1
+.5 0
+1 1
+.75 1
+.5 .5
+.25 1
+0 1
+END
+END 
+
+Symbol
+Name 'star'
+Type VECTOR
+Filled TRUE
+Points
+0 .375
+.35 .375
+.5 0
+.65 .375
+1 .375
+.75 .625
+.875 1
+.5 .75
+.125 1
+.25 .625
+END
+END 
+
+Symbol
+Name 'triangle'
+Type VECTOR
+Filled TRUE
+Points
+0 1
+.5 0
+1 1
+0 1
+END
+END 
+
+Symbol
+Name 'square'
+Type VECTOR
+Filled TRUE
+Points
+0 1
+0 0
+1 0
+1 1
+0 1
+END
+END 
+
+Symbol
+Name 'plus'
+Type VECTOR
+Points
+.5 0
+.5 1
+-99 -99
+0 .5
+1 .5
+END
+END 
+
+Symbol
+Name 'cross'
+Type VECTOR
+Points
+0 0
+1 1
+-99 -99
+0 1
+1 0
+END
+END
+
+Symbol
+Name 'circle'
+Type ELLIPSE
+Filled TRUE
+Points
+1 1
+END
+END 
+
+Symbol
+Name 'circle_empty'
+Type ELLIPSE
+Filled FALSE
+Points
+1 1
+END
+END
+
+Symbol
+Type VECTOR
+TRANSPARENT 0
+Points
+0 1
+1 1
+END
+END 
+
+Symbol
+Type VECTOR
+TRANSPARENT 0
+Points
+1 0
+1 1
+END
+END 
+
+Symbol
+Type VECTOR
+TRANSPARENT 0
+Points
+0 0
+1 1
+END
+END 
+
+Symbol
+Type VECTOR
+TRANSPARENT 0
+Points
+0 1
+1 0
+END
+END 
+
+Symbol
+Type VECTOR
+Points
+0 1
+1 0
+-99 -99
+0 0
+1 1
+END
+END 
+
+Symbol
+Name 'defline'
+Type ELLIPSE
+Filled TRUE
+Points
+1 1
+END
+END

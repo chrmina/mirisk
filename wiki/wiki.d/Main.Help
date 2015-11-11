@@ -1,0 +1,16 @@
+version=pmwiki-2.2.0-beta45 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3
+author=CM
+charset=ISO-8859-1
+csum=Initial Change
+ctime=1180508680
+host=130.54.130.61
+name=Main.Help
+rev=1
+targets=
+text=== **MIRISK** Help Page ==%0a%0aPlease click [[ http://mirisk.dum.kyoto-u.ac.jp/mirisk/MIRISK-HELP.pdf | HERE]] to view MIRISK help file in pdf format '-(v. 0.1: 21 May 07)-'.%0a%0a
+time=1180508680
+author:1180508680=CM
+csum:1180508680=Initial Change
+diff:1180508680:1180508680:=1,4d0%0a%3c == **MIRISK** Help Page ==%0a%3c %0a%3c Please click [[ http://mirisk.dum.kyoto-u.ac.jp/mirisk/MIRISK-HELP.pdf | HERE]] to view MIRISK help file in pdf format '-(v. 0.1: 21 May 07)-'.%0a%3c %0a
+host:1180508680=130.54.130.61

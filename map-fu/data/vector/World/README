@@ -1,0 +1,39 @@
+
+FreeGIS Worlddata
+===========================
+
+These sample geodata have been extracted from VMAP0 R3. To avoid the raster
+grids the original data has been processed by grass by reclassifying an
+dissolving all polygons. The result is polygon data set with boundaries of
+most of the countries of the world. 
+
+The the country data of the FreeGIS Worlddata are provided in two version, one
+containing the full resolution of the original data. The other one has been
+simplified using the Douglas-Peuker algorithm (tolerance value 0.25). The
+second one is called country_simpl. This package only contains the simplified
+version of the data.
+
+Some population data coming from the U.S. Census Bureau has been joined to the
+plygons. The data is coming from http://www.census.gov/cgi-bin/ipc/idbagg and
+represents the population by age and sex from 2004.
+
+There are several different 2-letter codes to represent the countries of the
+world. One is called FIBS which is used by VMAP0. The ISO Alpha 2-Letter code
+(ISO 639-1) is more commonly used for example by the data providers of the UN.
+You find therefor a dbf-file containing the ISO 639-1 as well as the fibs code
+and all country names. Some cells have been left blank since not all countries
+are represented by both systems.
+
+The RPM-package 'freegis_worlddata' contains one thuban session file (placed in
+/usr/share/geodata/freegis_worlddata/.thuban) as well as a grass display
+manager file (/usr/share/geodata/freegis_worlddata/pop.dm) which help to have a
+first look onto the data. in /usr/share/geodata/freegis_worlddata/GRASSHowTo
+you learn how to import the data into GRASS and do some basic visualization.
+
+License
+-------
+The FreeGIS worlddata are licensed under the terms of the GNU General Public
+License (GPL). This will perhaps be changed in future versions when a better
+licence which is better suitable for free geodata becomes available.
+
+

@@ -1,0 +1,645 @@
+/3.2
+(ODB.1
+	FirstRootClassName:	"Legend"
+	Roots:	2
+	Version:	32
+)
+
+(Legend.2
+	LegType:	0x08
+	ClassType:	0x03
+	FieldNames:	3
+	Symbols:	4
+	Class:	90
+	Class:	91
+	Class:	92
+	Class:	93
+	Class:	94
+	Class:	95
+	Class:	96
+	Class:	97
+	Class:	98
+	StdDevs:	1.00000000000000
+	NullSym:	99
+	NullValues:	106
+	StatValues:	107
+	Precision:	-3
+)
+
+(AVStr.3
+	S:	"Category"
+)
+
+(SymList.4
+	Child:	5
+	Child:	23
+	Child:	30
+	Child:	37
+	Child:	44
+	Child:	51
+	Child:	58
+	Child:	76
+	Child:	83
+)
+
+(CMkSym.5
+	Color:	6
+	Symbols:	7
+	BgColor:	22
+	Size:	16.00000000000000
+)
+
+(TClr.6
+	Blue:	0xffff
+)
+
+(SymList.7
+	Child:	8
+	Child:	15
+)
+
+(BMkSym.8
+	Color:	9
+	ColorLock:	1
+	BgColor:	10
+	Font:	11
+	Size:	16.00000000000000
+	Pattern:	198
+	Angle:	360.00000000000000
+)
+
+(TClr.9
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(TClr.10
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NFont.11
+	Family:	12
+	Name:	13
+	Style:	14
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.12
+	S:	"ESRI Transportation & Municipal"
+)
+
+(AVStr.13
+	S:	"ESRI Transportation & Municipal"
+)
+
+(AVStr.14
+	S:	"Normal"
+)
+
+(BMkSym.15
+	Color:	16
+	BgColor:	17
+	Font:	18
+	Size:	16.00000000000000
+	Pattern:	96
+	Angle:	360.00000000000000
+)
+
+(TClr.16
+	Blue:	0xffff
+)
+
+(TClr.17
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NFont.18
+	Family:	19
+	Name:	20
+	Style:	21
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.19
+	S:	"ESRI Transportation & Municipal"
+)
+
+(AVStr.20
+	S:	"ESRI Transportation & Municipal"
+)
+
+(AVStr.21
+	S:	"Normal"
+)
+
+(TClr.22
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BMkSym.23
+	Color:	24
+	BgColor:	25
+	Font:	26
+	Size:	16.00000000000000
+	Pattern:	231
+	Angle:	360.00000000000000
+)
+
+(TClr.24
+	Blue:	0xffff
+)
+
+(TClr.25
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NFont.26
+	Family:	27
+	Name:	28
+	Style:	29
+	Weight:	1
+	Wideness:	1
+	UseCaching:	1
+)
+
+(AVStr.27
+	S:	"ESRI Cartography"
+)
+
+(AVStr.28
+	S:	"ESRI Cartography"
+)
+
+(AVStr.29
+	S:	"Normal"
+)
+
+(BMkSym.30
+	Color:	31
+	BgColor:	32
+	Font:	33
+	Size:	16.00000000000000
+	Pattern:	195
+	Angle:	360.00000000000000
+)
+
+(TClr.31
+)
+
+(TClr.32
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NFont.33
+	Family:	34
+	Name:	35
+	Style:	36
+	Weight:	1
+	Wideness:	1
+	UseCaching:	1
+)
+
+(AVStr.34
+	S:	"ESRI Cartography"
+)
+
+(AVStr.35
+	S:	"ESRI Cartography"
+)
+
+(AVStr.36
+	S:	"Normal"
+)
+
+(BMkSym.37
+	Color:	38
+	BgColor:	39
+	Font:	40
+	Size:	16.00000000000000
+	Pattern:	86
+	Angle:	360.00000000000000
+)
+
+(TClr.38
+	Red:	0xff00
+	Green:	0xad9f
+	Blue:	0xfe
+)
+
+(TClr.39
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NFont.40
+	Family:	41
+	Name:	42
+	Style:	43
+	Weight:	1
+	Wideness:	1
+	UseCaching:	1
+)
+
+(AVStr.41
+	S:	"ESRI Cartography"
+)
+
+(AVStr.42
+	S:	"ESRI Cartography"
+)
+
+(AVStr.43
+	S:	"Normal"
+)
+
+(BMkSym.44
+	Color:	45
+	BgColor:	46
+	Font:	47
+	Size:	16.00000000000000
+	Pattern:	90
+	Angle:	360.00000000000000
+)
+
+(TClr.45
+	Green:	0xffff
+)
+
+(TClr.46
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NFont.47
+	Family:	48
+	Name:	49
+	Style:	50
+	Weight:	1
+	Wideness:	1
+	UseCaching:	1
+)
+
+(AVStr.48
+	S:	"ESRI Cartography"
+)
+
+(AVStr.49
+	S:	"ESRI Cartography"
+)
+
+(AVStr.50
+	S:	"Normal"
+)
+
+(BMkSym.51
+	Color:	52
+	BgColor:	53
+	Font:	54
+	Size:	16.00000000000000
+	Pattern:	206
+	Angle:	360.00000000000000
+)
+
+(TClr.52
+	Blue:	0xffff
+)
+
+(TClr.53
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NFont.54
+	Family:	55
+	Name:	56
+	Style:	57
+	Weight:	1
+	Wideness:	1
+	UseCaching:	1
+)
+
+(AVStr.55
+	S:	"ESRI Cartography"
+)
+
+(AVStr.56
+	S:	"ESRI Cartography"
+)
+
+(AVStr.57
+	S:	"Normal"
+)
+
+(CMkSym.58
+	Color:	59
+	Symbols:	60
+	BgColor:	75
+	Size:	16.00000000000000
+)
+
+(TClr.59
+	Red:	0xffff
+	Green:	0xffff
+)
+
+(SymList.60
+	Child:	61
+	Child:	68
+)
+
+(BMkSym.61
+	Color:	62
+	BgColor:	63
+	Font:	64
+	Size:	16.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.62
+	Red:	0xffff
+	Green:	0xffff
+)
+
+(TClr.63
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NFont.64
+	Family:	65
+	Name:	66
+	Style:	67
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.65
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.66
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.67
+	S:	"Normal"
+)
+
+(BMkSym.68
+	Color:	69
+	ColorLock:	1
+	BgColor:	70
+	Font:	71
+	Size:	16.00000000000000
+	Pattern:	89
+	Angle:	360.00000000000000
+)
+
+(TClr.69
+)
+
+(TClr.70
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NFont.71
+	Family:	72
+	Name:	73
+	Style:	74
+	Weight:	1
+	Wideness:	1
+)
+
+(AVStr.72
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.73
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.74
+	S:	"Normal"
+)
+
+(TClr.75
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(BMkSym.76
+	Color:	77
+	BgColor:	78
+	Font:	79
+	Size:	16.00000000000000
+	Pattern:	98
+	Angle:	360.00000000000000
+)
+
+(TClr.77
+	Red:	0xdc00
+	Green:	0xdb
+	Blue:	0xdb
+)
+
+(TClr.78
+	Red:	0xffff
+	Green:	0xffff
+	Blue:	0xffff
+)
+
+(NFont.79
+	Family:	80
+	Name:	81
+	Style:	82
+	Weight:	1
+	Wideness:	1
+	UseCaching:	1
+)
+
+(AVStr.80
+	S:	"ESRI Cartography"
+)
+
+(AVStr.81
+	S:	"ESRI Cartography"
+)
+
+(AVStr.82
+	S:	"Normal"
+)
+
+(BMkSym.83
+	Color:	84
+	BgColor:	85
+	Font:	86
+	Size:	8.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.84
+	Name:	"Transparent"
+)
+
+(TClr.85
+	Name:	"Transparent"
+)
+
+(NFont.86
+	Family:	87
+	Name:	88
+	Style:	89
+	Weight:	1
+	Wideness:	1
+	UseCaching:	1
+)
+
+(AVStr.87
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.88
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.89
+	S:	"Normal"
+)
+
+(LClass.90
+	IsText:	1
+	Label:	"Airport"
+	MinStr:	"Airport"
+	MaxStr:	"Airport"
+	Precision:	-3
+)
+
+(LClass.91
+	IsText:	1
+	Label:	"Coastal feature"
+	MinStr:	"Coastal feature"
+	MaxStr:	"Coastal feature"
+	Precision:	-3
+)
+
+(LClass.92
+	IsText:	1
+	Label:	"Drainage feature"
+	MinStr:	"Drainage feature"
+	MaxStr:	"Drainage feature"
+	Precision:	-3
+)
+
+(LClass.93
+	IsText:	1
+	Label:	"Island"
+	MinStr:	"Island"
+	MaxStr:	"Island"
+	Precision:	-3
+)
+
+(LClass.94
+	IsText:	1
+	Label:	"Land feature"
+	MinStr:	"Land feature"
+	MaxStr:	"Land feature"
+	Precision:	-3
+)
+
+(LClass.95
+	IsText:	1
+	Label:	"Ocean feature"
+	MinStr:	"Ocean feature"
+	MaxStr:	"Ocean feature"
+	Precision:	-3
+)
+
+(LClass.96
+	IsText:	1
+	Label:	"Political"
+	MinStr:	"Political"
+	MaxStr:	"Political"
+	Precision:	-3
+)
+
+(LClass.97
+	IsText:	1
+	Label:	"Populated place"
+	MinStr:	"Populated place"
+	MaxStr:	"Populated place"
+	Precision:	-3
+)
+
+(LClass.98
+	IsNoData:	1
+	IsText:	1
+	Label:	"No Data"
+	Precision:	-3
+)
+
+(BMkSym.99
+	Color:	100
+	BgColor:	101
+	Font:	102
+	Size:	8.00000000000000
+	Pattern:	35
+	Angle:	360.00000000000000
+)
+
+(TClr.100
+	Name:	"Transparent"
+)
+
+(TClr.101
+	Name:	"Transparent"
+)
+
+(NFont.102
+	Family:	103
+	Name:	104
+	Style:	105
+	Weight:	1
+	Wideness:	1
+	UseCaching:	1
+)
+
+(AVStr.103
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.104
+	S:	"ESRI Geometric Symbols"
+)
+
+(AVStr.105
+	S:	"Normal"
+)
+
+(NameDict.106
+)
+
+(NameDict.107
+)
+

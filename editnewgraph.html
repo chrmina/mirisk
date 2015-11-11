@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>MDF-PGA edit Mode</title>
+</head>
+
+<body>
+  <table align="center" border=1>
+  <TR>
+     <TH>Parameter</TH>
+     <TH>Graph view</TH>
+  </TR>
+  <TR>
+    <TD>
+      <center>
+         <h4>Input the parameter for new graph</h4>
+      </center>
+      <p>
+     <TABLE border=0>
+       <TR>
+         <TD align="center">Create MDF-PGA as quartic function</TD>
+       </TR>
+       <form method="POST" action="./jpgraph/graphscript/editnewgraph.php" target="grapharea">
+       <TR>
+         <TD>
+              MDF = <input type="text" name="quartic_4th" maxlength="7" size="7">*(PGA)^4 + 
+                    <input type="text" name="quartic_3rd" maxlength="7" size="7">*(PGA)^3 + <p>
+                    <input type="text" name="quartic_2nd" maxlength="7" size="7">*(PGA)^2 + 
+                    <input type="text" name="quartic_1st" maxlength="7" size="7">*(PGA) +
+                    <input type="text" name="quartic_0th" maxlength="7" size="7">
+         </TD>
+       </TR>
+       <TR>
+          <TD align="center"><input type="submit" value="view the graph"></TD>
+       </TR>
+       </form>  
+     </TABLE>
+    </TD>
+    <TD>
+       <iframe name="grapharea" border="0" width=650 height=450></iframe>
+    </TD>
+   </TR>
+  </table>
+</body>
+
+</html>

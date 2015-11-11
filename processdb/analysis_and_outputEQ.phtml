@@ -1,0 +1,328 @@
+<?php
+
+// connect to the database(to get the study and project list)
+
+//include "./connect_pg.php";
+//@$conn = connect_pg("MIRISK");
+//if(!$conn){
+//  echo "Fail to connect to the database...";
+//  exit();
+//}
+
+// connect to the MIRISK DB
+// This function is for connecting to PostgreSQL DB.
+
+function connect_pg($dbname)
+{
+  $connect_string = "host=localhost port=5432 user=pgsql password=miriskdb dbname=";
+  $connect_string .= $dbname;
+
+  return(pg_connect($connect_string));
+}
+
+@$conn = connect_pg("MIRISK");
+
+if(!$conn){
+  echo "Fail to connect to the database";
+  exit();
+}
+
+// Get the ID of saved project from user input
+
+if(!$_POST["project"]){
+// Do nothing
+  }
+else{
+  
+$project_id = $_POST["project"];
+
+// GET the project information from MIRISK DB
+
+$sql = "SELECT project_study_id, project_id, project_name,
+Astext(geom), project_eq_value, project_wind_level,
+project_flood_level, project_volcano_level, asset_category,
+category_class, project_value, project_bcr, project_eq_value, k_value FROM project2 WHERE project_id='$project_id'";
+
+@$res = pg_query($conn,$sql) or die("Failed to retrieve the project data...");
+
+$row = pg_fetch_row($res,0);
+
+$row[3] = substr($row[3],6);
+$row[3] = str_replace(")","",$row[3]);
+
+// Get the parameter from input form(asset value etc.), and calculate the benefit
+$val = $row[10];
+$rate = $row[11];
+
+$benefit = $val * $rate;
+
+// extract the parameter from DB
+$PGA = $row[12];
+$k_val = $row[13];
+
+
+
+// get the relation between PGA and exceedance probability per year
+
+$fixedpr = 1/475;           // 10% per 50 years is equal to 1/475 per a year
+$logpr = log($fixedpr);
+
+// ln(Pe) = a - [PGA]  i.e. a = ln(Pe) + [PGA]
+
+$a = $logpr + $PGA;
+
+
+/*// Calculate EAL(Expected Annual Loss)
+//
+//     The function to get EAL
+//          
+//            is   EAL = -K*exp(a)*(2/e-1)  
+//
+//////////////////////////////////////////////// */
+
+$e = exp(1);
+
+$EAL = -$k_val * exp($a) * (2/$e - 1);
+
+$r = 0.03; // r means depreciation rate
+
+$ELL = $EAL/$r;
+
+$dir_loss = $val * $ELL;
+$indir_loss = $dir_loss * $rate;
+$total_loss = $dir_loss + $indir_loss;
+
+$total = $val + $total_loss;
+
+if($_POST["output"]=="get the graph"){
+include "../jpgraph/jpgraph.php";
+include "../jpgraph/jpgraph_line.php";
+include "../jpgraph/jpgraph_scatter.php";
+include "../jpgraph/jpgraph_regstat.php";
+
+  //data points
+  $xdata = array(1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.30, 1.35);
+  $ydelconstr = array(0, $val*0.005, $val*0.011, $val*0.018, $val*0.026, $val*0.037, $val*0.05, $val*0.065);
+  $ytotalloss = array($total_loss,$total_loss*0.84, $total_loss*0.71, $total_loss*0.60, $total_loss*0.52, $total_loss*0.45, $total_loss*0.39, $total_loss*0.33);
+  $ytotal = array($total_loss, $val*0.005+$total_loss*0.84, $val*0.011+$total_loss*0.71, $val*0.018+$total_loss*0.60, $val*0.026+$total_loss*0.52, $val*0.037+$total_loss*0.45, $val*0.05+$total_loss*0.39, $val*0.065+$total_loss*0.33);
+
+  $spline1 = new Spline($xdata, $ydelconstr);
+  $spline2 = new Spline($xdata, $ytotalloss);
+  $spline3 = new Spline($xdata, $ytotal);
+
+  // get the point data set to get a smooth curve
+  list($newx1, $newy1) = $spline1->Get(50);
+  list($newx2, $newy2) = $spline2->Get(50);
+  list($newx3, $newy3) = $spline3->Get(50);
+
+  //Create the graph
+  $graph = new Graph(870, 600, "auto");
+  $graph->SetMargin(100, 120, 50, 90);
+  $graph->title->Set("Result of Analysis");
+  $graph->title->SetFont(FF_FONT1,FS_NORMAL,12);
+  $graph->SetMarginColor('lightblue');
+
+  //Set the scale 
+  $graph->Setscale("linlin");
+
+  //Set the title
+  $graph->xaxis->title->Set("Design Code Increment");
+  $graph->yaxis->title->Set("cost[$]");
+  $graph->yaxis->title->SetFont(FF_FONT1, FS_BOLD);
+  $graph->xaxis->title->SetFont(FF_FONT1, FS_BOLD);
+  $graph->yaxis->SetTitleMargin(60);
+  $graph->xaxis->SetTitleMargin(20);
+  
+  $graph->xaxis->SetPos(1);
+  $graph->xaxis->SetLabelFormat('%1.2f');
+
+  $lplot1 = new Lineplot($ydelconstr, $xdata);
+  $lplot2 = new Lineplot($ytotalloss, $xdata);
+  $lplot3 = new Lineplot($ytotal, $xdata);
+
+  $slplot1 = new Lineplot($newy1, $newx1); 
+  $slplot2 = new Lineplot($newy2, $newx2);
+  $slplot3 = new Lineplot($newy3, $newx3);
+
+  $graph->Add($slplot1);
+  $graph->Add($slplot2);
+  $graph->Add($slplot3);
+
+  $slplot1->Setcolor("blue");
+  $slplot2->Setcolor("green");
+  $slplot3->Setcolor("red");
+
+  $slplot1->SetLegend("Construction cost - based on normal code");
+  $slplot2->SetLegend("Expected loss by earthquake");
+  $slplot3->SetLegend("Total cost - based on normal code");
+
+  $graph->legend->Pos(0.05, 0.4, "right", "center");
+
+  $graph->Stroke();
+}
+}
+
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>MIRISK - Analysis and Report</title>
+  <meta name="description" content="Mitigation Information and Risk Identification System">
+  <meta name="author" content="MIRISK Team">
+  <meta name="keywords" content="MIRISK">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="abstract" content="MIRISK">
+  <meta name="description" content="MIRISK">
+  <meta name="keywords" content="MIRISK">
+  <link href="../dbstyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <Center>
+
+  <!-- show the information on the selected project -->
+    <h3>Project information on <?php echo $row[2]; ?></h3>
+    <TABLE WIDTH=800 border=1>
+    <TR>
+      <TH>study id</TH>
+      <TH>project id</TH>
+      <TH width=18%>project name</TH>
+      <TH>Long-Lat geometry</TH>
+      <TH>EQ frequency</TH>
+      <TH>HR frequency</TH>
+      <TH>FL frequency</TH>
+      <TH>VL frequency</TH>
+    </TR>
+    <TR>
+      <TD align="center"><?php echo $row[0]; ?></TD>
+      <TD align="center"><?php echo $row[1]; ?></TD>
+      <TD align="center"><?php echo $row[2]; ?></TD>
+      <TD align="center"><?php echo $row[3]; ?></TD>
+      <TD align="center"><?php echo $row[4]; ?></TD>
+      <TD align="center"><?php echo $row[5]; ?></TD>
+      <TD align="center"><?php echo $row[6]; ?></TD>
+      <TD align="center"><?php echo $row[7]; ?></TD>
+    </TR>
+    </TABLE>
+    <TABLE border=1 align="left" style="margin-left: 14px;">
+    <TR>
+      <TH>Asset category</TH>
+      <TH>Category Class</TH>
+      <TH>Asset value</TH>
+      <TH>B/C rate</TH>
+    </TR>
+    <TR> 
+      <TD align="center"><?php echo $row[8]; ?></TD>
+      <TD align="center"><?php echo $row[9]; ?></TD>
+      <TD align="center"><?php echo $row[10]; ?></TD>
+      <TD align="center"><?php echo $row[11]; ?></TD>
+    </TR>
+    </TABLE>   
+    
+    <BR>
+    <BR>
+    <BR>
+    <BR>
+     
+    <h3>Output table of EQ Analysis</h3>
+
+   
+    <TABLE WIDTH=800 border=1>
+    <TR>
+      <TH WIDTH=9%></TH>
+      <TH WIDTH=13%>Construction cost(asset value)</TH> 
+      <TH WIDTH=13%>(Construction cost)</TH> 
+      <TH WIDTH=13%>Benefit</TH>
+      <TH WIDTH=13%>Direct Loss</TH>
+      <TH WIDTH=13%>Indirect Loss</TH>
+      <TH WIDTH=13%>Total Loss</TH>
+      <TH WIDTH=13%>Total cost(Based on normal code)</TH>
+    </TR>
+
+    <TR>
+      <TD align=center>Code(normal)</TD>
+      <TD align=right><?php echo $val; ?></TD>
+      <TD align=right><?php echo $val*0; ?></TD>
+      <TD align=right><?php echo $benefit; ?></TD>
+      <TD align=right><?php echo $dir_loss; ?></TD>
+      <TD align=right><?php echo $indir_loss; ?></TD>
+      <TD align=right><?php echo $total_loss; ?></TD>
+      <TD align=center><?php echo $total_loss; ?></TD>
+    </TR>
+    <TR>
+      <TD align=center>Code*1.05</TD>
+      <TD align=right><?php echo $val*1.005; ?></TD>
+      <TD align=right><?php echo $val*0.005; ?></TD>
+      <TD align=right><?php echo $benefit; ?></TD>
+      <TD align=right><?php echo $dir_loss*0.84; ?></TD>
+      <TD align=right><?php echo $indir_loss*0.84; ?></TD>
+      <TD align=right><?php echo $total_loss*0.84; ?></TD>
+      <TD align=center><?php echo $total_loss*0.84+$val*0.005; ?></TD>
+    </TR>
+    <TR>
+      <TD align=center>Code*1.1</TD>
+      <TD align=right><?php echo $val*1.011; ?></TD>
+      <TD align=right><?php echo $val*0.011; ?></TD>
+      <TD align=right><?php echo $benefit; ?></TD>
+      <TD align=right><?php echo $dir_loss*0.71; ?></TD>
+      <TD align=right><?php echo $indir_loss*0.71; ?></TD>
+      <TD align=right><?php echo $total_loss*0.71; ?></TD>
+      <TD align=center><?php echo $total_loss*0.71+$val*0.011; ?></TD>
+    </TR>
+    <TR>
+      <TD align=center>Code*1.15</TD>
+      <TD align=right><?php echo $val*1.018; ?></TD>
+      <TD align=right><?php echo $val*0.018; ?></TD>
+      <TD align=right><?php echo $benefit; ?></TD>
+      <TD align=right><?php echo $dir_loss*0.60; ?></TD>
+      <TD align=right><?php echo $indir_loss*0.60; ?></TD>
+      <TD align=right><?php echo $total_loss*0.60; ?></TD>
+      <TD align=center><?php echo $total_loss*0.60+$val*0.018; ?></TD>
+    </TR>
+    <TR>
+      <TD align=center>Code*1.20</TD>
+      <TD align=right><?php echo $val*1.026; ?></TD>
+      <TD align=right><?php echo $val*0.026; ?></TD>
+      <TD align=right><?php echo $benefit; ?></TD>
+      <TD align=right><?php echo $dir_loss*0.52; ?></TD>
+      <TD align=right><?php echo $indir_loss*0.52; ?></TD>
+      <TD align=right><?php echo $total_loss*0.52; ?></TD>
+      <TD align=center><?php echo $total_loss*0.52+$val*0.026; ?></TD>
+    </TR>
+    <TR>
+      <TD align=center>Code*1.25</TD>
+      <TD align=right><?php echo $val*1.037; ?></TD>
+      <TD align=right><?php echo $val*0.037; ?></TD>
+      <TD align=right><?php echo $benefit; ?></TD>
+      <TD align=right><?php echo $dir_loss*0.45; ?></TD>
+      <TD align=right><?php echo $indir_loss*0.45; ?></TD>
+      <TD align=right><?php echo $total_loss*0.45; ?></TD>
+      <TD align=center><?php echo $total_loss*0.45+$val*0.037; ?></TD>
+    </TR>
+    <TR>
+      <TD align=center>Code*1.30</TD>
+      <TD align=right><?php echo $val*1.05; ?></TD>
+      <TD align=right><?php echo $val*0.05; ?></TD>
+      <TD align=right><?php echo $benefit; ?></TD>
+      <TD align=right><?php echo $dir_loss*0.39; ?></TD>
+      <TD align=right><?php echo $indir_loss*0.39; ?></TD>
+      <TD align=right><?php echo $total_loss*0.39; ?></TD>
+      <TD align=center><?php echo $total_loss*0.39+$val*0.05; ?></TD>
+    </TR>
+    <TR>
+      <TD align=center>Code*1.35</TD>
+      <TD align=right><?php echo $val*1.065; ?></TD>
+      <TD align=right><?php echo $val*0.065; ?></TD>
+      <TD align=right><?php echo $benefit; ?></TD>
+      <TD align=right><?php echo $dir_loss*0.33; ?></TD>
+      <TD align=right><?php echo $indir_loss*0.33; ?></TD>
+      <TD align=right><?php echo $total_loss*0.33; ?></TD>
+      <TD align=center><?php echo $total_loss*0.33+$val*0.065; ?></TD>
+    </TR>
+    </TABLE>
+
+  </center>
+   
+</body>
+
+</html>

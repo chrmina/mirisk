@@ -1,0 +1,187 @@
+MAP
+  NAME "WORLD MAP"
+  STATUS ON
+  ### the pixel size of displayed map, width and height
+  #SIZE 600 300
+  SIZE 800 500
+  IMAGETYPE png24
+  #IMAGETYPE PNG
+  #OUTPUTFORMAT
+  #  NAME png
+  #  DRIVER "GD/PNG"
+  #  MIMETYPE "image/png"
+  #  IMAGEMODE RGBA
+  #  EXTENSION "png"
+  #END
+  #IMAGECOLOR 33 128 222
+  ### Path to the directory holding the shapefiles
+  SHAPEPATH "map/world"
+  fontset "data/fonts/fonts.txt"
+  ### default extent of map
+  EXTENT -180 -90 180 90
+  ### enable interlace method when drawing  
+  #INTERLACE ON
+  ### units used on the map system, DD means degrees (latitude and longitude)
+  UNITS DD
+  ### Full filename of the symbolset to use
+  SYMBOLSET "map/symbols35.sym"
+  ### define the coordinate system to display the map  
+  PROJECTION
+  "proj=latlong"  # set the coordinate system, latitude and longitude    
+  "ellps=WGS84"   # define the ellipsoid system
+  "datum=WGS84"   # projection data used in shapefile(?)
+  "no_defs"       # ensure that no defaults are read from the defaults files.
+  END
+  ### define the web interface
+  WEB
+  ### path to the directory for writing temporary files and images
+  IMAGEPATH "map/images/"
+  IMAGEURL "map/images/"
+  ### format of query result
+  QUERYFORMAT text/html
+END
+
+LAYER
+### Start of base layer, satellite image worldmap
+  ### Name for this layer, linking between the mapfile and web interfaces
+  NAME "BASEMAP"
+  ### The file name of the spatial data to process
+  ### file has to be in SHAPEPATH directory
+  DATA "worldbase.tif"
+  #IMAGETYPE PNG
+  ### Specifies how the data should be drawn(define the type of data)
+  TYPE RASTER
+  ### Sets the status of the layer, on or off or default
+  STATUS DEFAULT
+  ### Passes a processing directive to be used with this layer
+  #PROCESSING "DITHER=YES"
+  #    METADATA
+  #      "DESCRIPTION" "Basemap"
+  #      "RESULT_FIELDS" "x y value_list value_n class red green blue"
+  #    END   
+  #  CLASSITEM "[pixel]"
+  #  TEMPLATE void
+  #  CLASS
+  #    EXPRESSION ([pixel] >= 0)
+  #    COLOR 255 0 0
+  #  END
+  PROJECTION
+  ### define the co-ordination system by co-ord number
+    "init=epsg:4326"
+  END
+END
+
+LAYER	
+  NAME "country"	
+  DATA "cntry02"
+    METADATA 
+      "DESCRIPTION" "country"
+      "RESULT_FIELDS" "CNTRY_NAME"
+    END
+  TYPE POLYGON
+  UNITS DD
+  STATUS ON
+  TOLERANCE 0
+  TOLERANCEUNITS PIXELS
+  TRANSPARENCY 10
+  ### Maximum scale at which this CLASS is drawn
+  #MAXSCALE 1200000000
+    CLASS
+      OUTLINECOLOR 51 51 51
+      COLOR 255 255 255
+    END
+    ### Used as a global alternative to CLASS TEMPLATE,
+    ### Template file or URL to use in presenting query results to the user
+  TEMPLATE void
+END
+
+LAYER	
+  NAME "EQ_PGA"	
+  DATA "eq_pga"
+    METADATA 
+      "DESCRIPTION" "Earthquake hazard(PGA,10% in 50 years)"
+      "RESULT_FIELDS" "HAZARD_LV"
+    END
+  TYPE POLYGON
+  UNITS DD
+  STATUS ON
+  TOLERANCE 0
+  TOLERANCEUNITS PIXELS
+  TRANSPARENCY 45
+    CLASS			
+      NAME "PGA LV1"
+      EXPRESSION([HAZARD_LV]=1)
+      COLOR 255 255 255
+    END
+    CLASS			
+      NAME "PGA LV2"
+      EXPRESSION([HAZARD_LV]=2)
+      COLOR 255 227 227 
+    END
+    CLASS			
+      NAME "PGA LV3"
+      EXPRESSION([HAZARD_LV]=3)
+      COLOR 255 198 198
+    END
+    CLASS			
+      NAME "PGA LV4"
+      EXPRESSION([HAZARD_LV]=4)
+      COLOR 255 170 170
+    END
+    CLASS			
+      NAME "PGA LV5"
+      EXPRESSION([HAZARD_LV]=5)
+      COLOR 255 142 142
+    END
+    CLASS			
+      NAME "PGA LV6"
+      EXPRESSION([HAZARD_LV]=6)
+      COLOR 255 113 113
+    END
+    CLASS			
+      NAME "PGA LV7"
+      EXPRESSION([HAZARD_LV]=7)
+      COLOR 255 85 85
+    END
+    CLASS			
+      NAME "PGA LV8"
+      EXPRESSION([HAZARD_LV]=8)
+      COLOR 255 57 57
+    END
+    CLASS			
+      NAME "PGA LV9"
+      EXPRESSION([HAZARD_LV]=9)
+      COLOR 255 28 28
+    END
+    CLASS			
+      NAME "PGA LV10"
+      EXPRESSION([HAZARD_LV]=10)
+      COLOR 255 0 0
+    END
+  TEMPLATE void
+END
+
+LAYER
+  NAME project_point
+  TYPE POINT
+  STATUS ON
+  ### Type of connection, define the data source.(Default is local.)
+  CONNECTIONTYPE POSTGIS
+  ### PostGIS connection string(basically equal to that of PostgreSQL)
+  CONNECTION "dbname=MIRISK user=pgsql host=localhost port=5432 password=miriskdb"
+  ### <columnname> from <tablename> (in case of PostGIS layer)
+  DATA "geom from project USING UNIQUE gid USING SRID=4326"
+  LABELITEM "project_id"
+  CLASS
+    SYMBOL 'circle'
+    SIZE 7
+    COLOR 255 255 51
+    LABEL
+      COLOR 255 255 51
+      POSITION AUTO
+      SIZE LARGE
+    END
+  END
+END
+
+END

@@ -1,0 +1,3 @@
+verdanai verdanai.ttf
+verdana	 verdana.ttf
+verdanab verdanab.ttf

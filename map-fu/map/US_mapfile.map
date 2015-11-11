@@ -1,0 +1,327 @@
+MAP
+    NAME USA
+    STATUS ON
+    SIZE 800 500
+    IMAGETYPE PNG
+    IMAGECOLOR 240 240 240
+    SHAPEPATH "data/vector/USA/"
+    fontset "data/fonts/fonts.txt"
+    symbolset "data/fonts/symbols.txt"
+    EXTENT -7000000 -1500000 4000000 4500000
+    UNITS METERS
+    PROJECTION
+		"proj=lcc" "lat_1=32" "lat_2=44" "lat_0=38" "lon_0=-100" "x_0=0" "y_0=0" "ellps=GRS80" "datum=NAD83"
+    END
+    WEB
+      IMAGEPATH "map/images/"
+      IMAGEURL "map/images/"
+    END
+
+	REFERENCE
+    STATUS ON
+  	image "images/USrefmap.png"
+    EXTENT -7000000 -1500000 4000000 4500000
+  	size 200 120
+  	color -1 -1 -1
+  	outlinecolor 255 0 0
+  END
+
+LEGEND
+  STATUS ON
+  # KEYSIZE 18 12
+  # LABEL object
+  LABEL
+    TYPE bitmap
+    COLOR 0 0 0
+    SIZE small
+    ANTIALIAS TRUE
+  END
+  TEMPLATE "templates/legend.html"  ### HTML template file
+END
+
+	LAYER
+		NAME "US state boundaries"
+		TYPE POLYGON
+		STATUS ON
+		DATA "states_dissolved"
+		PROJECTION
+			"proj=latlong"
+		"ellps=GRS80"
+			"datum=NAD83"
+		END
+		CLASS
+			NAME "US states"
+			OUTLINECOLOR 60 60 60
+			COLOR 192 192 192
+			SYMBOL 0
+		END
+    METADATA
+      SHOWINLEGEND "yes"
+    END
+	END
+	
+	LAYER
+    DATA "countries"
+    NAME "Countries"
+    GROUP "Countries"
+    PROJECTION
+      "proj=latlong"
+      "ellps=GRS80"
+      "datum=NAD83"
+    END
+    SIZEUNITS PIXELS
+    STATUS ON
+    TOLERANCEUNITS PIXELS
+    TYPE POLYGON
+    UNITS METERS
+    CLASS
+      NAME "Country Outlines"
+      STYLE
+        ANGLE 360
+        OUTLINECOLOR 0 0 0
+        SYMBOL 0
+      END
+    END
+    METADATA
+      SHOWINLEGEND "yes"
+    END
+    METADATA
+      SHOWINLEGEND "yes"
+    END
+  END
+
+	LAYER
+    DATA "countries"
+    NAME "Countries"
+    GROUP "Countries"
+    LABELITEM "NAME"
+    PROJECTION
+      "proj=latlong"
+      "ellps=GRS80"
+      "datum=NAD83"
+    END
+    SIZEUNITS PIXELS
+    STATUS ON
+    TOLERANCEUNITS PIXELS
+    TYPE POLYGON
+    UNITS METERS
+    CLASS
+      NAME "Country Names"
+      LABEL
+        ANGLE 0.000000
+        ANTIALIAS TRUE
+        FONT "verdana"
+        MAXSIZE 256
+        MINSIZE 4
+        SIZE 9
+        TYPE TRUETYPE
+        BUFFER 1
+        COLOR 20 20 20
+        OUTLINECOLOR 255 128 30
+        PARTIALS FALSE
+        POSITION CC
+      END
+      STYLE
+        ANGLE 360
+        OUTLINECOLOR 0 0 0
+        SYMBOL 0
+      END
+    END
+  END
+
+  LAYER
+    CLASSITEM "NAME"
+    DATA "all_cities_dissolved"
+    GROUP "Cities"
+    NAME "City Outlines"
+    PROJECTION
+      "proj=latlong"
+      "ellps=GRS80"
+      "datum=NAD83"
+    END
+    SIZEUNITS PIXELS
+    STATUS OFF
+    TOLERANCEUNITS PIXELS
+    TRANSPARENCY 20
+    TYPE POLYGON
+    UNITS METERS
+    CLASS
+
+      NAME "Large Cities"
+      EXPRESSION /Metro Area/
+      MAXSCALE 1e+07
+      MINSCALE 5e+06
+      STYLE
+        ANGLE 360
+        COLOR 255 255 255
+        OUTLINECOLOR 255 0 0
+        SYMBOL 0
+      END
+    END
+    CLASS
+      NAME "Medium & Large Cities"
+      EXPRESSION ([AREA] > 0.01)
+      MAXSCALE 5e+06
+      MINSCALE 500001
+      STYLE
+        ANGLE 360
+        COLOR 255 255 255
+        OUTLINECOLOR 255 0 0
+        SYMBOL 0
+      END
+    END
+    CLASS
+      NAME "Small, Medium & Large Cities"
+      MAXSCALE 500000
+      STYLE
+        ANGLE 360
+        COLOR 255 255 255
+        OUTLINECOLOR 255 0 0
+        SYMBOL 0
+      END
+    END
+    METADATA
+      SHOWINLEGEND "yes"
+    END
+  END
+
+  LAYER
+    CLASSITEM "NAME"
+    DATA "all_cities_dissolved"
+    GROUP "Cities"
+    LABELITEM "NAME"
+    NAME "City Names"
+    PROJECTION
+      "proj=latlong"
+      "ellps=GRS80"
+      "datum=NAD83"
+    END
+    SIZEUNITS PIXELS
+    STATUS ON
+    TOLERANCEUNITS PIXELS
+    TYPE ANNOTATION
+    UNITS METERS
+    CLASS
+      NAME "Large Cities"
+      EXPRESSION /Metro/
+      LABEL
+        ANGLE 0.000000
+        ANTIALIAS TRUE
+        FONT "verdana"
+        MAXSIZE 256
+        MINSIZE 4
+        SIZE 8
+        TYPE TRUETYPE
+        BUFFER 1
+        COLOR 20 20 20
+        FORCE FALSE
+        MINDISTANCE -1
+        MINFEATURESIZE 2
+        OFFSET 0 -10
+        OUTLINECOLOR 255 255 255
+        PARTIALS FALSE
+        POSITION CC
+      END
+      MAXSCALE 1e+07
+      MINSCALE 5e+06
+    END
+    CLASS
+      NAME "Medium & Large Cities"
+      EXPRESSION ([AREA] > 0.01)
+      LABEL
+        ANGLE 0.000000
+        ANTIALIAS TRUE
+        FONT "verdana"
+        MAXSIZE 256
+        MINSIZE 4
+        SIZE 8
+        TYPE TRUETYPE
+        BUFFER 1
+        COLOR 20 20 20
+        FORCE FALSE
+        MINDISTANCE -1
+        MINFEATURESIZE 2
+        OFFSET 0 -10
+        OUTLINECOLOR 255 255 255
+        PARTIALS FALSE
+        POSITION CC
+      END
+      MAXSCALE 5e+06
+      MINSCALE 500001
+    END
+    CLASS
+      NAME "Small, Medium & Large Cities"
+      LABEL
+        ANGLE 0.000000
+        ANTIALIAS TRUE
+        FONT "verdana"
+        MAXSIZE 256
+        MINSIZE 4
+        SIZE 8
+        TYPE TRUETYPE
+        BUFFER 1
+        COLOR 20 20 20
+        FORCE TRUE
+        MINDISTANCE -1
+        MINFEATURESIZE 2
+        OFFSET 0 -10
+        OUTLINECOLOR 255 255 255
+        PARTIALS FALSE
+        POSITION CC
+      END
+      MAXSCALE 500000
+    END
+    METADATA
+      SHOWINLEGEND "yes"
+    END
+  END
+
+  LAYER
+    DATA "states_dissolved"
+    GROUP "States"
+    LABELITEM "STATE"
+    LABELMAXSCALE 5e+06
+    LABELMINSCALE 1
+    NAME "State Names"
+    PROJECTION
+      "proj=latlong"
+      "ellps=GRS80"
+      "datum=NAD83"
+    END
+    SIZEUNITS PIXELS
+    STATUS ON
+    TOLERANCEUNITS PIXELS
+    TYPE ANNOTATION
+    UNITS METERS
+    CLASS
+      NAME "State Names"
+      LABEL
+        ANGLE 0.000000
+        ANTIALIAS TRUE
+        FONT "verdana"
+        MAXSIZE 256
+        MINSIZE 4
+        SIZE 9
+        TYPE TRUETYPE
+        BUFFER 2
+        COLOR 20 20 20
+        FORCE TRUE
+        MINDISTANCE -1
+        MINFEATURESIZE -1
+        OFFSET 0 10
+        OUTLINECOLOR 128 255 128
+        PARTIALS FALSE
+        POSITION CC
+      END
+      STYLE
+        ANGLE 360
+        OUTLINECOLOR 0 0 0
+        SYMBOL 0
+      END
+    END
+    METADATA
+      SHOWINLEGEND "yes"
+    END
+  END
+
+END

@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>MIRISK</title>
+  <meta name="description" content="MIRISK">
+  <meta name="author" content="MIRISK Team">
+  <meta name="keywords" content="MIRISK">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="abstract" content="MIRISK">
+  <meta name="description" content="MIRISK">
+  <meta name="keywords" content="MIRISK">
+  <link href="./style.css" rel="stylesheet" type="text/css">
+</head>
+
+<BODY>
+  <div id="container">
+
+  <div id="header">MIRISK</div>
+  <center>
+  <H3>Mitigation Information and Risk Identification System</H3>
+  </center>
+
+  <div id="menu">
+    <a href="./index.html">Main</a>
+    <a href="./study.html">1. Project Data</a>
+    <a href="./location.html">2. Location/Hazard Data</a> 
+    <a href="./asset.html">3. Component (Asset) Data</a>
+    <a href="./analysis.html" class="aactive">4. Analysis/Report</a>
+    <a href="./help.html">Help</a>
+    <a href="./about.html">About</a>
+    <a href="./peer_review.html">Feedback</a> 
+  </div>
+
+<H3>Analysis and Report</H3>
+
+<BR><BR>
+<CENTER>
+<TABLE border="1" cellpadding="0">
+  <TR>
+    <TH height="25">Select Project and Component</TH>
+  </TR>
+  <TR>
+    <TD>
+       <iframe src="./processdb/projlist.phtml" width="880" height="150" name="select" frameborder="0"></iframe>
+    </TD>
+  </TR>
+  <TR>
+    <TH height="25" colspan="2">Analysis Results and Report</TH>
+  </TR>
+  <TR>
+    <TD>
+       <iframe src="./processdb/analysis.php" width="880" height="700" name="output" frameborder="0"></iframe>
+    </TD>
+  </TR>
+</TABLE>
+</CENTER>
+
+<div id="footer">(c) 2006 MIRISK Group</div>
+
+</div>
+</body>
+</html>

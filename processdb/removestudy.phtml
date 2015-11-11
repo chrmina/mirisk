@@ -1,0 +1,72 @@
+<?php
+
+//  
+// process the study name in database
+//
+
+// connect to the database
+include "./connect_pg.php";
+
+@$conn = connect_pg("MIRISK");
+
+if(!$conn){
+   echo "Fail to connect to the database";
+   exit();
+}
+
+$sql = "select oid, study_name from studydata";
+$res = pg_query($conn,$sql) or die("fail to insert the data");
+
+$rownum = pg_num_rows($res);
+
+for($j=0;$j<$rownum;$j++){
+    $arr[$j][0] = pg_fetch_result($res,$j,0);
+    $arr[$j][1] = pg_fetch_result($res,$j,1);
+}
+
+?>
+
+<html>
+<head>
+  <title>MIRISK - removestudy.phtml</title>
+  <meta name="description" content="Mitigation Information and Risk Identification System">
+  <meta name="author" content="MIRISK Team">
+  <meta name="keywords" content="MIRISK">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="abstract" content="MIRISK">
+  <meta name="description" content="MIRISK">
+  <meta name="keywords" content="MIRISK">
+  <link href="../dbstyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<center>
+
+<H3>Project to be <U>DELETED</U></H3>
+<form method="post" action="./deletestudy.php">
+<select name="selectstudydel">
+
+<?php
+
+   for($i=0;$i<$rownum;$i++)
+   {
+     echo "<option value=\"",$arr[$i][0],"\">";
+     echo $arr[$i][1];
+     echo "</option>";
+   }
+
+?>  
+ 
+</select>
+<BR><BR>
+  
+<input type="submit" name="erasestudy" value="Erase Project">
+</form>
+
+<B><U><FONT COLOR="red">Clicking on the button
+will erase the selected project and all the components associated with it!</FONT></U></B> 
+
+</center> 
+</body>
+
+</html>

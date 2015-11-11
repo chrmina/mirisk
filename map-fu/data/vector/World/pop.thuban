@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE session SYSTEM "thuban-1.1.dtd">
+<session xmlns="http://thuban.intevation.org/dtds/thuban-1.1-dev.dtd" title="unnamed session">
+    <fileshapesource filetype="shapefile" id="D-160536692" filename="/usr/share/geo-data/freegis_worlddata/countries_simpl.shp"/>
+    <fileshapesource filetype="shapefile" id="D-160547828" filename="/usr/share/geo-data/freegis_worlddata/countries_simpl.shp"/>
+    <map title="unnamed map">
+        <layer title="total population as quantiles" stroke_width="1" shapestore="D-160536692" visible="true" stroke="#000000" fill="#c0c0c0">
+            <classification field="total" field_type="int">
+                <clnull label="no data">
+                    <cldata stroke="#000000" stroke_width="1" fill="#c0c0c0"/>
+                </clnull>
+                <clrange label="0.0% - 26.63%" range="[0;4.57456e+06]">
+                    <cldata stroke="#000000" stroke_width="1" fill="#ffffff"/>
+                </clrange>
+                <clrange label="26.63% - 63.37%" range="]4.57456e+06;3.25079e+07]">
+                    <cldata stroke="#000000" stroke_width="1" fill="#aaaaee"/>
+                </clrange>
+                <clrange label="63.37% - 84.64%" range="]3.25079e+07;1.43782e+08]">
+                    <cldata stroke="#000000" stroke_width="1" fill="#5555dd"/>
+                </clrange>
+                <clrange label="84.64% - 100.0%" range="]1.43782e+08;1.29885e+09]">
+                    <cldata stroke="#000000" stroke_width="1" fill="#0000cc"/>
+                </clrange>
+            </classification>
+        </layer>
+        <layer title="countries_simpl" stroke_width="1" shapestore="D-160547828" visible="true" stroke="#000000" fill="#c0c0c0">
+            <classification field="ratio" field_type="double">
+                <clnull label="no data">
+                    <cldata stroke="#000000" stroke_width="1" fill="#c0c0c0"/>
+                </clnull>
+                <clrange label="more women then men" range="[0;100]">
+                    <cldata stroke="#000000" stroke_width="1" fill="#db70db"/>
+                </clrange>
+                <clrange label="more men than women" range="]100;200]">
+                    <cldata stroke="#000000" stroke_width="1" fill="#ffff00"/>
+                </clrange>
+            </classification>
+        </layer>
+    </map>
+</session>

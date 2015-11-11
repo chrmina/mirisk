@@ -1,0 +1,333 @@
+body {
+	background-color:#eeeeee;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-size:10px;
+	cursor:default;
+	background-image:url(images/diagonal_lines2.gif);
+}
+h1 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+        font-size:24px;
+	padding-right:5px;
+	padding-left:5px;
+	margin-right:10px;
+	margin-left:10px;
+	margin-bottom:2px;
+}
+h2 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+        font-size:16px;
+	padding-right:5px;
+	padding-left:5px;
+	margin-right:10px;
+	margin-left:10px;
+	margin-bottom:2px;
+}
+
+h3 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+        font-size:12px;
+	padding-right:5px;
+	padding-left:5px;
+	margin-right:10px;
+	margin-left:10px;
+	margin-bottom:2px;
+}
+
+h4 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+        font-size:10px;
+	padding-right:5px;
+	padding-left:5px;
+	margin-right:10px;
+	margin-left:10px;
+	margin-bottom:2px;
+}
+
+h5 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+        font-size:8px;
+	padding-right:5px;
+	padding-left:5px;
+	margin-right:10px;
+	margin-left:10px;
+	margin-bottom:2px;
+}
+
+
+p {
+	padding:5px 15px 5px 30px;
+	margin:5px 5px;
+	text-align:justify;
+}
+ul li {
+  /*list-style-image:url(images/bullet.jpg);*/
+        padding:0px 0px 0px 0px;
+	margin-left:25px;
+        margin-right:5px;
+}
+
+ol {
+  counter-reset: section;                /* Creates a new instance of the
+                                              section counter with each ol
+                                              element */
+  list-style-type: none;
+}
+ol li:before {
+  counter-increment: section;            /* Increments only this instance
+					    of the section counter */
+ content: counters(section, ".") " ";   /* Adds the value of all instances
+                                              of the section counter separated
+                                             by a ".". */
+}
+
+a {
+	color:#000099;
+        text-decoration:none;
+}
+a:hover {
+	color:#000099;
+	border-bottom:2px solid #FF0000;
+}
+a:visited {
+	color:#666666;
+}
+img {
+	border: none;
+	padding:1px 1px;
+	margin:0em 1em;
+	float:none;
+}
+input, textarea {
+        ; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #000000
+}
+acronym {
+	font-variant:small-caps;
+	cursor:help;
+	border-bottom: 1px solid #cccccc;
+}
+
+dl { 
+  padding: 0.5em 0.7em 0.5em;
+  margin: 0em;
+}
+
+* html dl dt { 
+  position: relative;
+}
+
+dt {
+  margin-top: 0.4em;
+  float: left;
+  clear: left;
+  width: 12em;
+}
+
+dd {
+  padding: 0.5em 0.7em;
+  margin: 0em;
+  margin-left: 12em;
+  margin-bottom: 0.4em;
+}
+
+table {
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 10px;
+  background-color: #ffffff;
+  border: 1px #bbbbbb solid;
+  border-collapse: collapse;
+  border-spacing: 5px;
+}
+
+
+table th {
+  border: 1px #bbbbbb solid;
+  background-color: #dddddd;
+  text-align: center;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 11px;
+  color: #404040;
+}
+
+table td {
+    border: 1px #bbbbbb solid;
+    padding: 5px 5px 5px 5px;
+}
+
+* html dd.data {
+  margin: 0.5em 0em;
+  width: 100%;
+}
+
+#container {
+	width:890px;
+	background-color:#FFFFFF;
+	border: 1px #cccccc solid;
+	margin:0 auto 0 auto;
+}
+#menu {
+	width:100%;
+	background-color:#FFFFFF;
+	border-bottom:1px solid #cccccc;
+	padding-top:15px;
+	padding-bottom:9px;
+	text-align:center;
+; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px
+}
+#menu a {
+	height:25px;
+	padding:9px;
+	background-color:#efefef;
+	border-left: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-bottom:1px solid #cccccc;
+	margin-right:0;
+	color:#000000;
+	text-decoration:none;
+	font-weight:bold;
+	-moz-border-radius-topright:10px;
+	-moz-border-radius-topleft:10px;
+	margin:2px;
+	background-image:url(images/shadow.gif);
+	background-position:bottom;
+	background-repeat:repeat-x;
+}
+#menu a:hover {
+	height:25px;
+	padding:9px;
+	background-color:#FFFFFF;
+	border-left: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-bottom:1px solid #ffffff;
+	margin-right:0;
+	color:#000000;
+	text-decoration:none;
+	font-weight:bold;
+	-moz-border-radius-topright:10px;
+	-moz-border-radius-topleft:10px;
+	margin:2px;
+	background-image:none;
+}
+#menu .aactive {
+	height:25px;
+	padding:9px;
+	background-color:#FFFFFF;
+	border-left: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-bottom:1px solid #ffffff;
+	margin-right:0;
+	color:#000000;
+	text-decoration:none;
+	font-weight:bold;
+	-moz-border-radius-topright:10px;
+	-moz-border-radius-topleft:10px;
+	margin:2px;
+	background-image:none;
+}
+#header {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:36px;
+    font-weight:bold;
+	color:#000000;
+	padding:10px;
+	text-align:center;
+	background-image:url(images/headerbg4.jpg);
+	background-repeat:repeat-x;
+	border-bottom:1px solid #999999;
+	margin-bottom:10px;
+}
+#header a {
+	color:#000000;
+	text-decoration:none;
+}
+#header a:hover {
+	color:#000000;
+	text-decoration:none;
+	border:none;
+}
+#footer {
+	color:#666666;
+	padding:10px;
+	text-align:center;
+	background-image:url(images/footerbg.jpg);
+	background-repeat:repeat-x;
+    border-top:1px solid #999999;
+    margin-top:10px;
+    margin-bottom:0px;
+}
+
+#divider {
+          height:20px;
+          background-image:url(images/line.jpg);
+          background-position:center;
+          background-repeat: no-repeat;
+}
+
+.comments {  text-align: left; background-color: #F7F7F7}
+
+/* FORM DATA ======================================================================== */
+
+form {
+    padding: 20px;
+}
+form a {
+    color: #000099;
+}
+
+/* Inputs ======================================================================== */
+
+textarea {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    color:#000000;
+    font-size:10px;
+    padding: 0;
+    vertical-align: top;
+    margin: 2px 2px 1px 0;
+}
+input {
+    font-size: 125%; 
+    margin: 0 2px 0 0;
+    padding: 2px 0;
+}
+select {
+    margin: 1px 1px 1px 0;
+    padding: 0;
+    font-size: 10px; 
+}
+
+/* Buttons ======================================================================= */
+
+form .actions {
+    margin: 20px 0 10px 0;
+    padding: 10px 5px;
+    background-color: #F5F5F5;
+    border-top: 2px solid #339933;
+    text-align: right;
+}
+/* Submit button */
+form .primaryAction {
+}
+/* Cancel button */
+form .secondaryAction {
+    color: grey;
+}
+form .secondaryAction:hover {
+    color: black;
+}
+
+/* IE6 BUG FIXES ==================================================================== */
+form {
+    height:expression('1%'); /* IE Pick-a-boo bug fix */
+}
