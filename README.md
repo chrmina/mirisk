@@ -34,12 +34,12 @@ MIRISK’s basic purpose is to allow a Development Manager to quickly learn if n
 
 ##Installation##
 * Copy the files to the webserver.
-* Unzip databasedump\DB-MIRISK-26JUN2007.zip
+* Unzip ```databasedump\DB-MIRISK-26JUN2007.zip```
 * Import the database from the dump
-* Unzip map-fu\map\world\gshhs_land.zip
+* Unzip ```map-fu\map\world\gshhs_land.zip```
 
 ##How to use##
-Follow the instructions in *MIRISK-HELP.pdf*
+Follow the instructions in ```MIRISK-HELP.pdf```
 
 ##License##
 
