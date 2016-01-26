@@ -41,8 +41,10 @@ MIRISK’s basic purpose is to allow a Development Manager to quickly learn if n
 ##How to use##
 Follow the instructions in ```MIRISK-HELP.pdf```
 
-##License##
+##Disclaimer##
+MIRISK is distributed in the hope that it will be useful, but without any warranty: without even the implied warranty of merchantability or fitness for a particular purpose. While every precaution has been taken in the creation of MIRISK, in no event shall the creators and contributors of MIRISK be liable to any party for direct, indirect, special, incidental, or consequential damages, including lost profits, arising out of the use of MIRISK and/or of information contained in MIRISK documents and/or from the use of programs and source code that may accompany it, even if the creators of MIRISK have been advised of the possibility of such damage. MIRISK is provided on as "as is" basis, and its creators have no obligations to provide maintenance, support, updates, enhancements, or modifications.
 
+##License##
 Copyright [Charles Scawthorn](https://www.linkedin.com/in/charles-scawthorn-b340a815), [Christakis Mina](https://www.linkedin.com/in/chrismina) and Takahiro Tsutsumiuchi.
 
 MIRISK has been developed under and is subject to the terms of the [Kyoto University Intellectual Property Policy](http://www.kyoto-u.ac.jp/en/about/profile/ideals/documents/e-ipp.pdf).
